@@ -414,6 +414,11 @@
       .phonetics-grid { grid-template-columns: 1fr 1fr; }
     }
 
+    /* ─── SITE NAV ─── */
+    .site-nav { padding: 12px 20px; background: var(--surface); border-bottom: 1px solid var(--border); }
+    .site-nav a { font-size: 13px; font-weight: 600; color: var(--muted); text-decoration: none; }
+    .site-nav a:hover { color: var(--accent); }
+
     /* ─── FEEDBACK ─── */
     .feedback-section { margin-top: 44px; }
     .feedback-section-label { font-size:13px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
@@ -434,6 +439,8 @@
   </style>
 </head>
 <body>
+
+<nav class="site-nav"><a href="../index.html">← All Lessons</a></nav>
 
   <header class="lesson-header">
     <div class="lesson-number">Lesson 1 · Spoken Bangla (Shudho)</div>
