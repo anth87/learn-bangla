@@ -24,9 +24,9 @@
 - **Group by meaning, not alphabet.** Thematic groupings (Greetings, Family, Food, etc.) are more useful than alphabetical lists for language learning.
 - **Add on introduction.** Add a term to the glossary the session it is first taught, not retroactively.
 - **Mark difficulty.** If a term caused confusion in a session, note it: *[review needed]*.
-- **Include variants.** Dhaka dialect often differs from textbook Bangla — note both where relevant.
+- **Include variants.** Colloquial Bangla often differs from Shudho Bangla — teach Shudho Bangla as primary, note colloquial variants as alternatives where relevant.
 - **Keep definitions brief.** One line. Context notes can be a second line. Not a dictionary entry.
-- **_Avoid_ aliases.** Where a learner is likely to use a wrong form (e.g. a Kolkata variant instead of Dhaka), flag it explicitly.
+- **_Avoid_ aliases.** Where a learner is likely to use a wrong form (e.g. a colloquial variant instead of Shudho Bangla), flag it explicitly.
 
 ## Sections to consider for Bangla
 

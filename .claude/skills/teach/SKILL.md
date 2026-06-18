@@ -54,7 +54,7 @@ Write a new lesson file at `lessons/NNNN-slug.html` where NNNN is the next seque
 - Beautiful: the learner should *want* to open it
 - Interactive: include at minimum one active recall exercise (quiz, tap-to-reveal, matching)
 - Grounded: reference the real-world scenario from `MISSION.md` that this lesson serves
-- Include a "Dhaka note" callout wherever Dhaka dialect differs from textbook Bangla
+- Include a "Note" callout wherever colloquial variants differ from Shudho Bangla (this learner's family speaks Shudho Bangla — teach that as primary, note colloquial variants as alternatives)
 
 **Lesson structure:**
 1. Context — one sentence on why this matters for the mission
