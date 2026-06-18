@@ -413,6 +413,24 @@
       .phrase-bangla { font-size: 20px; }
       .phonetics-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* ─── FEEDBACK ─── */
+    .feedback-section { margin-top: 44px; }
+    .feedback-section-label { font-size:13px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+    .feedback-section h2 { font-size:20px; font-weight:800; color:var(--text); line-height:1.2; margin-bottom:8px; }
+    .feedback-section p { font-size:14px; color:var(--muted); line-height:1.6; }
+    .feedback-card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:22px 24px; margin-top:16px; }
+    .feedback-card-alt { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:22px 24px; margin-top:16px; }
+    .feedback-field-label { font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:6px; }
+    .feedback-input { width:100%; background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:10px 14px; color:var(--text); font-size:14px; outline:none; box-sizing:border-box; font-family:inherit; transition:border-color 0.15s; }
+    .feedback-textarea { width:100%; background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:10px 14px; color:var(--text); font-size:14px; outline:none; box-sizing:border-box; resize:vertical; line-height:1.5; font-family:inherit; transition:border-color 0.15s; }
+    .feedback-input:focus, .feedback-textarea:focus { border-color:var(--accent); }
+    .feedback-btn { background:var(--accent); color:#fff; border:none; border-radius:8px; padding:10px 22px; font-size:14px; font-weight:700; cursor:pointer; transition:opacity 0.15s; }
+    .feedback-btn:hover:not(:disabled) { opacity:0.9; }
+    .feedback-btn:disabled { opacity:0.45; cursor:default; }
+    .feedback-btn-ghost { background:none; border:none; color:var(--small); font-size:12px; cursor:pointer; text-decoration:underline; padding:0; font-family:inherit; }
+    .feedback-entry { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:8px; font-size:13px; line-height:1.7; }
+    .feedback-entries-label { font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin:16px 0 10px; }
   </style>
 </head>
 <body>
@@ -725,6 +743,50 @@
       </p>
     </div>
 
+    <hr class="divider">
+
+    <!-- FAMILY FEEDBACK -->
+    <div class="feedback-section">
+      <div class="feedback-section-label">Her Family</div>
+      <h2>How does her family say it?</h2>
+      <p>Note any phrases her family says differently. Notes are saved to the repo and picked up automatically next time the teach skill runs.</p>
+
+      <div id="fb-setup" class="feedback-card-alt">
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--amber); margin-bottom:10px;">One-time setup</div>
+        <p style="font-size:13px; color:var(--muted); margin-bottom:14px; line-height:1.5;">
+          Enter a GitHub Personal Access Token with <strong style="color:var(--text)">Contents: Read &amp; Write</strong>
+          on this repo to save notes directly.
+          <a href="https://github.com/settings/tokens?type=beta" target="_blank" style="color:var(--accent);">Create one here ↗</a>
+        </p>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <input id="fb-pat" type="password" class="feedback-input" placeholder="github_pat_..." style="flex:1; min-width:200px;" />
+          <button class="feedback-btn" onclick="fbSavePat()">Save token</button>
+        </div>
+      </div>
+
+      <div id="fb-form" class="feedback-card" style="display:none;">
+        <div style="margin-bottom:14px;">
+          <label class="feedback-field-label" for="fb-phrase">Phrase from this lesson</label>
+          <input id="fb-phrase" type="text" class="feedback-input" placeholder="e.g. Kemon achen?" />
+        </div>
+        <div style="margin-bottom:14px;">
+          <label class="feedback-field-label" for="fb-family">Her family says</label>
+          <input id="fb-family" type="text" class="feedback-input" placeholder="e.g. Kemon acho?" />
+        </div>
+        <div style="margin-bottom:18px;">
+          <label class="feedback-field-label" for="fb-notes">Notes <span style="color:var(--small); font-weight:400; text-transform:none; font-size:11px;">(optional)</span></label>
+          <textarea id="fb-notes" class="feedback-textarea" rows="2" placeholder="e.g. used only with close family peers, not elders"></textarea>
+        </div>
+        <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+          <button id="fb-btn" class="feedback-btn" onclick="fbSubmit()">Save note</button>
+          <span id="fb-status" style="font-size:13px; color:var(--muted); flex:1;"></span>
+          <button class="feedback-btn-ghost" onclick="fbClearPat()">Change token</button>
+        </div>
+      </div>
+
+      <div id="fb-entries"></div>
+    </div>
+
   </div>
 
   <script>
@@ -741,6 +803,135 @@
           '<span style="color: var(--green)">All ' + total + ' revealed!</span> Run through them again from the top — say each one aloud before checking.';
       }
     }
+  </script>
+
+  <script>
+  (function () {
+    var hostname = window.location.hostname;
+    var ghMatch = hostname.match(/^(.+)\.github\.io$/);
+    var owner = ghMatch ? ghMatch[1] : 'anth87';
+    var pathParts = window.location.pathname.split('/').filter(Boolean);
+    var repo = ghMatch ? (pathParts[0] || 'learn-bangla') : 'learn-bangla';
+    var slug = window.location.pathname.split('/').pop().replace('.html', '');
+    var feedbackFile = 'feedback/' + slug + '-feedback.md';
+    var apiUrl = 'https://api.github.com/repos/' + owner + '/' + repo + '/contents/' + feedbackFile;
+    var PAT_KEY = 'teach_skill_github_pat';
+
+    function getPat() { return localStorage.getItem(PAT_KEY); }
+
+    window.fbSavePat = function () {
+      var val = document.getElementById('fb-pat').value.trim();
+      if (!val) return;
+      localStorage.setItem(PAT_KEY, val);
+      fbInit();
+    };
+
+    window.fbClearPat = function () {
+      localStorage.removeItem(PAT_KEY);
+      fbInit();
+    };
+
+    function fbInit() {
+      var pat = getPat();
+      document.getElementById('fb-setup').style.display = pat ? 'none' : 'block';
+      document.getElementById('fb-form').style.display = pat ? 'block' : 'none';
+      if (pat) fbLoad(pat);
+    }
+
+    function fbDecode(b64) {
+      try { return decodeURIComponent(escape(atob(b64.replace(/\n/g, '')))); }
+      catch (e) { return atob(b64.replace(/\n/g, '')); }
+    }
+
+    function fbEncode(str) {
+      try { return btoa(unescape(encodeURIComponent(str))); }
+      catch (e) { return btoa(str); }
+    }
+
+    function fbLoad(pat) {
+      fetch(apiUrl, { headers: { Authorization: 'Bearer ' + pat, Accept: 'application/vnd.github+json' } })
+        .then(function (r) { return r.status === 404 ? null : r.json(); })
+        .then(function (data) { if (data && data.content) fbRender(fbDecode(data.content)); })
+        .catch(function () {});
+    }
+
+    function fbRender(md) {
+      var el = document.getElementById('fb-entries');
+      var blocks = md.split('\n---\n').map(function (b) { return b.trim(); }).filter(Boolean);
+      if (!blocks.length) { el.innerHTML = ''; return; }
+      var html = '<div class="feedback-entries-label">Saved notes (' + blocks.length + ')</div>';
+      blocks.forEach(function (block) {
+        var phrase = (block.match(/\*\*Phrase:\*\* (.+)/) || [])[1] || '';
+        var family = (block.match(/\*\*Her family says:\*\* (.+)/) || [])[1] || '';
+        var notes  = (block.match(/\*\*Notes:\*\* (.+)/) || [])[1] || '';
+        html += '<div class="feedback-entry">';
+        if (phrase) html += '<div><span style="color:var(--muted)">Phrase: </span><strong style="color:var(--accent2)">' + phrase + '</strong></div>';
+        if (family) html += '<div><span style="color:var(--muted)">Family says: </span><strong style="color:var(--green)">' + family + '</strong></div>';
+        if (notes)  html += '<div style="color:var(--small);margin-top:2px">' + notes + '</div>';
+        html += '</div>';
+      });
+      el.innerHTML = html;
+    }
+
+    window.fbSubmit = function () {
+      var pat = getPat();
+      var phrase = document.getElementById('fb-phrase').value.trim();
+      var family = document.getElementById('fb-family').value.trim();
+      var notes  = document.getElementById('fb-notes').value.trim();
+      var status = document.getElementById('fb-status');
+      var btn    = document.getElementById('fb-btn');
+
+      if (!phrase || !family) {
+        status.style.color = 'var(--amber)';
+        status.textContent = 'Both fields are required.';
+        return;
+      }
+
+      btn.disabled = true;
+      status.style.color = 'var(--muted)';
+      status.textContent = 'Saving…';
+
+      var title = document.title.split('—')[0].trim();
+      var date  = new Date().toISOString().slice(0, 10);
+      var entry = '## ' + title + ' — ' + date + '\n\n' +
+        '**Phrase:** ' + phrase + '  \n' +
+        '**Her family says:** ' + family + '  \n' +
+        (notes ? '**Notes:** ' + notes + '  \n' : '') +
+        '\n---\n';
+
+      fetch(apiUrl, { headers: { Authorization: 'Bearer ' + pat, Accept: 'application/vnd.github+json' } })
+        .then(function (r) {
+          if (r.status === 404) return { existing: '', sha: undefined };
+          return r.json().then(function (d) { return { existing: fbDecode(d.content), sha: d.sha }; });
+        })
+        .then(function (f) {
+          var body = { message: 'feedback: ' + slug, content: fbEncode(f.existing + entry), branch: 'main' };
+          if (f.sha) body.sha = f.sha;
+          return fetch(apiUrl, {
+            method: 'PUT',
+            headers: { Authorization: 'Bearer ' + pat, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
+            body: JSON.stringify(body)
+          });
+        })
+        .then(function (r) {
+          if (!r.ok) return r.json().then(function (e) { throw new Error(e.message || 'API error'); });
+          status.style.color = 'var(--green)';
+          status.textContent = 'Saved!';
+          document.getElementById('fb-phrase').value = '';
+          document.getElementById('fb-family').value = '';
+          document.getElementById('fb-notes').value = '';
+          fbLoad(pat);
+          btn.disabled = false;
+        })
+        .catch(function (e) {
+          status.style.color = 'var(--red)';
+          status.textContent = 'Error: ' + e.message;
+          btn.disabled = false;
+        });
+    };
+
+    fbInit();
+  })();
   </script>
 
 </body>
