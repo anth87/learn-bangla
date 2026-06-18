@@ -25,6 +25,13 @@ Read all files in `learning-records/` (sorted by filename). Note:
 - Any vocabulary or phrases flagged for review
 - The most recent session date (to gauge spacing since last review)
 
+### 2.5. Read family feedback
+Read all files in `feedback/` (if the directory exists). These are corrections and variants submitted by the learner's family after reviewing lessons. For each entry:
+- Treat the family form as ground truth — it overrides course defaults where they conflict
+- Update the affected lesson's phrase card to show the family variant (add a "Her family says:" note callout if not already reflected)
+- Add family variants to `GLOSSARY.md` with a `_(family note)_` marker in the relevant entry
+- Carry family-specific patterns forward as constraints into any new lesson content
+
 ### 3. Review the glossary
 Read `GLOSSARY.md`. Note what terms are already established — don't re-explain what's already solid.
 
