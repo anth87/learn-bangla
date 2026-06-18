@@ -83,6 +83,32 @@
 
 ---
 
+## Food & Hospitality (at the table)
+
+**Cha khorben?** *(chaa KHOR-ben)*: "Will you have tea?" — the first hospitality offer you'll hear on every visit.
+  - _Dhaka note_: "Khorben" is Dhaka dialect for eating/drinking; standard Bangla uses "khaben".
+
+**Ektu** *(EK-tu)*: "A little." Use with nebo: "ektu nebo" = "I'll take a little" — the graceful response to being urged to eat more.
+
+**Nebo** *(NE-bo)*: "I'll take / I'll have." First-person future of "neoa" (to take).
+
+**Ami bhoraa** *(AA-mi BHO-raa)*: "I'm full." The polite signal you've had enough. May not stop "aro neen" — that's normal.
+
+**Khub shundor hoyeche** *(khub SHUN-dor HO-ye-che)*: "It's come out beautifully" — the standard food/cooking compliment.
+  - _Note_: Bangla compliments food with "beautiful" where English uses "delicious". Both shundor and mishti work.
+
+**Khaan, khaan** *(KHAAN KHAAN)*: "Eat, eat!" — host encouragement during a meal. A command that is pure warmth.
+
+**Kaaj kaamon cholche?** *(kaaj KAA-mon CHOL-che)*: "How's work going?" — small-talk opener for adults.
+
+**Bacchara kaamon ache?** *(bach-CHA-ra KAA-mon AA-che)*: "How are the children?" — warm opener with parents or grandparents.
+
+**Shoreer kaamon?** *(SHO-reer KAA-mon)*: "How is your health?" — respectful question for elders. Always ask this with grandparents.
+
+**Moja holo!** *(MO-jaa HO-lo)*: "That was great / that was fun!" — warm, colloquial Dhaka expression of enjoyment.
+
+---
+
 ## Everyday Conversation
 
 **Ashun** *(AA-shun)*: "Come in / please come." What you'll hear at the door.

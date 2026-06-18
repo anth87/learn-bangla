@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 2: Cha Khorben? — Tea, Food & Hospitality</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #0f1117;
+      --surface: #1a1d27;
+      --card:    #22263a;
+      --border:  #2e3347;
+      --accent:  #6c8fff;
+      --accent2: #a78bfa;
+      --green:   #34d399;
+      --amber:   #fbbf24;
+      --red:     #f87171;
+      --text:    #e4e8f1;
+      --muted:   #8891a8;
+      --small:   #6b7390;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+
+    /* ─── HEADER ─── */
+    .lesson-header {
+      background: linear-gradient(135deg, #1a1d27 0%, #0f1117 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    .lesson-number {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 12px;
+    }
+    .lesson-title {
+      font-size: clamp(26px, 5vw, 40px); font-weight: 700;
+      line-height: 1.2; margin-bottom: 16px;
+    }
+    .lesson-subtitle {
+      font-size: 17px; color: var(--muted);
+      max-width: 520px; margin: 0 auto 24px;
+    }
+    .mission-tag {
+      display: inline-block; background: rgba(108,143,255,0.12);
+      border: 1px solid rgba(108,143,255,0.3); color: var(--accent);
+      font-size: 13px; padding: 6px 14px; border-radius: 999px;
+    }
+
+    /* ─── LAYOUT ─── */
+    .container { max-width: 680px; margin: 0 auto; padding: 0 20px; }
+    .section { margin-top: 52px; }
+    .section-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent2); margin-bottom: 20px;
+    }
+    h2 {
+      font-size: clamp(20px, 3.5vw, 26px); font-weight: 700;
+      line-height: 1.3; margin-bottom: 10px;
+    }
+    .lead {
+      color: var(--muted); font-size: 16px; line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    /* ─── SCENARIO BLOCK ─── */
+    .scenario {
+      background: var(--surface); border: 1px solid var(--border);
+      border-left: 3px solid var(--accent2); border-radius: 10px;
+      padding: 20px 22px; margin-bottom: 28px; font-size: 15px;
+      color: var(--muted); line-height: 1.7;
+    }
+    .scenario strong { color: var(--text); }
+
+    /* ─── PHRASE CARD ─── */
+    .phrase-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px 22px; margin-bottom: 12px;
+    }
+    .phrase-bangla {
+      font-size: 22px; font-weight: 700; color: var(--accent);
+      letter-spacing: 0.01em; margin-bottom: 4px;
+    }
+    .phrase-pronounce {
+      font-size: 13px; color: var(--muted); margin-bottom: 8px;
+    }
+    .phrase-english {
+      font-size: 15px; color: var(--text); margin-bottom: 8px;
+    }
+    .phrase-context {
+      font-size: 13px; color: var(--small); line-height: 1.6;
+    }
+
+    /* ─── DHAKA NOTE ─── */
+    .dhaka-note {
+      background: rgba(251,191,36,0.08); border: 1px solid rgba(251,191,36,0.25);
+      border-radius: 8px; padding: 12px 16px; margin-top: 10px;
+      font-size: 13px; color: var(--amber); line-height: 1.6;
+    }
+    .dhaka-note::before {
+      content: "🗺 Dhaka · ";
+      font-weight: 700;
+    }
+
+    /* ─── DIALOGUE EXCHANGE ─── */
+    .dialogue { margin-bottom: 14px; }
+    .dialogue-row {
+      display: flex; gap: 12px; align-items: flex-start; margin-bottom: 8px;
+    }
+    .speaker-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 3px 9px; border-radius: 999px;
+      white-space: nowrap; margin-top: 2px; flex-shrink: 0;
+    }
+    .speaker-them {
+      background: rgba(167,139,250,0.15); color: var(--accent2);
+    }
+    .speaker-you {
+      background: rgba(108,143,255,0.15); color: var(--accent);
+    }
+    .dialogue-text { font-size: 15px; line-height: 1.6; }
+    .dialogue-text .phrase { font-weight: 600; color: var(--text); }
+    .dialogue-text .translation { color: var(--muted); font-size: 14px; }
+    .dialogue-note {
+      margin-left: 0; padding: 8px 14px 8px 14px;
+      border-left: 2px solid var(--border);
+      font-size: 13px; color: var(--small); margin-bottom: 6px;
+    }
+
+    /* ─── DIVIDER ─── */
+    hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+    /* ─── RETRIEVAL CARDS ─── */
+    .recall-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px 22px; margin-bottom: 12px;
+      cursor: pointer; transition: border-color 0.15s;
+    }
+    .recall-card:hover { border-color: var(--accent); }
+    .recall-prompt { font-size: 15px; color: var(--text); margin-bottom: 12px; }
+    .recall-reveal {
+      display: none; background: var(--surface); border-radius: 8px;
+      padding: 14px 16px; margin-top: 4px;
+    }
+    .recall-reveal.shown { display: block; }
+    .recall-answer {
+      font-size: 19px; font-weight: 700; color: var(--green); margin-bottom: 4px;
+    }
+    .recall-translation { font-size: 14px; color: var(--muted); }
+    .recall-hint {
+      font-size: 12px; color: var(--small); text-align: right; margin-top: 10px;
+    }
+
+    /* ─── QUIZ ─── */
+    .quiz-block {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 28px 24px; margin-bottom: 20px;
+    }
+    .quiz-number {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--small); margin-bottom: 10px;
+    }
+    .quiz-prompt {
+      font-size: 16px; color: var(--muted); margin-bottom: 6px; line-height: 1.5;
+    }
+    .quiz-stimulus {
+      font-size: 22px; font-weight: 700; color: var(--accent2);
+      margin-bottom: 20px; line-height: 1.3;
+    }
+    .quiz-options { display: flex; flex-direction: column; gap: 10px; }
+    .quiz-option {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 14px 18px; cursor: pointer;
+      transition: all 0.15s; font-size: 15px; line-height: 1.5;
+      text-align: left;
+    }
+    .quiz-option:hover:not(:disabled) { border-color: var(--accent); }
+    .quiz-option.correct { border-color: var(--green); background: rgba(52,211,153,0.1); color: var(--green); }
+    .quiz-option.wrong   { border-color: var(--red);   background: rgba(248,113,113,0.1); color: var(--red); }
+    .quiz-option:disabled { cursor: default; }
+    .quiz-feedback {
+      margin-top: 14px; padding: 12px 16px; border-radius: 8px;
+      font-size: 14px; line-height: 1.6; display: none;
+    }
+    .quiz-feedback.correct-fb { background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.3); color: var(--green); }
+    .quiz-feedback.wrong-fb   { background: rgba(248,113,113,0.1); border: 1px solid rgba(248,113,113,0.3); color: var(--red); }
+
+    /* ─── PROGRESS ─── */
+    .quiz-progress {
+      display: flex; gap: 6px; margin-bottom: 24px; flex-wrap: wrap;
+    }
+    .progress-pip {
+      width: 28px; height: 5px; border-radius: 3px;
+      background: var(--border); transition: background 0.3s;
+    }
+    .progress-pip.done-correct { background: var(--green); }
+    .progress-pip.done-wrong   { background: var(--red); }
+
+    /* ─── SCORE ─── */
+    .quiz-score {
+      text-align: center; padding: 32px 20px; display: none;
+    }
+    .quiz-score.visible { display: block; }
+    .score-number { font-size: 56px; font-weight: 800; color: var(--green); }
+    .score-label  { font-size: 17px; color: var(--muted); margin-top: 8px; }
+    .score-message { font-size: 15px; color: var(--text); margin-top: 16px; max-width: 360px; margin-left: auto; margin-right: auto; }
+
+    /* ─── CHALLENGE ─── */
+    .challenge {
+      background: linear-gradient(135deg, rgba(108,143,255,0.08), rgba(167,139,250,0.08));
+      border: 1px solid rgba(108,143,255,0.3);
+      border-radius: 14px; padding: 28px 24px;
+    }
+    .challenge-title {
+      font-size: 13px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
+    }
+    .challenge p { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 12px; }
+    .challenge p:last-child { margin-bottom: 0; }
+    .challenge strong { color: var(--text); }
+
+    /* ─── NEXT LESSON LINK ─── */
+    .nav-footer {
+      text-align: center; margin-top: 48px; font-size: 14px; color: var(--small);
+    }
+    .nav-footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 480px) {
+      .lesson-header { padding: 36px 20px 32px; }
+      .quiz-stimulus { font-size: 18px; }
+      .phrase-bangla { font-size: 19px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="lesson-header">
+  <div class="lesson-number">Lesson 2 · Spoken Bangla for Family</div>
+  <h1 class="lesson-title">"Cha khorben?"<br>Tea, Food & Hospitality</h1>
+  <p class="lesson-subtitle">You've made it past the door. Now comes the part that defines every Bangladeshi visit.</p>
+  <span class="mission-tag">After the greeting, before the meal</span>
+</div>
+
+<div class="container">
+
+  <!-- SECTION: QUICK REVIEW -->
+  <div class="section">
+    <div class="section-label">Warm-up · Retrieval Practice</div>
+    <h2>Before we start — can you recall these?</h2>
+    <p class="lead">Think of the answer, then tap to reveal. No peeking first — the struggle is the point.</p>
+
+    <div class="recall-card" onclick="toggleRecall(this)">
+      <div class="recall-prompt">You walk through the door. What do you say?</div>
+      <div class="recall-reveal">
+        <div class="recall-answer">Assalamu alaikum</div>
+        <div class="recall-translation">as-SAA-laa-mu aa-LAY-kum · "Peace be upon you"</div>
+      </div>
+      <div class="recall-hint">Tap to reveal →</div>
+    </div>
+
+    <div class="recall-card" onclick="toggleRecall(this)">
+      <div class="recall-prompt">They ask "Kemon achen?" — how do you respond?</div>
+      <div class="recall-reveal">
+        <div class="recall-answer">Jee, bhalo achi</div>
+        <div class="recall-translation">jee, BHAA-lo AA-chi · "Yes, I'm well" — the jee shows respect</div>
+      </div>
+      <div class="recall-hint">Tap to reveal →</div>
+    </div>
+
+    <div class="recall-card" onclick="toggleRecall(this)">
+      <div class="recall-prompt">Your mother-in-law opens the door. What do you call her — to her face?</div>
+      <div class="recall-reveal">
+        <div class="recall-answer">Amma</div>
+        <div class="recall-translation">AM-maa · Not "shashuri" — that's how you talk about her. Amma is how you address her.</div>
+      </div>
+      <div class="recall-hint">Tap to reveal →</div>
+    </div>
+
+    <div class="recall-card" onclick="toggleRecall(this)">
+      <div class="recall-prompt">They say "Ashun" and gesture inside. What does it mean?</div>
+      <div class="recall-reveal">
+        <div class="recall-answer">Come in / Please come</div>
+        <div class="recall-translation">AA-shun · Step inside and say "Jee" as you enter</div>
+      </div>
+      <div class="recall-hint">Tap to reveal →</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- SECTION: SCENARIO -->
+  <div class="section">
+    <div class="section-label">The Scenario</div>
+    <h2>What happens in the first 10 minutes</h2>
+
+    <div class="scenario">
+      You're shown to the sitting room. <strong>Bosun</strong> — sit down. Before you've settled your coat,
+      someone appears in the doorway: <strong>"Cha khorben?"</strong> Will you have tea?<br><br>
+      This is not really a question. This is Bangladeshi hospitality in three syllables.
+      The right answer is yes. And then the food appears. And then more food.
+      This lesson gives you the language to navigate the next 30 minutes with warmth.
+    </div>
+  </div>
+
+  <!-- SECTION: CORE PHRASES -->
+  <div class="section">
+    <div class="section-label">Core Phrases · The Hospitality Exchange</div>
+    <h2>What they'll say — and what to say back</h2>
+    <p class="lead">Learn these in order. They map to exactly what happens around the table.</p>
+
+    <div class="phrase-card">
+      <div class="phrase-bangla">Cha khorben?</div>
+      <div class="phrase-pronounce">chaa KHOR-ben</div>
+      <div class="phrase-english">"Will you have tea?" — the first hospitality offer</div>
+      <div class="phrase-context">You will hear this within 2 minutes of arriving. Every single time.</div>
+      <div class="dhaka-note">"Khorben" is the Dhaka verb for eating/drinking (consuming). Standard Bangla uses "khaben" — but you'll hear khorben constantly in Dhaka households.</div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-bangla">Jee, shukriya</div>
+      <div class="phrase-pronounce">jee, SHUK-ri-yaa</div>
+      <div class="phrase-english">"Yes, thank you" — accept the tea</div>
+      <div class="phrase-context">Always accept at first. Even if you don't drink tea, accepting the offer is the social act.</div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-bangla">Khub shundor hoyeche</div>
+      <div class="phrase-pronounce">khub SHUN-dor HO-ye-che</div>
+      <div class="phrase-english">"It's come out beautifully" — complimenting food or tea</div>
+      <div class="phrase-context">Use this after a first sip or bite. It's a genuine compliment that hosts love to hear.</div>
+      <div class="dhaka-note">Literally "very beautiful it has become" — Bangla compliments food with "beautiful" the way English uses "delicious". Both work.</div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-bangla">Bhalo laglo</div>
+      <div class="phrase-pronounce">BHAA-lo LAAG-lo</div>
+      <div class="phrase-english">"I liked it / that was lovely"</div>
+      <div class="phrase-context">Versatile end-of-meal or end-of-visit phrase. Works for food, a conversation, the whole visit.</div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-bangla">Aro neen</div>
+      <div class="phrase-pronounce">AA-ro neen</div>
+      <div class="phrase-english">"Take more / have some more" — what the host says</div>
+      <div class="phrase-context">You're not asking for this. They're insisting on it. Warmly. Repeatedly.</div>
+      <div class="dhaka-note">This is a command that's actually an act of love. Your hosts will say this many times. Knowing what it means lets you respond gracefully rather than looking confused.</div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-bangla">Ektu nebo</div>
+      <div class="phrase-pronounce">EK-tu NE-bo</div>
+      <div class="phrase-english">"I'll take a little" — the graceful response to "aro neen"</div>
+      <div class="phrase-context">Better than refusing outright. "Ektu" (a little) is your friend — it accepts the hospitality while managing the quantity.</div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-bangla">Ami bhoraa</div>
+      <div class="phrase-pronounce">AA-mi BHO-raa</div>
+      <div class="phrase-english">"I'm full" — when you genuinely can't eat more</div>
+      <div class="phrase-context">Deploy this with a smile and a hand gesture. Even so, "aro neen" may continue. That's fine — "bhoraa" is understood.</div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-bangla">Khub mishti</div>
+      <div class="phrase-pronounce">khub MISH-ti</div>
+      <div class="phrase-english">"Very sweet" — for desserts, mishti doi, gulab jamun</div>
+      <div class="phrase-context">Bangladeshi sweets are <em>very</em> sweet. This is always true and always a compliment.</div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-bangla">Moja holo!</div>
+      <div class="phrase-pronounce">MO-jaa HO-lo</div>
+      <div class="phrase-english">"That was great fun / I enjoyed that!"</div>
+      <div class="phrase-context">A warm, colloquial exclamation after something enjoyable — a meal, a funny story, a game with the kids.</div>
+      <div class="dhaka-note">"Moja" is a very Dhaka word — warm, casual, expressive. Using it signals you're picking up the local flavour.</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- SECTION: LISTENING EXCHANGES -->
+  <div class="section">
+    <div class="section-label">Listening Practice · What You'll Hear</div>
+    <h2>The real conversation</h2>
+    <p class="lead">Recognising what they're saying is half the battle. Here's the hospitality loop, start to finish.</p>
+
+    <div class="dialogue">
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-them">Them</span>
+        <div class="dialogue-text">
+          <div class="phrase">Bosun, bosun.</div>
+          <div class="translation">BO-shun · "Sit, sit." — with a gesture to the sofa</div>
+        </div>
+      </div>
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-you">You</span>
+        <div class="dialogue-text">
+          <div class="phrase">Jee, dhônnobad.</div>
+          <div class="translation">"Yes, thank you." — as you sit</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dialogue">
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-them">Them</span>
+        <div class="dialogue-text">
+          <div class="phrase">Ki khorben? Cha neben?</div>
+          <div class="translation">ki KHOR-ben, chaa NE-ben · "What will you have? Will you take tea?"</div>
+        </div>
+      </div>
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-you">You</span>
+        <div class="dialogue-text">
+          <div class="phrase">Jee, cha khorbo. Shukriya.</div>
+          <div class="translation">"Yes, I'll have tea. Thank you."</div>
+        </div>
+      </div>
+      <div class="dialogue-note">If you don't want tea: "Na, shukriya — pani deben?" (No thank you — could you give water?) is polite and understood.</div>
+    </div>
+
+    <div class="dialogue">
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-them">Them</span>
+        <div class="dialogue-text">
+          <div class="phrase">Khaan, khaan. Aro neen.</div>
+          <div class="translation">KHAAN KHAAN, AA-ro neen · "Eat, eat. Take more." — during the meal</div>
+        </div>
+      </div>
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-you">You</span>
+        <div class="dialogue-text">
+          <div class="phrase">Jee, ektu nebo. Khub shundor hoyeche.</div>
+          <div class="translation">"Yes, I'll take a little. It's come out beautifully."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dialogue">
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-them">Them</span>
+        <div class="dialogue-text">
+          <div class="phrase">Bhaat kheyechen?</div>
+          <div class="translation">bhaat KHE-ye-chen · "Have you eaten (rice)?" — checking if you've eaten enough</div>
+        </div>
+      </div>
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-you">You</span>
+        <div class="dialogue-text">
+          <div class="phrase">Jee, kheyechi. Khub bhalo hoyeche.</div>
+          <div class="translation">"Yes, I've eaten. It was very good."</div>
+        </div>
+      </div>
+      <div class="dialogue-note">Or if you haven't eaten yet: "Na, ekhono khaina" (No, I haven't eaten yet) — this will be fixed immediately.</div>
+    </div>
+
+    <div class="dialogue">
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-them">Them</span>
+        <div class="dialogue-text">
+          <div class="phrase">Aro ektu mishti neben?</div>
+          <div class="translation">AA-ro EK-tu MISH-ti NE-ben · "Will you have a little more sweet?"</div>
+        </div>
+      </div>
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-you">You</span>
+        <div class="dialogue-text">
+          <div class="phrase">Ami bhoraa. Khub mishti chilo!</div>
+          <div class="translation">"I'm full. It was very sweet (and delicious)!"</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- SECTION: QUIZ -->
+  <div class="section">
+    <div class="section-label">Practice · Conversation Simulator</div>
+    <h2>You're at the table. What do you say?</h2>
+    <p class="lead">They speak. You pick the best response. One chance per question.</p>
+
+    <div class="quiz-progress" id="quizProgress"></div>
+
+    <div id="quizContainer"></div>
+    <div class="quiz-score" id="quizScore">
+      <div class="score-number" id="scoreNum"></div>
+      <div class="score-label">correct</div>
+      <div class="score-message" id="scoreMsg"></div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- SECTION: BONUS SMALL TALK -->
+  <div class="section">
+    <div class="section-label">Bonus · Small Talk at the Table</div>
+    <h2>Three phrases for conversation</h2>
+    <p class="lead">Once you're settled with tea and food, conversation flows. These three are your starting points.</p>
+
+    <div class="phrase-card">
+      <div class="phrase-bangla">Kaaj kaamon cholche?</div>
+      <div class="phrase-pronounce">kaaj KAA-mon CHOL-che</div>
+      <div class="phrase-english">"How's work going?" — asking about someone's work</div>
+      <div class="phrase-context">Use with your brother-in-law, your father-in-law. Shows you're interested in their life.</div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-bangla">Bacchara kaamon ache?</div>
+      <div class="phrase-pronounce">bach-CHA-ra KAA-mon AA-che</div>
+      <div class="phrase-english">"How are the children?" — asking about kids in the family</div>
+      <div class="phrase-context">A warm opener, especially with parents or grandparents. Bacchara = the children (plural).</div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-bangla">Shoreer kaamon?</div>
+      <div class="phrase-pronounce">SHO-reer KAA-mon</div>
+      <div class="phrase-english">"How is your health?" — asking after an elder's wellbeing</div>
+      <div class="phrase-context">Particularly good for grandparents. Shows care. Expect a detailed answer.</div>
+      <div class="dhaka-note">Asking about health is a sign of deep respect for elders in Dhaka families — never skip this with grandparents.</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- SECTION: CHALLENGE -->
+  <div class="section">
+    <div class="section-label">Real-World Challenge</div>
+    <div class="challenge">
+      <div class="challenge-title">Before your next visit</div>
+      <p>Next time you're offered tea or food — anywhere, even at work — mentally rehearse the hospitality loop: <strong>Jee, shukriya → Ektu nebo → Khub shundor hoyeche → Bhalo laglo</strong>.</p>
+      <p>The goal: when Amma says "Aro neen" at the next visit, you respond with <strong>"Ami bhoraa — khub shundor hoyeche"</strong> without thinking. That moment will mean a lot.</p>
+      <p>Bonus: try saying <strong>"Moja holo!"</strong> after something fun at the table. Watch the reaction.</p>
+    </div>
+  </div>
+
+  <div class="nav-footer">
+    <a href="0001-meeting-your-in-laws.html">← Lesson 1: Meeting Your In-Laws</a>
+    &nbsp;·&nbsp;
+    <a href="../reference/pronunciation-guide.html">Pronunciation guide</a>
+  </div>
+
+</div><!-- /container -->
+
+<script>
+  // ─── RECALL TOGGLE ───────────────────────────────────────
+  function toggleRecall(card) {
+    const reveal = card.querySelector('.recall-reveal');
+    const hint   = card.querySelector('.recall-hint');
+    reveal.classList.toggle('shown');
+    hint.style.display = reveal.classList.contains('shown') ? 'none' : 'block';
+  }
+
+  // ─── QUIZ DATA ───────────────────────────────────────────
+  const questions = [
+    {
+      prompt: "They say:",
+      stimulus: "Cha khorben?",
+      translation: "(Will you have tea?)",
+      options: [
+        { text: "Jee, cha khorbo. Shukriya.", correct: true,  feedback: "Perfect. You accepted politely with 'jee' (showing respect) and 'shukriya' (thank you)." },
+        { text: "Na, ami bhoraa.",            correct: false, feedback: "You're not full yet — you just arrived! Save 'bhoraa' for after eating. Accept the tea." },
+        { text: "Kemon achen?",               correct: false, feedback: "That's asking how they are — a greeting, not a response to a tea offer. Wrong moment." },
+      ]
+    },
+    {
+      prompt: "They say:",
+      stimulus: "Aro neen!",
+      translation: "(Take more!)",
+      options: [
+        { text: "Jee, ektu nebo.",           correct: true,  feedback: "Excellent. 'Ektu' (a little) gracefully accepts the hospitality without overcommitting." },
+        { text: "Ami bhoraa, na.",            correct: false, feedback: "Too abrupt. 'Ami bhoraa' is okay when you truly can't eat more — but 'ektu nebo' is warmer here." },
+        { text: "Bosun.",                     correct: false, feedback: "That means 'please sit' — not the right phrase here at all." },
+      ]
+    },
+    {
+      prompt: "After the meal, they ask:",
+      stimulus: "Bhaat kheyechen?",
+      translation: "(Have you eaten?)",
+      options: [
+        { text: "Ami bhoraa.",               correct: false, feedback: "That says you're full — but doesn't answer whether you ate. Say 'jee, kheyechi' first." },
+        { text: "Jee, kheyechi. Khub bhalo hoyeche.", correct: true, feedback: "Yes — you've confirmed you ate and complimented the food. This is the full, warm answer." },
+        { text: "Thik ache.",                correct: false, feedback: "'Thik ache' means 'it's fine / okay' — a non-answer here. Confirm you've eaten." },
+      ]
+    },
+    {
+      prompt: "You take a sip of tea. You want to compliment it. You say:",
+      stimulus: "Your turn",
+      translation: "(Pay the compliment)",
+      options: [
+        { text: "Khub shundor hoyeche.",     correct: true,  feedback: "Beautiful — literally 'it's come out beautifully'. Your host will light up." },
+        { text: "Khub gôrôm.",               correct: false, feedback: "'Khub gôrôm' means 'very hot' — true, but not a compliment. That's a complaint about temperature." },
+        { text: "Ektu nebo.",                correct: false, feedback: "'Ektu nebo' means 'I'll take a little' — you haven't been offered more yet. Compliment first." },
+      ]
+    },
+    {
+      prompt: "At the end of the meal they offer sweets. You eat one and want to say it was very sweet/delicious:",
+      stimulus: "Mishti after the meal",
+      translation: "(Compliment the sweets)",
+      options: [
+        { text: "Thanda.",                   correct: false, feedback: "'Thanda' means cold — not relevant to sweets (unless they're ice cream!)." },
+        { text: "Khub mishti!",              correct: true,  feedback: "Yes! 'Khub mishti' is exactly right for sweets — and it's always true of Bangladeshi mishti." },
+        { text: "Moja holo!",               correct: false, feedback: "Close — 'moja holo' is warm and positive, but it means 'that was fun/enjoyable', not specifically sweet. 'Khub mishti' is more precise here." },
+      ]
+    },
+    {
+      prompt: "As you're leaving, you want to say you had a great time:",
+      stimulus: "Time to say goodbye",
+      translation: "(Wrap up the visit warmly)",
+      options: [
+        { text: "Ami bhoraa, khoda hafez.",  correct: false, feedback: "'Ami bhoraa' (I'm full) is a food phrase — odd in a farewell context. Use the warm closing phrase." },
+        { text: "Bhalo laglo. Abar ashbo.",  correct: true,  feedback: "Perfect farewell — 'I enjoyed it, I'll come again.' This is exactly what your hosts want to hear." },
+        { text: "Kemon achen?",              correct: false, feedback: "That's a greeting — you're leaving, not arriving. 'Bhalo laglo, abar ashbo' is the right close." },
+      ]
+    },
+  ];
+
+  let current = 0;
+  let score = 0;
+  const results = [];
+
+  function buildProgress() {
+    const bar = document.getElementById('quizProgress');
+    bar.innerHTML = questions.map((_, i) => `<div class="progress-pip" id="pip-${i}"></div>`).join('');
+  }
+
+  function renderQuestion(i) {
+    const q = questions[i];
+    const container = document.getElementById('quizContainer');
+    container.innerHTML = `
+      <div class="quiz-block">
+        <div class="quiz-number">Question ${i + 1} of ${questions.length}</div>
+        <div class="quiz-prompt">${q.prompt}</div>
+        <div class="quiz-stimulus">${q.stimulus}<br><span style="font-size:14px;font-weight:400;color:var(--muted)">${q.translation}</span></div>
+        <div class="quiz-options">
+          ${q.options.map((opt, j) => `
+            <button class="quiz-option" onclick="answer(${i}, ${j})">${opt.text}</button>
+          `).join('')}
+        </div>
+        <div class="quiz-feedback" id="feedback-${i}"></div>
+      </div>
+    `;
+  }
+
+  function answer(qi, optIdx) {
+    const q = questions[qi];
+    const opt = q.options[optIdx];
+    const buttons = document.querySelectorAll('.quiz-option');
+    const feedback = document.getElementById(`feedback-${qi}`);
+
+    buttons.forEach(b => b.disabled = true);
+
+    if (opt.correct) {
+      buttons[optIdx].classList.add('correct');
+      feedback.className = 'quiz-feedback correct-fb';
+      feedback.textContent = '✓ ' + opt.feedback;
+      score++;
+      document.getElementById(`pip-${qi}`).className = 'progress-pip done-correct';
+    } else {
+      buttons[optIdx].classList.add('wrong');
+      feedback.className = 'quiz-feedback wrong-fb';
+      feedback.textContent = '✗ ' + opt.feedback;
+      // reveal correct
+      q.options.forEach((o, j) => { if (o.correct) buttons[j].classList.add('correct'); });
+      document.getElementById(`pip-${qi}`).className = 'progress-pip done-wrong';
+    }
+    feedback.style.display = 'block';
+    results.push(opt.correct);
+
+    setTimeout(() => {
+      current++;
+      if (current < questions.length) {
+        renderQuestion(current);
+      } else {
+        showScore();
+      }
+    }, 2200);
+  }
+
+  function showScore() {
+    document.getElementById('quizContainer').innerHTML = '';
+    const scoreEl = document.getElementById('quizScore');
+    scoreEl.classList.add('visible');
+    document.getElementById('scoreNum').textContent = `${score}/${questions.length}`;
+
+    let msg = '';
+    if (score === questions.length) {
+      msg = "Perfect score. You've got the hospitality loop down. Your hosts will feel the warmth.";
+    } else if (score >= questions.length - 1) {
+      msg = "Strong result. Review the one you missed — it'll stick after one more pass.";
+    } else if (score >= Math.floor(questions.length / 2)) {
+      msg = "Solid start. The phrases you missed are worth a second look before your next visit.";
+    } else {
+      msg = "The conversation moves fast — that's okay. Re-read the dialogue section and try again.";
+    }
+    document.getElementById('scoreMsg').textContent = msg;
+  }
+
+  buildProgress();
+  renderQuestion(0);
+</script>
+</body>
+</html>
