@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 1: Meeting Your In-Laws — Spoken Bangla</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0f1117;
+      --surface:  #1a1d27;
+      --card:     #22263a;
+      --border:   #2e3347;
+      --accent:   #6c8fff;
+      --accent2:  #a78bfa;
+      --green:    #34d399;
+      --amber:    #fbbf24;
+      --red:      #f87171;
+      --text:     #e4e8f1;
+      --muted:    #8891a8;
+      --small:    #6b7390;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      padding: 0 0 80px;
+    }
+
+    /* Header */
+    .lesson-header {
+      background: linear-gradient(135deg, #1a1d27 0%, #0f1117 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    .lesson-number {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .lesson-title {
+      font-size: clamp(26px, 5vw, 40px);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .lesson-subtitle {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 24px;
+    }
+    .lesson-meta {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .meta-pill {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* Layout */
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Section headers */
+    .section {
+      margin-top: 56px;
+    }
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .section-desc {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 28px;
+    }
+
+    /* Phonetics guide */
+    .phonetics-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 32px 0;
+    }
+    .phonetics-box h3 {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+    .phonetics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    .phonetics-item {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      font-size: 14px;
+    }
+    .phonetics-key {
+      font-family: 'Courier New', monospace;
+      color: var(--amber);
+      font-weight: 700;
+      min-width: 30px;
+    }
+    .phonetics-val {
+      color: var(--muted);
+    }
+
+    /* Phrase cards */
+    .phrase-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 24px;
+      margin-bottom: 14px;
+      position: relative;
+      transition: border-color 0.2s;
+    }
+    .phrase-card:hover {
+      border-color: #3e4560;
+    }
+    .phrase-bangla {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+      letter-spacing: 0.01em;
+    }
+    .phrase-pronunciation {
+      font-size: 13px;
+      color: var(--amber);
+      font-family: 'Courier New', monospace;
+      margin-bottom: 8px;
+    }
+    .phrase-meaning {
+      font-size: 16px;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .phrase-context {
+      font-size: 14px;
+      color: var(--muted);
+      font-style: italic;
+      line-height: 1.5;
+    }
+    .phrase-response {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+    .phrase-response-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--small);
+      margin-bottom: 6px;
+    }
+    .phrase-response-text {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--green);
+    }
+    .phrase-response-meaning {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* Dhaka callout */
+    .dhaka-note {
+      background: #1c1a2e;
+      border: 1px solid #3d3070;
+      border-left: 3px solid var(--accent2);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-top: 14px;
+      font-size: 14px;
+      color: #c4b8f0;
+    }
+    .dhaka-note strong {
+      color: var(--accent2);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* Listening section */
+    .listen-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-bottom: 12px;
+    }
+    .listen-they-say {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .listen-pronunciation {
+      font-size: 12px;
+      color: var(--amber);
+      font-family: 'Courier New', monospace;
+      margin-bottom: 8px;
+    }
+    .listen-means {
+      font-size: 15px;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .listen-you-say {
+      font-size: 14px;
+      color: var(--green);
+    }
+    .listen-you-say::before {
+      content: "→ You say: ";
+      color: var(--small);
+      font-size: 12px;
+    }
+
+    /* Quiz section */
+    .quiz-intro {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 24px;
+      margin-bottom: 24px;
+      font-size: 15px;
+      color: var(--muted);
+    }
+    .quiz-intro strong {
+      color: var(--text);
+    }
+
+    .quiz-card {
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 14px;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      user-select: none;
+    }
+    .quiz-card:hover {
+      border-color: var(--accent);
+      background: #1e2236;
+    }
+    .quiz-card.revealed {
+      border-color: var(--green);
+      background: #0f201a;
+      cursor: default;
+    }
+    .quiz-card.revealed:hover {
+      border-color: var(--green);
+    }
+    .quiz-prompt {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .quiz-hint {
+      font-size: 13px;
+      color: var(--small);
+      margin-bottom: 0;
+    }
+    .quiz-answer {
+      display: none;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #1e3a2a;
+    }
+    .quiz-card.revealed .quiz-answer {
+      display: block;
+    }
+    .quiz-bangla {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 4px;
+    }
+    .quiz-pronunciation {
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      color: var(--amber);
+      margin-bottom: 6px;
+    }
+    .quiz-tip {
+      font-size: 13px;
+      color: var(--muted);
+      font-style: italic;
+    }
+    .quiz-tap-hint {
+      font-size: 12px;
+      color: var(--small);
+      text-align: center;
+      margin-bottom: 6px;
+    }
+    .quiz-card.revealed .quiz-hint {
+      display: none;
+    }
+
+    /* Progress */
+    .quiz-progress {
+      text-align: center;
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 20px;
+      padding: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+    .quiz-progress span {
+      color: var(--green);
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    /* Challenge box */
+    .challenge-box {
+      background: linear-gradient(135deg, #1a2340 0%, #1a1d27 100%);
+      border: 1px solid #2d3d6a;
+      border-radius: 14px;
+      padding: 28px 28px;
+      margin-top: 40px;
+    }
+    .challenge-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .challenge-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .challenge-text {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .challenge-text strong {
+      color: var(--text);
+    }
+
+    /* Divider */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 48px 0 0;
+    }
+
+    /* Scenario banner */
+    .scenario {
+      background: #161a28;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 28px 0;
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .scenario strong {
+      color: var(--text);
+    }
+
+    @media (max-width: 480px) {
+      .lesson-header { padding: 36px 20px 32px; }
+      .phrase-bangla { font-size: 20px; }
+      .phonetics-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="lesson-header">
+    <div class="lesson-number">Lesson 1 · Spoken Bangla (Dhaka)</div>
+    <h1 class="lesson-title">Meeting Your In-Laws</h1>
+    <p class="lesson-subtitle">Everything you need for the first five minutes at the door — greetings, titles, and the phrases that show you've made an effort.</p>
+    <div class="lesson-meta">
+      <span class="meta-pill">~30 minutes</span>
+      <span class="meta-pill">8 core phrases</span>
+      <span class="meta-pill">Phonetics only</span>
+      <span class="meta-pill">Dhaka dialect</span>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- Phonetics guide -->
+    <div class="phonetics-box">
+      <h3>How to read the phonetics in this lesson</h3>
+      <div class="phonetics-grid">
+        <div class="phonetics-item"><span class="phonetics-key">aa</span><span class="phonetics-val">long 'a' — like <em>f<u>a</u>ther</em></span></div>
+        <div class="phonetics-item"><span class="phonetics-key">ô</span><span class="phonetics-val">like 'o' in <em>n<u>o</u>t</em></span></div>
+        <div class="phonetics-item"><span class="phonetics-key">kh</span><span class="phonetics-val">k + breath — like Scottish <em>lo<u>ch</u></em></span></div>
+        <div class="phonetics-item"><span class="phonetics-key">bh</span><span class="phonetics-val">b + soft breath — like <em><u>bh</u>indi</em></span></div>
+        <div class="phonetics-item"><span class="phonetics-key">jee</span><span class="phonetics-val">like English <em>yeah</em>, but short</span></div>
+        <div class="phonetics-item"><span class="phonetics-key">ch</span><span class="phonetics-val">like <em><u>ch</u>air</em></span></div>
+        <div class="phonetics-item"><span class="phonetics-key">CAPS</span><span class="phonetics-val">stressed syllable</span></div>
+        <div class="phonetics-item"><span class="phonetics-key">~</span><span class="phonetics-val">slight nasal quality</span></div>
+      </div>
+    </div>
+
+    <div class="scenario">
+      <strong>The scenario:</strong> You arrive at your in-laws' home. The door opens. In the next 5 minutes you'll greet everyone, be invited in, be asked to sit, and almost certainly be offered tea. This lesson gives you the exact phrases for each moment.
+    </div>
+
+    <!-- SECTION 1: Core phrases -->
+    <div class="section">
+      <div class="section-label">Section 1</div>
+      <h2 class="section-title">Core Phrases</h2>
+      <p class="section-desc">Learn these eight phrases and you're ready for the door. Read each one, say it aloud, and notice the pronunciation notes.</p>
+
+      <!-- 1 -->
+      <div class="phrase-card">
+        <div class="phrase-bangla">Assalamu alaikum</div>
+        <div class="phrase-pronunciation">as-SAA-laa-mu aa-LAY-kum</div>
+        <div class="phrase-meaning">"Peace be upon you" — the Islamic greeting</div>
+        <div class="phrase-context">This is how you greet everyone. Use it when you arrive, when you enter a room, when you get on a call. In a Muslim household it is the opener for everything — more than "hello", it's a blessing. Say it to the whole room, not just one person.</div>
+        <div class="phrase-response">
+          <div class="phrase-response-label">They will respond:</div>
+          <div class="phrase-response-text">Wa alaikum assalam</div>
+          <div class="phrase-response-meaning">waa aa-LAY-kum as-SAA-lam — "And upon you peace"</div>
+        </div>
+        <div class="dhaka-note">
+          <strong>Dhaka note</strong>
+          In everyday Dhaka speech, this is sometimes shortened slightly in casual exchanges, but in a family greeting context — especially with elders — say the full form clearly. It signals sincerity.
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="phrase-card">
+        <div class="phrase-bangla">Kemon achen?</div>
+        <div class="phrase-pronunciation">KE-mon AA-chen</div>
+        <div class="phrase-meaning">"How are you?" (respectful)</div>
+        <div class="phrase-context">Use this with your in-laws and any elders. The word <em>achen</em> is the respectful form of "are" — it tells the listener you're treating them with respect. This is the question to ask right after the greeting.</div>
+        <div class="phrase-response">
+          <div class="phrase-response-label">They may respond:</div>
+          <div class="phrase-response-text">Bhalo achi, apni kemon achen?</div>
+          <div class="phrase-response-meaning">BHAA-lo AA-chi, AP-ni KE-mon AA-chen — "I'm well, how are you?" (and they'll ask back)</div>
+        </div>
+        <div class="dhaka-note">
+          <strong>Dhaka note</strong>
+          In fast natural Dhaka speech, <em>achen</em> often sounds closer to <em>asen</em> — the "ch" softens. You may hear "Kemon asen?" Don't be confused; it's the same phrase.
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="phrase-card">
+        <div class="phrase-bangla">Jee, bhalo achi</div>
+        <div class="phrase-pronunciation">jee, BHAA-lo AA-chi</div>
+        <div class="phrase-meaning">"Yes, I'm well"</div>
+        <div class="phrase-context">Your response when someone asks how you are. Always lead with <em>jee</em> — it's a polite acknowledgement that signals respect. Then <em>bhalo achi</em> = I'm well. Simple, clean, correct.</div>
+        <div class="dhaka-note">
+          <strong>Dhaka note</strong>
+          Starting answers with <em>jee</em> is a marker of respect, especially towards elders. Skipping it and going straight to <em>bhalo achi</em> isn't rude, but <em>jee, bhalo achi</em> sounds more natural and warmer in a family setting.
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="phrase-card">
+        <div class="phrase-bangla">Ashun, ashun</div>
+        <div class="phrase-pronunciation">AA-shun, AA-shun</div>
+        <div class="phrase-meaning">"Come in, come in"</div>
+        <div class="phrase-context">You will hear this the moment the door opens — a warm, almost reflexive invitation to enter. Saying it yourself if you ever answer the door at their home would be a lovely touch.</div>
+      </div>
+
+      <!-- 5 -->
+      <div class="phrase-card">
+        <div class="phrase-bangla">Bosun</div>
+        <div class="phrase-pronunciation">BO-shun</div>
+        <div class="phrase-meaning">"Please sit down"</div>
+        <div class="phrase-context">You'll hear this immediately after being welcomed inside. In return, if you're ever playing host, using <em>bosun</em> yourself will surprise and delight them.</div>
+        <div class="dhaka-note">
+          <strong>Dhaka note</strong>
+          Literally "sit" in the respectful command form. In Dhaka households you may also hear it repeated warmly — <em>bosun, bosun</em> — as hospitality emphasis.
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="phrase-card">
+        <div class="phrase-bangla">Shukriya</div>
+        <div class="phrase-pronunciation">SHUK-ri-yaa</div>
+        <div class="phrase-meaning">"Thank you"</div>
+        <div class="phrase-context">The most natural "thank you" in a Dhaka Muslim household. Borrowed from Arabic via Urdu, it's deeply embedded in everyday Bangladeshi speech. Use it freely — when offered food, when someone fetches something, when you leave.</div>
+        <div class="phrase-response">
+          <div class="phrase-response-label">Also heard:</div>
+          <div class="phrase-response-text">Dhônnobad</div>
+          <div class="phrase-response-meaning">DHÔN-no-baad — also "thank you", slightly more formal. Both work.</div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="phrase-card">
+        <div class="phrase-bangla">Amma / Abba</div>
+        <div class="phrase-pronunciation">AM-maa / AB-baa</div>
+        <div class="phrase-meaning">Mother-in-law / Father-in-law (how you address them directly)</div>
+        <div class="phrase-context">These are the titles you use when speaking directly to your in-laws. Not their name — their title. Using these correctly signals that you understand and respect Bangladeshi family structure. It will mean a lot.</div>
+        <div class="dhaka-note">
+          <strong>Dhaka note</strong>
+          Some families use <em>Ma</em> instead of <em>Amma</em>, and <em>Baba</em> instead of <em>Abba</em>. Ask your partner which their family uses. Either is warm and correct.
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="phrase-card">
+        <div class="phrase-bangla">Khoda hafez</div>
+        <div class="phrase-pronunciation">KHO-daa HAA-fez</div>
+        <div class="phrase-meaning">"Goodbye" — lit. "God protect you"</div>
+        <div class="phrase-context">The standard farewell in a Muslim Bangladeshi household. Use this when leaving rather than just "bye". Heard at the end of every visit and call.</div>
+        <div class="phrase-response">
+          <div class="phrase-response-label">Also used:</div>
+          <div class="phrase-response-text">Allah hafez</div>
+          <div class="phrase-response-meaning">AL-laa HAA-fez — more explicitly Islamic, increasingly common. Both are correct and warm.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="divider">
+
+    <!-- SECTION 2: Listening -->
+    <div class="section">
+      <div class="section-label">Section 2</div>
+      <h2 class="section-title">What You'll Hear</h2>
+      <p class="section-desc">Recognising what they say is half the battle. These are the phrases that will come at you in the first five minutes. Know what they mean so you can respond naturally — even a nod and <em>jee</em> shows you understood.</p>
+
+      <div class="listen-card">
+        <div class="listen-they-say">Ashun, ashun — bôsun</div>
+        <div class="listen-pronunciation">AA-shun AA-shun — BO-shun</div>
+        <div class="listen-means">"Come in, come in — please sit"</div>
+        <div class="listen-you-say">Shukriya, Amma / Shukriya, Abba</div>
+      </div>
+
+      <div class="listen-card">
+        <div class="listen-they-say">Kemon achen? / Kemon acho?</div>
+        <div class="listen-pronunciation">KE-mon AA-chen / KE-mon AA-cho</div>
+        <div class="listen-means">"How are you?" — the first may be directed at you respectfully; the second is casual between peers</div>
+        <div class="listen-you-say">Jee, bhalo achi — apni kemon achen?</div>
+      </div>
+
+      <div class="listen-card">
+        <div class="listen-they-say">Ki khorben? Cha neben?</div>
+        <div class="listen-pronunciation">ki KHOR-ben — chaa NE-ben</div>
+        <div class="listen-means">"What will you have? Will you have tea?" — you will hear this within 90 seconds of arriving</div>
+        <div class="listen-you-say">Jee, shukriya — or — Jee, cha nebo (yes, I'll have tea)</div>
+      </div>
+
+      <div class="listen-card">
+        <div class="listen-they-say">Bhaat kheyechen?</div>
+        <div class="listen-pronunciation">bhaat KHE-ye-chen</div>
+        <div class="listen-means">"Have you eaten?" — Bangla hospitality, asking if you've had rice (the staple). Not literally asking about rice — it means "have you eaten a proper meal?"</div>
+        <div class="listen-you-say">Jee, kheyechi (yes, I've eaten) — or — Na, khainai (no, not yet)</div>
+      </div>
+
+      <div class="listen-card">
+        <div class="listen-they-say">Thik ache? / Thik acho?</div>
+        <div class="listen-pronunciation">THEEK aa-che / THEEK aa-cho</div>
+        <div class="listen-means">"Are you alright?" — checking in on you. Often said if you look tired or quiet.</div>
+        <div class="listen-you-say">Jee, thik achi — "Yes, I'm fine"</div>
+      </div>
+
+      <div class="listen-card">
+        <div class="listen-they-say">Abar ashben</div>
+        <div class="listen-pronunciation">AA-bar AAS-ben</div>
+        <div class="listen-means">"Come again" — said as you leave. A warm farewell. Not a question — it's an invitation.</div>
+        <div class="listen-you-say">Jee, ashbo — "Yes, I'll come"</div>
+      </div>
+
+    </div>
+
+    <hr class="divider">
+
+    <!-- SECTION 3: Quiz -->
+    <div class="section">
+      <div class="section-label">Section 3</div>
+      <h2 class="section-title">Retrieval Practice</h2>
+      <p class="section-desc">Look at the English meaning. Before you tap, try to recall the Bangla phrase out loud. Then tap to reveal and check yourself.</p>
+
+      <div class="quiz-intro">
+        <strong>How this works:</strong> Read the English meaning. Say the Bangla out loud (or in your head). Then tap the card to reveal the phrase. The goal is the moment before you tap — that's where the learning happens.
+      </div>
+
+      <p class="quiz-tap-hint">Tap a card to reveal the answer</p>
+
+      <div class="quiz-card" onclick="revealCard(this)">
+        <div class="quiz-prompt">The Islamic greeting — used to greet everyone on arrival</div>
+        <div class="quiz-hint">Two Arabic words borrowed into Bangla, used universally in Muslim households...</div>
+        <div class="quiz-answer">
+          <div class="quiz-bangla">Assalamu alaikum</div>
+          <div class="quiz-pronunciation">as-SAA-laa-mu aa-LAY-kum</div>
+          <div class="quiz-tip">Response: Wa alaikum assalam</div>
+        </div>
+      </div>
+
+      <div class="quiz-card" onclick="revealCard(this)">
+        <div class="quiz-prompt">"How are you?" — respectful form for elders</div>
+        <div class="quiz-hint">Two words. The second contains the respectful verb ending...</div>
+        <div class="quiz-answer">
+          <div class="quiz-bangla">Kemon achen?</div>
+          <div class="quiz-pronunciation">KE-mon AA-chen</div>
+          <div class="quiz-tip">In Dhaka speech, often sounds like "Kemon asen?"</div>
+        </div>
+      </div>
+
+      <div class="quiz-card" onclick="revealCard(this)">
+        <div class="quiz-prompt">"Yes, I'm well" — your reply when asked how you are</div>
+        <div class="quiz-hint">Three words, starting with the respectful "yes"...</div>
+        <div class="quiz-answer">
+          <div class="quiz-bangla">Jee, bhalo achi</div>
+          <div class="quiz-pronunciation">jee, BHAA-lo AA-chi</div>
+          <div class="quiz-tip">Always lead with "jee" — it signals respect</div>
+        </div>
+      </div>
+
+      <div class="quiz-card" onclick="revealCard(this)">
+        <div class="quiz-prompt">"Thank you"</div>
+        <div class="quiz-hint">Borrowed from Arabic via Urdu — three syllables, starts with 'sh'...</div>
+        <div class="quiz-answer">
+          <div class="quiz-bangla">Shukriya</div>
+          <div class="quiz-pronunciation">SHUK-ri-yaa</div>
+          <div class="quiz-tip">Also: Dhônnobad (more formal)</div>
+        </div>
+      </div>
+
+      <div class="quiz-card" onclick="revealCard(this)">
+        <div class="quiz-prompt">How you address your mother-in-law directly (to her face)</div>
+        <div class="quiz-hint">Not her name — her title. Warm, respectful, family-appropriate...</div>
+        <div class="quiz-answer">
+          <div class="quiz-bangla">Amma</div>
+          <div class="quiz-pronunciation">AM-maa</div>
+          <div class="quiz-tip">Some families use "Ma" — ask your partner which theirs uses</div>
+        </div>
+      </div>
+
+      <div class="quiz-card" onclick="revealCard(this)">
+        <div class="quiz-prompt">How you address your father-in-law directly (to his face)</div>
+        <div class="quiz-hint">Same logic as the previous title — two syllables...</div>
+        <div class="quiz-answer">
+          <div class="quiz-bangla">Abba</div>
+          <div class="quiz-pronunciation">AB-baa</div>
+          <div class="quiz-tip">Some families use "Baba" — ask your partner</div>
+        </div>
+      </div>
+
+      <div class="quiz-card" onclick="revealCard(this)">
+        <div class="quiz-prompt">"Goodbye" — what to say when leaving a Muslim household</div>
+        <div class="quiz-hint">Two words, meaning "God protect you"...</div>
+        <div class="quiz-answer">
+          <div class="quiz-bangla">Khoda hafez</div>
+          <div class="quiz-pronunciation">KHO-daa HAA-fez</div>
+          <div class="quiz-tip">Also: Allah hafez — increasingly common, equally warm</div>
+        </div>
+      </div>
+
+      <div class="quiz-card" onclick="revealCard(this)">
+        <div class="quiz-prompt">"Please sit down" — what they'll say when you enter</div>
+        <div class="quiz-hint">One short word — respectful command form...</div>
+        <div class="quiz-answer">
+          <div class="quiz-bangla">Bosun</div>
+          <div class="quiz-pronunciation">BO-shun</div>
+          <div class="quiz-tip">You may hear it twice — "Bosun, bosun" — that's warm Bangladeshi hospitality</div>
+        </div>
+      </div>
+
+      <div class="quiz-progress" id="progress">
+        Revealed: <span id="count">0</span> of 8
+      </div>
+
+    </div>
+
+    <!-- Real-world challenge -->
+    <div class="challenge-box">
+      <div class="challenge-label">Before the next lesson</div>
+      <h3 class="challenge-title">Real-World Challenge</h3>
+      <p class="challenge-text">
+        Before your next session: ask your partner to play the role of their mother or father. You knock, they open the door. Run through the arrival — greeting, being invited in, sitting down, being offered tea, and saying goodbye.<br><br>
+        Focus on just <strong>three phrases</strong> until they feel automatic: <strong>Assalamu alaikum</strong>, <strong>Kemon achen?</strong>, and <strong>Jee, bhalo achi</strong>. These are the ones that matter most in the first 30 seconds.<br><br>
+        If that feels like too much — just practise saying <strong>Assalamu alaikum</strong> naturally, ten times, until it doesn't feel strange in your mouth.
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    let revealed = 0;
+    const total = document.querySelectorAll('.quiz-card').length;
+
+    function revealCard(card) {
+      if (card.classList.contains('revealed')) return;
+      card.classList.add('revealed');
+      revealed++;
+      document.getElementById('count').textContent = revealed;
+      if (revealed === total) {
+        document.getElementById('progress').innerHTML =
+          '<span style="color: var(--green)">All ' + total + ' revealed!</span> Run through them again from the top — say each one aloud before checking.';
+      }
+    }
+  </script>
+
+</body>
+</html>

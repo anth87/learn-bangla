@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pronunciation Guide — Spoken Bangla (Dhaka)</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #0f1117;
+      --surface: #1a1d27;
+      --card:    #22263a;
+      --border:  #2e3347;
+      --accent:  #6c8fff;
+      --accent2: #a78bfa;
+      --green:   #34d399;
+      --amber:   #fbbf24;
+      --red:     #f87171;
+      --coral:   #fb923c;
+      --text:    #e4e8f1;
+      --muted:   #8891a8;
+      --small:   #6b7390;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(160deg, #151827 0%, #0f1117 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 52px 24px 44px;
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .header-desc {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Top-level sections */
+    .chapter {
+      margin-top: 56px;
+    }
+    .chapter-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 6px;
+    }
+    .chapter-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .chapter-desc {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 28px;
+      line-height: 1.65;
+    }
+
+    /* Sound cards */
+    .sound-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 24px;
+      margin-bottom: 14px;
+    }
+    .sound-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+    .sound-symbol {
+      font-family: 'Courier New', monospace;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--amber);
+      min-width: 52px;
+    }
+    .sound-name {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .sound-frequency {
+      font-size: 12px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2px 10px;
+      color: var(--muted);
+    }
+    .sound-anchor {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .sound-anchor strong {
+      color: var(--text);
+    }
+    .sound-anchor .highlight {
+      background: #2a2410;
+      border: 1px solid #4a3d12;
+      border-radius: 6px;
+      padding: 2px 8px;
+      color: var(--amber);
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+    .sound-words {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .sound-word {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 5px 12px;
+      font-size: 14px;
+      color: var(--text);
+    }
+    .sound-word em {
+      color: var(--amber);
+      font-style: normal;
+      font-family: 'Courier New', monospace;
+    }
+    .sound-word .gloss {
+      color: var(--small);
+      font-size: 12px;
+      margin-left: 4px;
+    }
+    .sound-tip {
+      margin-top: 12px;
+      padding: 10px 14px;
+      background: var(--card);
+      border-radius: 8px;
+      font-size: 14px;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* Aspirated grid */
+    .aspirated-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .asp-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+    .asp-symbol {
+      font-family: 'Courier New', monospace;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--amber);
+      display: block;
+      margin-bottom: 6px;
+    }
+    .asp-base {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .asp-example {
+      font-size: 14px;
+      color: var(--text);
+    }
+    .asp-example em {
+      color: var(--green);
+      font-style: normal;
+    }
+
+    /* Dhaka note */
+    .dhaka-box {
+      background: #1c1a2e;
+      border: 1px solid #3d3070;
+      border-left: 3px solid var(--accent2);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 15px;
+      color: #c4b8f0;
+      line-height: 1.65;
+    }
+    .dhaka-box strong {
+      color: var(--accent2);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    /* Quick reference table */
+    .ref-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+    .ref-table th {
+      background: var(--card);
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 10px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .ref-table td {
+      padding: 11px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .ref-table tr:last-child td {
+      border-bottom: none;
+    }
+    .ref-table tr:nth-child(even) td {
+      background: #16182280;
+    }
+    .ref-table .sym {
+      font-family: 'Courier New', monospace;
+      color: var(--amber);
+      font-weight: 700;
+      font-size: 16px;
+    }
+    .ref-table .eng {
+      color: var(--text);
+    }
+    .ref-table .example {
+      color: var(--green);
+      font-size: 13px;
+    }
+    .ref-table .note {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Stress section */
+    .stress-rules {
+      list-style: none;
+      margin: 0;
+    }
+    .stress-rules li {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-bottom: 10px;
+      font-size: 15px;
+      display: flex;
+      gap: 14px;
+      align-items: baseline;
+    }
+    .stress-rules .rule-num {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 18px;
+      min-width: 24px;
+    }
+    .stress-rules .rule-text {
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .stress-rules .rule-text strong {
+      color: var(--text);
+    }
+
+    /* Dhaka shifts */
+    .shift-row {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+    .shift-col {
+      flex: 1;
+      padding: 16px 18px;
+    }
+    .shift-col.textbook {
+      border-right: 1px solid var(--border);
+    }
+    .shift-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .shift-label.standard { color: var(--small); }
+    .shift-label.dhaka { color: var(--green); }
+    .shift-value {
+      font-family: 'Courier New', monospace;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .shift-value.standard { color: var(--muted); }
+    .shift-value.dhaka { color: var(--green); }
+    .shift-example {
+      font-size: 13px;
+      color: var(--small);
+      margin-top: 2px;
+    }
+    .shift-arrow {
+      padding: 0 6px;
+      color: var(--border);
+      font-size: 20px;
+      display: none;
+    }
+
+    /* Quick ref header */
+    .quickref-header {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 28px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .quickref-header strong {
+      color: var(--text);
+    }
+
+    hr.divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 52px 0 0;
+    }
+
+    @media (max-width: 520px) {
+      .sound-header { flex-wrap: wrap; gap: 8px; }
+      .aspirated-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="badge">Reference · Phonetics</div>
+    <h1>Pronunciation Guide</h1>
+    <p class="header-desc">How Bangla sounds — using English word comparisons. No script, no symbols you need to learn separately.</p>
+  </header>
+
+  <div class="container">
+
+    <div class="quickref-header">
+      <strong>This guide is verbal-only.</strong> We never use Bengali script. Instead, every sound is mapped to an English word you already know. Read the phonetics in your lessons using this page as your key.
+    </div>
+
+    <!-- CHAPTER 1: Vowels -->
+    <div class="chapter">
+      <div class="chapter-label">Chapter 1</div>
+      <h2 class="chapter-title">The Essential Vowels</h2>
+      <p class="chapter-desc">Bangla has more vowel sounds than English. These are the ones you'll encounter constantly — get them right and you'll be understood.</p>
+
+      <!-- aa -->
+      <div class="sound-card">
+        <div class="sound-header">
+          <span class="sound-symbol">aa</span>
+          <span class="sound-name">Long A</span>
+          <span class="sound-frequency">Very common</span>
+        </div>
+        <div class="sound-anchor">Like the 'a' in <span class="highlight">f<strong>a</strong>ther</span> or <span class="highlight">c<strong>a</strong>r</span> — open, held slightly longer than in English.</div>
+        <div class="sound-words">
+          <span class="sound-word"><em>aa</em>ssen <span class="gloss">come in</span></span>
+          <span class="sound-word">bhaa<em>aa</em>t <span class="gloss">rice</span></span>
+          <span class="sound-word">AM-<em>maa</em> <span class="gloss">mother</span></span>
+          <span class="sound-word">BHAA-lo <span class="gloss">good/well</span></span>
+        </div>
+        <div class="sound-tip">Think of it as making your mouth more open than for the English 'a' in 'cat'. Drop your jaw slightly.</div>
+      </div>
+
+      <!-- ô -->
+      <div class="sound-card">
+        <div class="sound-header">
+          <span class="sound-symbol">ô</span>
+          <span class="sound-name">Short O</span>
+          <span class="sound-frequency">Very common</span>
+        </div>
+        <div class="sound-anchor">Like the 'o' in <span class="highlight">n<strong>o</strong>t</span> or <span class="highlight">h<strong>o</strong>t</span> in British English — open and unrounded. Not the 'o' in 'go'.</div>
+        <div class="sound-words">
+          <span class="sound-word">BO-<em>shun</em> <span class="gloss">sit</span></span>
+          <span class="sound-word">KHO-daa <span class="gloss">God</span></span>
+          <span class="sound-word">bô-<em>sun</em> <span class="gloss">sit (variant)</span></span>
+          <span class="sound-word">gô-<em>rôm</em> <span class="gloss">hot</span></span>
+        </div>
+        <div class="sound-tip">This is NOT the 'o' in 'go' or 'bone'. It's short and open — like when a doctor asks you to say "ahh" and your mouth is open.</div>
+      </div>
+
+      <!-- ee / i -->
+      <div class="sound-card">
+        <div class="sound-header">
+          <span class="sound-symbol">ee</span>
+          <span class="sound-name">Long EE</span>
+          <span class="sound-frequency">Common</span>
+        </div>
+        <div class="sound-anchor">Like 'ee' in <span class="highlight">s<strong>ee</strong></span> or <span class="highlight">f<strong>ee</strong>l</span> — clear and held.</div>
+        <div class="sound-words">
+          <span class="sound-word"><em>jee</em> <span class="gloss">yes (polite)</span></span>
+          <span class="sound-word">SHUK-ri-<em>yaa</em> <span class="gloss">thank you</span></span>
+          <span class="sound-word">AA-<em>chi</em> <span class="gloss">I am</span></span>
+        </div>
+      </div>
+
+      <!-- e -->
+      <div class="sound-card">
+        <div class="sound-header">
+          <span class="sound-symbol">e</span>
+          <span class="sound-name">Short E</span>
+          <span class="sound-frequency">Common</span>
+        </div>
+        <div class="sound-anchor">Like 'e' in <span class="highlight">b<strong>e</strong>d</span> or <span class="highlight">g<strong>e</strong>t</span> — short and clear.</div>
+        <div class="sound-words">
+          <span class="sound-word">KE-<em>mon</em> <span class="gloss">how</span></span>
+          <span class="sound-word">AA-<em>chen</em> <span class="gloss">are (respectful)</span></span>
+        </div>
+      </div>
+
+      <!-- u / oo -->
+      <div class="sound-card">
+        <div class="sound-header">
+          <span class="sound-symbol">u / oo</span>
+          <span class="sound-name">OO sound</span>
+          <span class="sound-frequency">Common</span>
+        </div>
+        <div class="sound-anchor">Like 'oo' in <span class="highlight">f<strong>oo</strong>d</span> — rounded and clear. Written 'u' in most lessons.</div>
+        <div class="sound-words">
+          <span class="sound-word">BUJ-<em>hi</em> <span class="gloss">understand</span></span>
+          <span class="sound-word">TU-<em>mi</em> <span class="gloss">you (casual)</span></span>
+          <span class="sound-word">SHUK-<em>ri</em>-yaa <span class="gloss">thank you</span></span>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="divider">
+
+    <!-- CHAPTER 2: Aspirated consonants -->
+    <div class="chapter">
+      <div class="chapter-label">Chapter 2</div>
+      <h2 class="chapter-title">Aspirated Consonants</h2>
+      <p class="chapter-desc">Aspiration is the key feature of Bangla (and all South Asian languages) that English doesn't have. An aspirated consonant is the same sound as the base consonant, but with a puff of breath added. Hold your hand in front of your mouth — you should feel air.</p>
+
+      <div class="dhaka-box">
+        <strong>Why this matters</strong>
+        In English, <em>pin</em> vs <em>spin</em> — the 'p' in "pin" already has aspiration; "spin" doesn't. In Bangla, aspiration is a full distinction that changes meaning. But for a beginner, the main goal is: when you see <strong>kh / bh / dh / th / ph / gh / ch / jh</strong>, add a noticeable puff of breath.
+      </div>
+
+      <div class="aspirated-grid">
+        <div class="asp-card">
+          <span class="asp-symbol">kh</span>
+          <div class="asp-base">Like 'k' + breath</div>
+          <div class="asp-example">Similar to Scottish <em>loch</em></div>
+        </div>
+        <div class="asp-card">
+          <span class="asp-symbol">gh</span>
+          <div class="asp-base">Like 'g' + breath</div>
+          <div class="asp-example">Breathy 'g' sound</div>
+        </div>
+        <div class="asp-card">
+          <span class="asp-symbol">ch</span>
+          <div class="asp-base">Like 'ch' in <em>chair</em></div>
+          <div class="asp-example">Standard English ch</div>
+        </div>
+        <div class="asp-card">
+          <span class="asp-symbol">jh</span>
+          <div class="asp-base">Like 'j' + breath</div>
+          <div class="asp-example">Breathy 'j' sound</div>
+        </div>
+        <div class="asp-card">
+          <span class="asp-symbol">th</span>
+          <div class="asp-base">Like 't' + breath</div>
+          <div class="asp-example">NOT as in <em>the</em> — it's t + puff</div>
+        </div>
+        <div class="asp-card">
+          <span class="asp-symbol">dh</span>
+          <div class="asp-base">Like 'd' + breath</div>
+          <div class="asp-example">Breathy 'd' — as in <em>dhow</em></div>
+        </div>
+        <div class="asp-card">
+          <span class="asp-symbol">bh</span>
+          <div class="asp-base">Like 'b' + breath</div>
+          <div class="asp-example">Soft breathy 'b' — <em>bhalo</em></div>
+        </div>
+        <div class="asp-card">
+          <span class="asp-symbol">ph</span>
+          <div class="asp-base">Like 'p' + breath</div>
+          <div class="asp-example">NOT 'f' — it's p + puff</div>
+        </div>
+      </div>
+
+      <div class="dhaka-box">
+        <strong>Important: th ≠ English "th"</strong>
+        In Bangla, <strong>th</strong> is never like the 'th' in <em>the</em> or <em>think</em>. It's always a 't' sound with an added puff of air. So <em>thik</em> (meaning "correct/fine") is said "TEEK" with a breath — not like "thick".
+      </div>
+
+    </div>
+
+    <hr class="divider">
+
+    <!-- CHAPTER 3: Retroflex -->
+    <div class="chapter">
+      <div class="chapter-label">Chapter 3</div>
+      <h2 class="chapter-title">Retroflex Sounds</h2>
+      <p class="chapter-desc">Retroflex consonants are made with the tongue curled back to touch the roof of the mouth. They're common in South Asian languages and absent in standard English. Don't panic — for casual speech, most listeners will understand you even if your retroflex isn't perfect.</p>
+
+      <div class="sound-card">
+        <div class="sound-header">
+          <span class="sound-symbol">ṭ / ḍ</span>
+          <span class="sound-name">Retroflex T and D</span>
+        </div>
+        <div class="sound-anchor">Curl your tongue tip back so it points towards the roof of your mouth. Then make a 't' or 'd' sound. The result is fuller and more resonant than the standard 't' or 'd'.</div>
+        <div class="sound-tip">
+          <strong>Shortcut for beginners:</strong> In the phonetic spellings in these lessons, retroflex sounds are written in bold or noted where they appear. If in doubt, use a regular 't' or 'd' — native speakers will understand you. Over time, you'll hear the difference and your ear will guide your mouth.
+        </div>
+        <div class="sound-words">
+          <span class="sound-word">tor-<em>KA</em>-ri <span class="gloss">vegetable dish</span></span>
+          <span class="sound-word">ṭhik <span class="gloss">correct, fine</span></span>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="divider">
+
+    <!-- CHAPTER 4: Nasal vowels -->
+    <div class="chapter">
+      <div class="chapter-label">Chapter 4</div>
+      <h2 class="chapter-title">Nasal Vowels</h2>
+      <p class="chapter-desc">Some Bangla vowels are nasalised — air flows through the nose as well as the mouth. In lessons, we mark this with a tilde (~) after the vowel.</p>
+
+      <div class="sound-card">
+        <div class="sound-header">
+          <span class="sound-symbol">~</span>
+          <span class="sound-name">Nasalisation</span>
+        </div>
+        <div class="sound-anchor">Like the French vowels in <span class="highlight">bo<strong>n</strong></span> or <span class="highlight">vi<strong>n</strong></span> — or the 'n' in an American singer's pronunciation of "ain't". The vowel resonates in your nose.</div>
+        <div class="sound-tip">In everyday Dhaka speech, nasalisation is present but not always strongly marked. Don't over-nasal — a slight nasal quality is enough.</div>
+      </div>
+
+    </div>
+
+    <hr class="divider">
+
+    <!-- CHAPTER 5: Word stress -->
+    <div class="chapter">
+      <div class="chapter-label">Chapter 5</div>
+      <h2 class="chapter-title">Word Stress</h2>
+      <p class="chapter-desc">Bangla stress patterns are fairly consistent — once you know the rule, you can apply it to new words automatically.</p>
+
+      <ul class="stress-rules">
+        <li>
+          <span class="rule-num">1</span>
+          <span class="rule-text"><strong>Stress the first syllable</strong> in most Bangla words. KE-mon, BHAA-lo, BO-shun, AM-maa, AB-baa.</span>
+        </li>
+        <li>
+          <span class="rule-num">2</span>
+          <span class="rule-text"><strong>Loanwords and Arabic/Urdu borrowings</strong> may keep their original stress. Assalamu alaikum: as-SAA-laa-mu aa-LAY-kum — the stress falls on the syllable that carries weight in Arabic.</span>
+        </li>
+        <li>
+          <span class="rule-num">3</span>
+          <span class="rule-text"><strong>Two-syllable words</strong> almost always stress the first: BHAa-lo, THEek, CHAa (tea), DAal (lentils).</span>
+        </li>
+        <li>
+          <span class="rule-num">4</span>
+          <span class="rule-text"><strong>Bangla does not use pitch to change meaning</strong> (it's not tonal like Chinese). Stress is about syllable weight, not a rising or falling melody.</span>
+        </li>
+      </ul>
+
+      <div class="dhaka-box">
+        <strong>Dhaka rhythm</strong>
+        Dhaka speech has a particular rhythm — slightly faster and more clipped than formal Bangla, with vowels sometimes shortened in casual speech. When a Bangla teacher speaks slowly for a lesson, phrases sound more drawn out than in normal family conversation. Don't be surprised when the family's speech sounds faster than what you've practised with.
+      </div>
+
+    </div>
+
+    <hr class="divider">
+
+    <!-- CHAPTER 6: Dhaka-specific shifts -->
+    <div class="chapter">
+      <div class="chapter-label">Chapter 6</div>
+      <h2 class="chapter-title">Dhaka-Specific Sound Shifts</h2>
+      <p class="chapter-desc">Dhaka spoken Bangla differs from textbook Bangla and from Kolkata/West Bengal Bangla in several consistent ways. Knowing these shifts helps you understand what you hear, even when it doesn't match what you practised.</p>
+
+      <div class="shift-row">
+        <div class="shift-col textbook">
+          <div class="shift-label standard">Standard / Textbook</div>
+          <div class="shift-value standard">ch (as in chair)</div>
+          <div class="shift-example">e.g. achen (are)</div>
+        </div>
+        <div class="shift-col">
+          <div class="shift-label dhaka">Dhaka speech</div>
+          <div class="shift-value dhaka">s or sh</div>
+          <div class="shift-example">sounds like "asen" or "assen"</div>
+        </div>
+      </div>
+
+      <div class="shift-row">
+        <div class="shift-col textbook">
+          <div class="shift-label standard">Standard / Textbook</div>
+          <div class="shift-value standard">-ôcche / -iche</div>
+          <div class="shift-example">progressive verb ending</div>
+        </div>
+        <div class="shift-col">
+          <div class="shift-label dhaka">Dhaka speech</div>
+          <div class="shift-value dhaka">-sse / -se</div>
+          <div class="shift-example">clipped and faster</div>
+        </div>
+      </div>
+
+      <div class="shift-row">
+        <div class="shift-col textbook">
+          <div class="shift-label standard">Standard / Textbook</div>
+          <div class="shift-value standard">ami (I)</div>
+          <div class="shift-example">formal first person</div>
+        </div>
+        <div class="shift-col">
+          <div class="shift-label dhaka">Dhaka speech</div>
+          <div class="shift-value dhaka">aami / ami</div>
+          <div class="shift-example">same, slight vowel lengthening</div>
+        </div>
+      </div>
+
+      <div class="shift-row">
+        <div class="shift-col textbook">
+          <div class="shift-label standard">Standard / Textbook</div>
+          <div class="shift-value standard">ki kôrcho?</div>
+          <div class="shift-example">"what are you doing?" (casual)</div>
+        </div>
+        <div class="shift-col">
+          <div class="shift-label dhaka">Dhaka speech</div>
+          <div class="shift-value dhaka">ki kôrso? / ki kôrish?</div>
+          <div class="shift-example">verb ending shifts in casual speech</div>
+        </div>
+      </div>
+
+      <div class="shift-row">
+        <div class="shift-col textbook">
+          <div class="shift-label standard">Standard / Textbook</div>
+          <div class="shift-value standard">Namaskar</div>
+          <div class="shift-example">general greeting</div>
+        </div>
+        <div class="shift-col">
+          <div class="shift-label dhaka">Dhaka speech</div>
+          <div class="shift-value dhaka">Assalamu alaikum</div>
+          <div class="shift-example">Islamic greeting replaces namaskar in Muslim households</div>
+        </div>
+      </div>
+
+      <div class="dhaka-box">
+        <strong>The most important Dhaka shift: ch → s/sh</strong>
+        This will confuse you when you first hear it. "Kemon achen?" (how are you?) can sound like "Kemon asen?" in normal Dhaka speech. The 'ch' in verb endings frequently softens to an 's' sound. Once you know this, a lot of "unfamiliar" speech will suddenly make sense — it's the same words, slightly softened.
+      </div>
+
+    </div>
+
+    <hr class="divider">
+
+    <!-- Quick reference table -->
+    <div class="chapter">
+      <div class="chapter-label">Quick Reference</div>
+      <h2 class="chapter-title">All Symbols at a Glance</h2>
+      <p class="chapter-desc">Bookmark this. When you encounter a phonetic spelling in a lesson and aren't sure how to say it, check here.</p>
+
+      <table class="ref-table">
+        <thead>
+          <tr>
+            <th>Symbol</th>
+            <th>Sounds like</th>
+            <th>Example word</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="sym">aa</td>
+            <td class="eng">father, car</td>
+            <td class="example">BHAA-lo</td>
+            <td class="note">Long open A</td>
+          </tr>
+          <tr>
+            <td class="sym">ô</td>
+            <td class="eng">not, hot</td>
+            <td class="example">KHO-daa</td>
+            <td class="note">Short open O — not "go"</td>
+          </tr>
+          <tr>
+            <td class="sym">ee / i</td>
+            <td class="eng">see, feel</td>
+            <td class="example">jee</td>
+            <td class="note">Long EE</td>
+          </tr>
+          <tr>
+            <td class="sym">e</td>
+            <td class="eng">bed, get</td>
+            <td class="example">KE-mon</td>
+            <td class="note">Short E</td>
+          </tr>
+          <tr>
+            <td class="sym">u / oo</td>
+            <td class="eng">food, moon</td>
+            <td class="example">BUJ-hi</td>
+            <td class="note">Rounded OO</td>
+          </tr>
+          <tr>
+            <td class="sym">kh</td>
+            <td class="eng">loch (Scottish)</td>
+            <td class="example">KHO-daa</td>
+            <td class="note">K + puff of breath</td>
+          </tr>
+          <tr>
+            <td class="sym">bh</td>
+            <td class="eng">— (no English equiv.)</td>
+            <td class="example">BHAA-lo</td>
+            <td class="note">B + soft breath</td>
+          </tr>
+          <tr>
+            <td class="sym">dh</td>
+            <td class="eng">— (no English equiv.)</td>
+            <td class="example">DHÔN-no-baad</td>
+            <td class="note">D + breath. NOT "the"</td>
+          </tr>
+          <tr>
+            <td class="sym">th</td>
+            <td class="eng">— (not "think" or "the")</td>
+            <td class="example">THEEK</td>
+            <td class="note">T + puff of breath</td>
+          </tr>
+          <tr>
+            <td class="sym">ph</td>
+            <td class="eng">— (not "phone")</td>
+            <td class="example">—</td>
+            <td class="note">P + puff of breath. Not 'f'</td>
+          </tr>
+          <tr>
+            <td class="sym">ch</td>
+            <td class="eng">chair, cheese</td>
+            <td class="example">AA-chi</td>
+            <td class="note">Standard English CH</td>
+          </tr>
+          <tr>
+            <td class="sym">CAPS</td>
+            <td class="eng">—</td>
+            <td class="example">BHAA-lo</td>
+            <td class="note">Stressed syllable — say it slightly louder and longer</td>
+          </tr>
+          <tr>
+            <td class="sym">~</td>
+            <td class="eng">nasal quality</td>
+            <td class="example">—</td>
+            <td class="note">Slight nasal resonance — air through nose too</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</body>
+</html>
