@@ -1,6 +1,6 @@
-# Resources: Spoken Bangla (Dhaka Dialect)
+# Resources: Spoken Bangla (Shudho Bangla)
 
-> This list is curated for a verbal-only learner targeting Dhaka household speech. Resources focused on reading/writing Bengali script are excluded unless they have strong audio components.
+> This list is curated for a verbal-only learner targeting Shudho Bangla (standard Bangla), as spoken by a Bangladeshi family. Resources focused on reading/writing Bengali script are excluded unless they have strong audio components.
 
 ---
 
@@ -86,7 +86,7 @@ The most effective flashcard system available. Build decks using phonetic spelli
 **Cost**: Paid per lesson (community tutors ~$10–20/hr; professional teachers more)
 **Reach for this when**: You're ready to attempt real conversation and want a patient native Bangladeshi speaker to practise with.
 
-iTalki lets you book 1-on-1 video lessons with native speakers. Filter for Bangladeshi tutors specifically to get Dhaka dialect. Even 30-minute "conversation sessions" with a community tutor (cheaper than professional teachers) are extremely valuable. Brief the tutor: "I only want spoken Bangla, no script, Dhaka dialect, household/family topics." Good to start once you have ~10–15 lessons of Pimsleur under your belt.
+iTalki lets you book 1-on-1 video lessons with native speakers. Filter for Bangladeshi tutors specifically. Even 30-minute "conversation sessions" with a community tutor (cheaper than professional teachers) are extremely valuable. Brief the tutor: "I only want spoken Bangla, no script, Shudho Bangla, household/family topics." Good to start once you have ~10–15 lessons of Pimsleur under your belt.
 
 ---
 

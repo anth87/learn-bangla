@@ -1,4 +1,4 @@
-# Glossary: Spoken Bangla (Dhaka Dialect)
+# Glossary: Spoken Bangla (Shudho Bangla)
 
 > Phonetic spellings only — no Bengali script. This glossary uses a simple English-friendly romanisation:
 > - **aa** = long 'a' as in "father"
@@ -23,8 +23,8 @@
   - _Also heard as_: Allah hafez *(AL-laa HAA-fez)* — more explicitly Islamic, increasingly common.
   - _Avoid_: "Bye bye" is understood but sounds very foreign; use khoda hafez with elders.
 
-**Shukriya** *(SHUK-ri-yaa)*: "Thank you" — borrowed from Arabic/Urdu, very common in Dhaka.
-  - _Also heard as_: Dhônnobad *(DHÔN-no-baad)* — more formal/literary thank you. Both are used.
+**Dhônnobad** *(DHÔN-no-baad)*: "Thank you" — the Bangla-native form. Standard in Shudho Bangla.
+  - _Also heard as_: Shukriya *(SHUK-ri-yaa)* — borrowed from Arabic/Urdu, also common in Bangladeshi Muslim households. Both are understood.
 
 **Maaf kôrben** *(MAAF kôr-BEN)*: "Please forgive me / excuse me / sorry". Polite apology or excuse-me.
 
@@ -85,8 +85,8 @@
 
 ## Food & Hospitality (at the table)
 
-**Cha khorben?** *(chaa KHOR-ben)*: "Will you have tea?" — the first hospitality offer you'll hear on every visit.
-  - _Dhaka note_: "Khorben" is Dhaka dialect for eating/drinking; standard Bangla uses "khaben".
+**Cha khaben?** *(chaa KHAA-ben)*: "Will you have tea?" — the first hospitality offer you'll hear on every visit.
+  - _Note_: "Khaben" is the Shudho Bangla form. In colloquial Dhaka speech you may also hear "khorben", but khaben is the standard form.
 
 **Ektu** *(EK-tu)*: "A little." Use with nebo: "ektu nebo" = "I'll take a little" — the graceful response to being urged to eat more.
 
@@ -115,7 +115,7 @@
 
 **Bosun** *(BO-shun)*: "Please sit down." Very common upon arrival.
 
-**Ki khorben?** *(ki KHOR-ben)*: "What will you eat/drink?" — hospitality offer, you'll hear this immediately.
+**Ki khaben?** *(ki KHAA-ben)*: "What will you eat/drink?" — hospitality offer, you'll hear this immediately.
 
 **Bhaat kheyechen?** *(bhaat KHE-ye-chen)*: "Have you eaten rice?" — a Bangla way of asking if you've eaten, rice being the staple.
 
@@ -153,8 +153,8 @@
 
 **Roti** *(RO-ti)*: Flatbread.
 
-**Pani** *(PAA-ni)*: Water.
-  - _Also heard as_: Jol *(jol)* — more commonly used in Bengal for water.
+**Jol** *(jol)*: Water — the standard Bangla/Shudho Bangla word.
+  - _Also heard as_: Pani *(PAA-ni)* — used in parts of Bangladesh, borrowed from Hindi/Urdu. Both are understood.
 
 **Cha** *(chaa)*: Tea. You will be offered this constantly.
 

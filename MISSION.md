@@ -1,14 +1,22 @@
 # Mission: Spoken Bangla for Family Connection
 
 ## Why
-To speak directly with my Bangladeshi in-laws (Dhaka background) — understand what they say, join family conversations, and show respect and warmth through their own language. Currently entirely dependent on translation.
+To speak directly with my Bangladeshi in-laws — understand what they say, join family conversations, and show respect and warmth through their own language. Currently entirely dependent on translation.
+
+## Dialect: Shudho Bangla
+My wife's family speaks **Shudho Bangla** (standard/formal Bangla), not colloquial Dhaka street dialect. Lessons use Shudho Bangla verb forms and vocabulary as the primary target. Where regional or colloquial variants exist, they are noted as alternatives — not primary targets.
+
+Key Shudho Bangla markers for this course:
+- `khaben` (will eat/drink) — not `khorben` (Dhaka colloquial)
+- `dhônnobad` (thank you) — primary; `shukriya` noted as alternative
+- `jol` (water) — preferred; `pani` noted as alternative
 
 ## Success looks like
 - Greet in-laws and extended family correctly and respond without hesitation
 - Follow family conversations well enough to catch the gist and react naturally
 - Hold a short, genuine exchange about everyday topics: food, how someone's day went, the kids, the weather
 - Use the right register and titles when addressing elders vs. peers
-- Recognise and use the ~150 most frequent words in casual Dhaka household speech
+- Recognise and use the ~150 most frequent words in Shudho Bangla household speech
 
 ## Constraints
 - Verbal only: reading and writing Bengali script is explicitly out of scope right now
@@ -18,6 +26,6 @@ To speak directly with my Bangladeshi in-laws (Dhaka background) — understand 
 
 ## Out of scope
 - Reading or writing Bengali script
-- Formal/literary Bangla (shadhubhasha)
+- Formal/literary Bangla (shadhubhasha / archaic register)
 - Formal grammar analysis
-- West Bengal / Kolkata dialect distinctions (unless they affect comprehension of Dhaka speech)
+- West Bengal / Kolkata dialect distinctions (unless they affect comprehension)
