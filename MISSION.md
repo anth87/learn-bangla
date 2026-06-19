@@ -11,11 +11,15 @@ Key Shudho Bangla markers for this course:
 - `dhônnobad` (thank you) — primary; `shukriya` noted as alternative
 - `jol` (water) — preferred; `pani` noted as alternative
 
+## Audience
+- **Primary**: Wife's parents and extended family (elders) — apni register (-en endings)
+- **Secondary**: Wife's friends and peers of similar age — tumi register (-e/-o endings)
+
 ## Success looks like
 - Greet in-laws and extended family correctly and respond without hesitation
 - Follow family conversations well enough to catch the gist and react naturally
 - Hold a short, genuine exchange about everyday topics: food, how someone's day went, the kids, the weather
-- Use the right register and titles when addressing elders vs. peers
+- Use the right register (apni with elders, tumi with peers) and address elders by their family title
 - Recognise and use the ~150 most frequent words in Shudho Bangla household speech
 
 ## Constraints
