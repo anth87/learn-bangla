@@ -78,8 +78,17 @@
 
 **Mami** *(MAA-mi)*: Mother's brother's wife (aunt).
 
-**Apni** *(AP-ni)*: "You" — formal/respectful. Always use this with elders and in-laws.
-  - _Avoid_: Tumi *(TU-mi)* = informal "you" for peers. Tui *(tui)* = very intimate/casual. Don't use these with elders.
+**Apni** *(AP-ni)*: "You" — formal/respectful second person. Use with elders, in-laws, and anyone you're showing respect to. Verb endings take **-en** (achen, khaben, ashben).
+  - _Possessive_: Apnar *(AP-nar)* = "your" (formal)
+  - _Avoid with elders_: Never use tumi or tui with in-laws or elders — it sounds disrespectful.
+
+**Tumi** *(TU-mi)*: "You" — familiar second person. Use with peers, friends of similar age, and your wife's friends. Verb endings take **-o** or **-e** (acho, khabe, ashbe).
+  - _Possessive_: Tomar *(TO-mar)* = "your" (familiar)
+  - _Not for elders_: Only for peers — not in-laws, not people older than you.
+  - _Key shift_: achen → acho, khaben → khabe, ashben → ashbe, bosun → bosho
+
+**Tui** *(tui)*: "You" — intimate second person. Only for very close childhood friends or younger siblings. Verb endings take **-is** (achis, khabi, ashbi).
+  - _Avoid_: Do not use tui with anyone unless you have known them since childhood — it can feel presumptuous or rude.
 
 ---
 

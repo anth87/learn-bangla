@@ -62,6 +62,7 @@ Write a new lesson file at `lessons/NNNN-slug.html` where NNNN is the next seque
 - Interactive: include at minimum one active recall exercise (quiz, tap-to-reveal, matching)
 - Grounded: reference the real-world scenario from `MISSION.md` that this lesson serves
 - Include a "Note" callout wherever colloquial variants differ from Shudho Bangla (this learner's family speaks Shudho Bangla — teach that as primary, note colloquial variants as alternatives)
+- For every phrase where the verb ending changes by register, add a **green `.tumi-note` callout** showing the tumi (familiar) equivalent alongside the apni (formal) form. The learner speaks not just to in-laws (apni/-en) but also to the wife's friends (tumi/-e/-o). Key shift: **-en → -e** (khaben→khabe, ashben→ashbe), **-chen → -cho** (achen→acho, kheyechen→kheyecho), commands **-un → -ho** (bosun→bosho, ashun→ashho). Use CSS class `.tumi-note` with the same `--green` variable already defined in lessons.
 
 **Lesson structure:**
 1. Context — one sentence on why this matters for the mission
