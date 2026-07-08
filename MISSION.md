@@ -9,7 +9,11 @@ My wife's family speaks **Shudho Bangla** (standard/formal Bangla), not colloqui
 Key Shudho Bangla markers for this course:
 - `khaben` (will eat/drink) — not `khorben` (Dhaka colloquial)
 - `dhônnobad` (thank you) — primary; `shukriya` noted as alternative
-- `jol` (water) — preferred; `pani` noted as alternative
+- `pani` (water) — her family's word _(family feedback)_; `jol` understood but not used by them
+
+Family-confirmed forms (from feedback/ — these override course defaults):
+- **Ammu** (not Amma) for mother-in-law
+- **pani** (not jol) for water
 
 ## Audience
 - **Primary**: Wife's parents and extended family (elders) — apni register (-en endings)
