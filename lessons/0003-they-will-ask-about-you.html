@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <title>Lesson 3: They're Asking About You — Spoken Bangla</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #0f1117;
+      --surface: #1a1d27;
+      --card:    #22263a;
+      --border:  #2e3347;
+      --accent:  #6c8fff;
+      --accent2: #a78bfa;
+      --green:   #34d399;
+      --amber:   #fbbf24;
+      --red:     #f87171;
+      --text:    #e4e8f1;
+      --muted:   #8891a8;
+      --small:   #6b7390;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+
+    /* ─── HEADER ─── */
+    .lesson-header {
+      background: linear-gradient(135deg, #1a1d27 0%, #0f1117 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    .lesson-number {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 12px;
+    }
+    .lesson-title {
+      font-size: clamp(26px, 5vw, 40px); font-weight: 700;
+      line-height: 1.2; margin-bottom: 16px;
+    }
+    .lesson-subtitle {
+      font-size: 17px; color: var(--muted);
+      max-width: 520px; margin: 0 auto 24px;
+    }
+    .mission-tag {
+      display: inline-block; background: rgba(108,143,255,0.12);
+      border: 1px solid rgba(108,143,255,0.3); color: var(--accent);
+      font-size: 13px; padding: 6px 14px; border-radius: 999px;
+    }
+
+    /* ─── LAYOUT ─── */
+    .container { max-width: 680px; margin: 0 auto; padding: 0 20px; }
+    .section { margin-top: 52px; }
+    .section-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent2); margin-bottom: 20px;
+    }
+    h2 {
+      font-size: clamp(20px, 3.5vw, 26px); font-weight: 700;
+      line-height: 1.3; margin-bottom: 10px;
+    }
+    .lead {
+      color: var(--muted); font-size: 16px; line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    /* ─── SCENARIO BLOCK ─── */
+    .scenario {
+      background: var(--surface); border: 1px solid var(--border);
+      border-left: 3px solid var(--accent2); border-radius: 10px;
+      padding: 20px 22px; margin-bottom: 28px; font-size: 15px;
+      color: var(--muted); line-height: 1.7;
+    }
+    .scenario strong { color: var(--text); }
+
+    /* ─── PHRASE CARD ─── */
+    .phrase-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px 22px; margin-bottom: 12px;
+    }
+    .phrase-bangla {
+      font-size: 22px; font-weight: 700; color: var(--accent);
+      letter-spacing: 0.01em; margin-bottom: 4px;
+    }
+    .phrase-pronounce {
+      font-size: 13px; color: var(--muted); margin-bottom: 8px;
+    }
+    .phrase-english {
+      font-size: 15px; color: var(--text); margin-bottom: 8px;
+    }
+    .phrase-context {
+      font-size: 13px; color: var(--small); line-height: 1.6;
+    }
+
+    /* ─── DHAKA NOTE ─── */
+    .dhaka-note {
+      background: rgba(251,191,36,0.08); border: 1px solid rgba(251,191,36,0.25);
+      border-radius: 8px; padding: 12px 16px; margin-top: 10px;
+      font-size: 13px; color: var(--amber); line-height: 1.6;
+    }
+    .dhaka-note::before {
+      content: "📝 Note · ";
+      font-weight: 700;
+    }
+
+    /* ─── DIALOGUE EXCHANGE ─── */
+    .dialogue { margin-bottom: 14px; }
+    .dialogue-row {
+      display: flex; gap: 12px; align-items: flex-start; margin-bottom: 8px;
+    }
+    .speaker-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 3px 9px; border-radius: 999px;
+      white-space: nowrap; margin-top: 2px; flex-shrink: 0;
+    }
+    .speaker-them {
+      background: rgba(167,139,250,0.15); color: var(--accent2);
+    }
+    .speaker-you {
+      background: rgba(108,143,255,0.15); color: var(--accent);
+    }
+    .dialogue-text { font-size: 15px; line-height: 1.6; }
+    .dialogue-text .phrase { font-weight: 600; color: var(--text); }
+    .dialogue-text .translation { color: var(--muted); font-size: 14px; }
+    .dialogue-note {
+      margin-left: 0; padding: 8px 14px 8px 14px;
+      border-left: 2px solid var(--border);
+      font-size: 13px; color: var(--small); margin-bottom: 6px;
+    }
+
+    /* ─── DIVIDER ─── */
+    hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+    /* ─── RETRIEVAL CARDS ─── */
+    .recall-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px 22px; margin-bottom: 12px;
+      cursor: pointer; transition: border-color 0.15s;
+    }
+    .recall-card:hover { border-color: var(--accent); }
+    .recall-prompt { font-size: 15px; color: var(--text); margin-bottom: 12px; }
+    .recall-reveal {
+      display: none; background: var(--surface); border-radius: 8px;
+      padding: 14px 16px; margin-top: 4px;
+    }
+    .recall-reveal.shown { display: block; }
+    .recall-answer {
+      font-size: 19px; font-weight: 700; color: var(--green); margin-bottom: 4px;
+    }
+    .recall-translation { font-size: 14px; color: var(--muted); }
+    .recall-hint {
+      font-size: 12px; color: var(--small); text-align: right; margin-top: 10px;
+    }
+
+    /* ─── QUIZ ─── */
+    .quiz-block {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 28px 24px; margin-bottom: 20px;
+    }
+    .quiz-number {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--small); margin-bottom: 10px;
+    }
+    .quiz-prompt {
+      font-size: 16px; color: var(--muted); margin-bottom: 6px; line-height: 1.5;
+    }
+    .quiz-stimulus {
+      font-size: 22px; font-weight: 700; color: var(--accent2);
+      margin-bottom: 20px; line-height: 1.3;
+    }
+    .quiz-options { display: flex; flex-direction: column; gap: 10px; }
+    .quiz-option {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 14px 18px; cursor: pointer;
+      transition: all 0.15s; font-size: 15px; line-height: 1.5;
+      text-align: left;
+    }
+    .quiz-option:hover:not(:disabled) { border-color: var(--accent); }
+    .quiz-option.correct { border-color: var(--green); background: rgba(52,211,153,0.1); color: var(--green); }
+    .quiz-option.wrong   { border-color: var(--red);   background: rgba(248,113,113,0.1); color: var(--red); }
+    .quiz-option:disabled { cursor: default; }
+    .quiz-feedback {
+      margin-top: 14px; padding: 12px 16px; border-radius: 8px;
+      font-size: 14px; line-height: 1.6; display: none;
+    }
+    .quiz-feedback.correct-fb { background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.3); color: var(--green); }
+    .quiz-feedback.wrong-fb   { background: rgba(248,113,113,0.1); border: 1px solid rgba(248,113,113,0.3); color: var(--red); }
+
+    /* ─── PROGRESS ─── */
+    .quiz-progress {
+      display: flex; gap: 6px; margin-bottom: 24px; flex-wrap: wrap;
+    }
+    .progress-pip {
+      width: 28px; height: 5px; border-radius: 3px;
+      background: var(--border); transition: background 0.3s;
+    }
+    .progress-pip.done-correct { background: var(--green); }
+    .progress-pip.done-wrong   { background: var(--red); }
+
+    /* ─── SCORE ─── */
+    .quiz-score {
+      text-align: center; padding: 32px 20px; display: none;
+    }
+    .quiz-score.visible { display: block; }
+    .score-number { font-size: 56px; font-weight: 800; color: var(--green); }
+    .score-label  { font-size: 17px; color: var(--muted); margin-top: 8px; }
+    .score-message { font-size: 15px; color: var(--text); margin-top: 16px; max-width: 360px; margin-left: auto; margin-right: auto; }
+
+    /* ─── CHALLENGE ─── */
+    .challenge {
+      background: linear-gradient(135deg, rgba(108,143,255,0.08), rgba(167,139,250,0.08));
+      border: 1px solid rgba(108,143,255,0.3);
+      border-radius: 14px; padding: 28px 24px;
+    }
+    .challenge-title {
+      font-size: 13px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
+    }
+    .challenge p { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 12px; }
+    .challenge p:last-child { margin-bottom: 0; }
+    .challenge strong { color: var(--text); }
+
+    @media (max-width: 480px) {
+      .lesson-header { padding: 36px 20px 32px; }
+      .quiz-stimulus { font-size: 18px; }
+      .phrase-bangla { font-size: 19px; }
+    }
+
+    /* ─── SITE NAV ─── */
+    .site-nav { position: sticky; top: 0; z-index: 50; background: rgba(15,17,23,0.9); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    .site-nav-inner { max-width: 700px; margin: 0 auto; padding: 11px 20px; display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+    .site-nav-brand { font-size: 14px; font-weight: 800; color: var(--text); text-decoration: none; letter-spacing: -0.2px; white-space: nowrap; }
+    .site-nav-brand span { color: var(--accent2); }
+    .site-nav-links { display: flex; gap: 16px; }
+    .site-nav-links a { font-size: 13px; font-weight: 600; color: var(--muted); text-decoration: none; transition: color 0.15s; white-space: nowrap; }
+    .site-nav-links a:hover, .site-nav-links a.active { color: var(--accent); }
+    .site-footer-nav { max-width: 700px; margin: 48px auto 0; padding: 28px 20px 8px; border-top: 1px solid var(--border); }
+    .site-footer-nav-links { display: flex; justify-content: center; flex-wrap: wrap; font-size: 13px; }
+    .site-footer-nav-links a { color: var(--muted); text-decoration: none; font-weight: 600; }
+    .site-footer-nav-links a:hover { color: var(--accent); }
+    .site-footer-nav-links .sep { color: var(--border); margin: 0 10px; }
+    .site-footer-prevnext { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 18px; flex-wrap: wrap; }
+    .site-footer-prevnext a { font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 600; }
+    @media (max-width: 480px) {
+      .site-nav-links { gap: 12px; }
+      .site-nav-brand { font-size: 13px; }
+    }
+
+    /* ─── FEEDBACK ─── */
+    .feedback-section { margin-top: 44px; }
+    .feedback-section-label { font-size:13px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+    .feedback-section h2 { font-size:20px; font-weight:800; color:var(--text); line-height:1.2; margin-bottom:8px; }
+    .feedback-section p { font-size:14px; color:var(--muted); line-height:1.6; }
+    .feedback-card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:22px 24px; margin-top:16px; }
+    .feedback-card-alt { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:22px 24px; margin-top:16px; }
+    .feedback-field-label { font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:6px; }
+    .feedback-input { width:100%; background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:10px 14px; color:var(--text); font-size:14px; outline:none; box-sizing:border-box; font-family:inherit; transition:border-color 0.15s; }
+    .feedback-textarea { width:100%; background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:10px 14px; color:var(--text); font-size:14px; outline:none; box-sizing:border-box; resize:vertical; line-height:1.5; font-family:inherit; transition:border-color 0.15s; }
+    .feedback-input:focus, .feedback-textarea:focus { border-color:var(--accent); }
+    .feedback-btn { background:var(--accent); color:#fff; border:none; border-radius:8px; padding:10px 22px; font-size:14px; font-weight:700; cursor:pointer; transition:opacity 0.15s; }
+    .feedback-btn:hover:not(:disabled) { opacity:0.9; }
+    .feedback-btn:disabled { opacity:0.45; cursor:default; }
+    .feedback-btn-ghost { background:none; border:none; color:var(--small); font-size:12px; cursor:pointer; text-decoration:underline; padding:0; font-family:inherit; }
+    .feedback-entry { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:8px; font-size:13px; line-height:1.7; }
+    .feedback-entries-label { font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin:16px 0 10px; }
+
+    /* ─── TUMI NOTE ─── */
+    .tumi-note {
+      background: rgba(52,211,153,0.06);
+      border: 1px solid rgba(52,211,153,0.2);
+      border-left: 3px solid var(--green);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-top: 12px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .tumi-note strong {
+      color: var(--green);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* ─── FAMILY NOTE ─── */
+    .family-note {
+      background: rgba(251,191,36,0.06);
+      border: 1px solid rgba(251,191,36,0.25);
+      border-left: 3px solid var(--amber);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-top: 12px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .family-note strong {
+      color: var(--amber);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: block;
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="../index.html" class="site-nav-brand">Learn <span>Bangla</span></a>
+    <div class="site-nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../reference/pronunciation-guide.html">Pronunciation</a>
+      <a href="../reference/glossary.html">Glossary</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<div class="lesson-header">
+  <div class="lesson-number">Lesson 3 · Spoken Bangla for Family</div>
+  <h1 class="lesson-title">They're Asking<br>About You</h1>
+  <p class="lesson-subtitle">You can greet, you can survive the meal. Now the questions turn to you — your work, your health, your life. Here's how to answer.</p>
+  <span class="mission-tag">Over tea, when the spotlight lands on you</span>
+</div>
+
+<div class="container">
+
+  <!-- SECTION: WARM-UP -->
+  <div class="section">
+    <div class="section-label">Warm-up · Retrieval Practice</div>
+    <h2>Before we start — recall these</h2>
+    <p class="lead">From your last two lessons. Say the answer out loud <em>before</em> you tap to reveal. The struggle to remember is the point.</p>
+
+    <div class="recall-card" onclick="toggleRecall(this)">
+      <div class="recall-prompt">What do you call your mother-in-law? (Careful — remember what your wife told you.)</div>
+      <div class="recall-reveal">
+        <div class="recall-answer">Ammu</div>
+        <div class="recall-translation">AM-mu — her family's form. Not Amma — your wife calls her mum Ammu, and so should you.</div>
+      </div>
+      <div class="recall-hint">Tap to reveal</div>
+    </div>
+
+    <div class="recall-card" onclick="toggleRecall(this)">
+      <div class="recall-prompt">You want water at the table. What do you ask for — in her family's word?</div>
+      <div class="recall-reveal">
+        <div class="recall-answer">Pani deben?</div>
+        <div class="recall-translation">PAA-ni DE-ben — "could you give water?" Her family says <em>pani</em>, not jol.</div>
+      </div>
+      <div class="recall-hint">Tap to reveal</div>
+    </div>
+
+    <div class="recall-card" onclick="toggleRecall(this)">
+      <div class="recall-prompt">Amma says "Aro neen!" (take more). What's the graceful response?</div>
+      <div class="recall-reveal">
+        <div class="recall-answer">Jee, ektu nebo</div>
+        <div class="recall-translation">jee, EK-tu NE-bo — "yes, I'll take a little." Accepts the hospitality without overcommitting.</div>
+      </div>
+      <div class="recall-hint">Tap to reveal</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- SECTION: SCENARIO -->
+  <div class="section">
+    <div class="section-label">The Scenario</div>
+    <h2>The spotlight turns to you</h2>
+
+    <div class="scenario">
+      The tea is poured. You've said <strong>khub shundor hoyeche</strong> and everyone smiled.
+      Then Ammu sets down her cup, looks at you warmly, and asks:
+      <strong>"Kaj kemon cholche?"</strong> — how's work going?<br><br>
+      Every visit reaches this moment. They want to know about <em>you</em> — your work, your health,
+      your family back home. Until now you could only smile and look at your wife.
+      This lesson gives you real answers.
+    </div>
+  </div>
+
+  <!-- SECTION: CORE PHRASES -->
+  <div class="section">
+    <div class="section-label">Core Phrases · Talking About Yourself</div>
+    <h2>Six answers that carry the conversation</h2>
+    <p class="lead">Short, honest, warm. You don't need long sentences — you need the right short ones.</p>
+
+    <div class="phrase-card">
+      <div class="phrase-bangla">Bhalo cholche</div>
+      <div class="phrase-pronounce">BHAA-lo CHOL-che</div>
+      <div class="phrase-english">"It's going well" — your answer to "kaj kemon cholche?"</div>
+      <div class="phrase-context">Literally "it's moving well". Works for work, projects, life in general. Your single most useful answer this lesson.</div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-bangla">Ami khub byasto</div>
+      <div class="phrase-pronounce">AA-mi khub BYAS-to</div>
+      <div class="phrase-english">"I'm very busy"</div>
+      <div class="phrase-context">The honest follow-up when work is hectic. Often paired: "Bhalo cholche — khub byasto!" (Going well — very busy!). Universally understood and always sympathized with.</div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-bangla">Shobai bhalo ache</div>
+      <div class="phrase-pronounce">SHO-bai BHAA-lo AA-che</div>
+      <div class="phrase-english">"Everyone is well" — when they ask about your family</div>
+      <div class="phrase-context">Shobai = everyone. When they ask about your parents or your side of the family, this is the warm, complete answer.</div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-bangla">Alhamdulillah</div>
+      <div class="phrase-pronounce">al-HAM-du-lil-laah</div>
+      <div class="phrase-english">"Praise be to God — all is well"</div>
+      <div class="phrase-context">In a Muslim household, this is the most natural possible answer to "how are you / how's everything?" It expresses gratitude and wellbeing in one word. Using it will land beautifully.</div>
+      <div class="dhaka-note">You'll hear this constantly — as an answer, as a response to good news, after a meal. It works alone or after a phrase: "Bhalo achi, alhamdulillah."</div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-bangla">Ektu ektu shikhchi</div>
+      <div class="phrase-pronounce">EK-tu EK-tu SHIKH-chi</div>
+      <div class="phrase-english">"I'm learning little by little" — about your Bangla</div>
+      <div class="phrase-context">The moment they realise you're speaking Bangla, someone will ask if you're learning. This is your answer — modest, charming, and it will delight the entire room. Possibly the highest-value phrase in this course.</div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-bangla">Ar apni?</div>
+      <div class="phrase-pronounce">aar AP-ni</div>
+      <div class="phrase-english">"And you?" — return the question</div>
+      <div class="phrase-context">The conversation multiplier. Answer, then bounce it back: "Bhalo achi — ar apni?" Suddenly you're not being interviewed, you're having a conversation.</div>
+      <div class="tumi-note">
+        <strong>With friends (tumi)</strong>
+        <strong style="color:var(--green);font-size:15px;text-transform:none;letter-spacing:0;display:inline">Ar tumi?</strong> — aar TU-mi — with your wife's friends, swap apni for tumi. "Bhalo achi — ar tumi?"
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- SECTION: LISTENING -->
+  <div class="section">
+    <div class="section-label">Listening Practice · What You'll Hear</div>
+    <h2>The questions coming your way</h2>
+    <p class="lead">These are the four questions you will actually be asked, in roughly this order. Recognise them, and you'll never be caught off guard.</p>
+
+    <div class="dialogue">
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-them">Them</span>
+        <div class="dialogue-text">
+          <div class="phrase">Kaj kemon cholche?</div>
+          <div class="translation">kaaj KE-mon CHOL-che · "How's work going?"</div>
+        </div>
+      </div>
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-you">You</span>
+        <div class="dialogue-text">
+          <div class="phrase">Bhalo cholche, dhônnobad. Ar apni?</div>
+          <div class="translation">"Going well, thank you. And you?"</div>
+        </div>
+      </div>
+      <div class="dialogue-note">If it's been hectic, add: "khub byasto!" — they'll nod knowingly.</div>
+    </div>
+
+    <div class="dialogue">
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-them">Them</span>
+        <div class="dialogue-text">
+          <div class="phrase">Apni ki kaj koren?</div>
+          <div class="translation">AP-ni ki kaaj KO-ren · "What work do you do?"</div>
+        </div>
+      </div>
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-you">You</span>
+        <div class="dialogue-text">
+          <div class="phrase">Ami [your job]-e kaj kori</div>
+          <div class="translation">AA-mi ...-e kaaj KO-ri · "I work in/at [your job]" — e.g. "Ami office-e kaj kori"</div>
+        </div>
+      </div>
+      <div class="dialogue-note">Your job title in English inside a Bangla sentence is completely normal — everyone does it. "Ami software-e kaj kori" works perfectly.</div>
+      <div class="tumi-note">
+        <strong>With friends (tumi)</strong>
+        <strong style="color:var(--green);font-size:15px;text-transform:none;letter-spacing:0;display:inline">Tumi ki kaj koro?</strong> — TU-mi ki kaaj KO-ro — a friend asking you the same question. The <em>-en</em> ending (apni) becomes <em>-o</em> (tumi).
+      </div>
+    </div>
+
+    <div class="dialogue">
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-them">Them</span>
+        <div class="dialogue-text">
+          <div class="phrase">Bangla shikhchen?!</div>
+          <div class="translation">BAANG-laa SHIKH-chen · "You're learning Bangla?!" — said with delight</div>
+        </div>
+      </div>
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-you">You</span>
+        <div class="dialogue-text">
+          <div class="phrase">Jee, ektu ektu shikhchi!</div>
+          <div class="translation">"Yes, I'm learning little by little!"</div>
+        </div>
+      </div>
+      <div class="dialogue-note">Expect applause, laughter, and someone immediately teaching you five more words. This is the best moment of the visit.</div>
+      <div class="tumi-note">
+        <strong>With friends (tumi)</strong>
+        <strong style="color:var(--green);font-size:15px;text-transform:none;letter-spacing:0;display:inline">Bangla shikhcho?</strong> — BAANG-laa SHIKH-cho — how a friend would ask it. The <em>-chen</em> ending (apni) becomes <em>-cho</em> (tumi).
+      </div>
+    </div>
+
+    <div class="dialogue">
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-them">Them</span>
+        <div class="dialogue-text">
+          <div class="phrase">Shoreer kemon?</div>
+          <div class="translation">SHO-reer KE-mon · "How's your health?"</div>
+        </div>
+      </div>
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-you">You</span>
+        <div class="dialogue-text">
+          <div class="phrase">Jee, bhalo. Alhamdulillah.</div>
+          <div class="translation">"Good, thank God."</div>
+        </div>
+      </div>
+      <div class="dialogue-note">You learned to <em>ask</em> this in Lesson 2 — now you can answer it too. Return it to an elder and watch them warm up: "Apnar shoreer kemon?"</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- SECTION: QUIZ -->
+  <div class="section">
+    <div class="section-label">Practice · Mixed Retrieval</div>
+    <h2>Old and new, shuffled together</h2>
+    <p class="lead">This quiz deliberately mixes this lesson with Lessons 1 and 2 — that's how memory gets stronger. One chance per question.</p>
+
+    <div class="quiz-progress" id="quizProgress"></div>
+
+    <div id="quizContainer"></div>
+    <div class="quiz-score" id="quizScore">
+      <div class="score-number" id="scoreNum"></div>
+      <div class="score-label">correct</div>
+      <div class="score-message" id="scoreMsg"></div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- SECTION: CHALLENGE -->
+  <div class="section">
+    <div class="section-label">Real-World Challenge</div>
+    <div class="challenge">
+      <div class="challenge-title">Before the next session</div>
+      <p>On the next call or visit, when anyone asks about your work or your day, answer in Bangla: <strong>"Bhalo cholche"</strong> — then return the question: <strong>"Ar apni?"</strong> (or <strong>"Ar tumi?"</strong> to a friend).</p>
+      <p>Gold-star version: find a moment to say <strong>"Ektu ektu Bangla shikhchi"</strong> to someone who doesn't know you're learning. Watch what happens.</p>
+      <p>And remember the family forms: it's <strong>Ammu</strong>, and it's <strong>pani</strong>.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <hr style="border:none; border-top:1px solid var(--border); margin: 0 0 44px;">
+
+    <!-- FAMILY FEEDBACK -->
+    <div class="feedback-section">
+      <div class="feedback-section-label">Her Family</div>
+      <h2>How does her family say it?</h2>
+      <p>Note any phrases her family says differently. Notes are saved to the repo and picked up automatically next time the teach skill runs.</p>
+
+      <div id="fb-setup" class="feedback-card-alt">
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--amber); margin-bottom:10px;">One-time setup</div>
+        <p style="font-size:13px; color:var(--muted); margin-bottom:14px; line-height:1.5;">
+          Enter a GitHub Personal Access Token with <strong style="color:var(--text)">Contents: Read &amp; Write</strong>
+          on this repo to save notes directly.
+          <a href="https://github.com/settings/tokens?type=beta" target="_blank" style="color:var(--accent);">Create one here ↗</a>
+        </p>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <input id="fb-pat" type="password" class="feedback-input" placeholder="github_pat_..." style="flex:1; min-width:200px;" />
+          <button class="feedback-btn" onclick="fbSavePat()">Save token</button>
+        </div>
+      </div>
+
+      <div id="fb-form" class="feedback-card" style="display:none;">
+        <div style="margin-bottom:14px;">
+          <label class="feedback-field-label" for="fb-phrase">Phrase from this lesson</label>
+          <input id="fb-phrase" type="text" class="feedback-input" placeholder="e.g. bhalo cholche" />
+        </div>
+        <div style="margin-bottom:14px;">
+          <label class="feedback-field-label" for="fb-family">Her family says</label>
+          <input id="fb-family" type="text" class="feedback-input" placeholder="e.g. bhaloi cholche" />
+        </div>
+        <div style="margin-bottom:18px;">
+          <label class="feedback-field-label" for="fb-notes">Notes <span style="color:var(--small); font-weight:400; text-transform:none; font-size:11px;">(optional)</span></label>
+          <textarea id="fb-notes" class="feedback-textarea" rows="2" placeholder="e.g. older family members use this form"></textarea>
+        </div>
+        <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+          <button id="fb-btn" class="feedback-btn" onclick="fbSubmit()">Save note</button>
+          <span id="fb-status" style="font-size:13px; color:var(--muted); flex:1;"></span>
+          <button class="feedback-btn-ghost" onclick="fbClearPat()">Change token</button>
+        </div>
+      </div>
+
+      <div id="fb-entries"></div>
+    </div>
+  </div>
+
+  <nav class="site-footer-nav">
+    <div class="site-footer-prevnext">
+      <a href="0002-cha-khorben-tea-and-hospitality.html">← Prev: Tea &amp; Hospitality</a>
+      <a href="../index.html">All Lessons →</a>
+    </div>
+    <div class="site-footer-nav-links">
+      <a href="../index.html">Home</a><span class="sep">·</span>
+      <a href="../reference/pronunciation-guide.html">Pronunciation</a><span class="sep">·</span>
+      <a href="../reference/glossary.html">Glossary</a>
+    </div>
+  </nav>
+
+</div><!-- /container -->
+
+<script>
+  // ─── RECALL TOGGLE ───────────────────────────────────────
+  function toggleRecall(card) {
+    const reveal = card.querySelector('.recall-reveal');
+    const hint   = card.querySelector('.recall-hint');
+    reveal.classList.toggle('shown');
+    hint.style.display = reveal.classList.contains('shown') ? 'none' : 'block';
+  }
+
+  // ─── QUIZ DATA (interleaved: L3 new + L1/L2 review) ──────
+  const questions = [
+    {
+      prompt: "Ammu asks:",
+      stimulus: "Kaj kemon cholche?",
+      translation: "(How's work going?)",
+      options: [
+        { text: "Bhalo cholche, dhônnobad. Ar apni?", correct: true,  feedback: "Perfect — answered, thanked, and returned the question. That's a conversation, not an interview." },
+        { text: "Jee, kheyechi.",                     correct: false, feedback: "'Kheyechi' means 'I've eaten' — that's the answer to bhaat kheyechen, not a work question." },
+        { text: "Ashun, ashun.",                      correct: false, feedback: "'Come in, come in' — you're already inside! Listen for 'kaj' (work) in the question." },
+      ]
+    },
+    {
+      prompt: "Review from Lesson 2 — they insist:",
+      stimulus: "Aro neen!",
+      translation: "(Take more!)",
+      options: [
+        { text: "Bhalo cholche.",   correct: false, feedback: "'It's going well' answers a work question — this is a food offer. 'Jee, ektu nebo' is the graceful move." },
+        { text: "Jee, ektu nebo.",  correct: true,  feedback: "Still got it. 'A little' accepts the love without overcommitting your stomach." },
+        { text: "Ar apni?",         correct: false, feedback: "'And you?' doesn't work here — they're offering you food, not asking a question." },
+      ]
+    },
+    {
+      prompt: "Someone realises you've been speaking Bangla and asks, delighted:",
+      stimulus: "Bangla shikhchen?!",
+      translation: "(You're learning Bangla?!)",
+      options: [
+        { text: "Na, khainai.",               correct: false, feedback: "'No, I haven't eaten' — wrong question! 'Shikhchen' is about learning, not eating." },
+        { text: "Jee, ektu ektu shikhchi!",   correct: true,  feedback: "The charmer. Modest, warm, and the whole room just fell in love with you." },
+        { text: "Khub mishti.",               correct: false, feedback: "'Very sweet' is for desserts. Save it for the mishti — this question is about your Bangla." },
+      ]
+    },
+    {
+      prompt: "You need water at the table. Using her family's word, you ask:",
+      stimulus: "Asking for water",
+      translation: "(Remember the family feedback)",
+      options: [
+        { text: "Jol deben?",   correct: false, feedback: "Understood — but her family says 'pani', not 'jol'. At their table, ask for pani." },
+        { text: "Pani deben?",  correct: true,  feedback: "Exactly — pani is her family's word. This is the form you'll hear and the one to use." },
+        { text: "Cha khaben?",  correct: false, feedback: "That's offering tea to someone else! To ask for water: 'pani deben?'" },
+      ]
+    },
+    {
+      prompt: "An elder asks about your family back home:",
+      stimulus: "Apnar family kemon ache?",
+      translation: "(How is your family?)",
+      options: [
+        { text: "Shobai bhalo ache, alhamdulillah.", correct: true,  feedback: "Beautiful — 'everyone is well, praise God.' The complete, warm answer." },
+        { text: "Ami khub byasto.",                  correct: false, feedback: "'I'm very busy' answers a work question. They asked about your family — 'shobai bhalo ache.'" },
+        { text: "Khub shundor hoyeche.",             correct: false, feedback: "That's the food compliment! Your family is (hopefully) not a dish. 'Shobai bhalo ache.'" },
+      ]
+    },
+    {
+      prompt: "Your wife's friend — same age as you — asks: \"Kemon acho?\" You answer and return the question:",
+      stimulus: "Kemon acho?",
+      translation: "(How are you? — from a friend, tumi register)",
+      options: [
+        { text: "Bhalo achi — ar apni?",  correct: false, feedback: "So close — but 'apni' is too formal for her friend. Match their register: 'ar tumi?'" },
+        { text: "Bhalo achi — ar tumi?",  correct: true,  feedback: "Register mastered. Apni for elders, tumi for friends — you just switched correctly in real time." },
+        { text: "Ki khabe?",              correct: false, feedback: "'What will you have?' — you're the guest, not the host! Answer the greeting first: 'bhalo achi, ar tumi?'" },
+      ]
+    },
+  ];
+
+  let current = 0;
+  let score = 0;
+  const results = [];
+
+  function buildProgress() {
+    const bar = document.getElementById('quizProgress');
+    bar.innerHTML = questions.map((_, i) => `<div class="progress-pip" id="pip-${i}"></div>`).join('');
+  }
+
+  function renderQuestion(i) {
+    const q = questions[i];
+    const container = document.getElementById('quizContainer');
+    container.innerHTML = `
+      <div class="quiz-block">
+        <div class="quiz-number">Question ${i + 1} of ${questions.length}</div>
+        <div class="quiz-prompt">${q.prompt}</div>
+        <div class="quiz-stimulus">${q.stimulus}<br><span style="font-size:14px;font-weight:400;color:var(--muted)">${q.translation}</span></div>
+        <div class="quiz-options">
+          ${q.options.map((opt, j) => `
+            <button class="quiz-option" onclick="answer(${i}, ${j})">${opt.text}</button>
+          `).join('')}
+        </div>
+        <div class="quiz-feedback" id="feedback-${i}"></div>
+      </div>
+    `;
+  }
+
+  function answer(qi, optIdx) {
+    const q = questions[qi];
+    const opt = q.options[optIdx];
+    const buttons = document.querySelectorAll('.quiz-option');
+    const feedback = document.getElementById(`feedback-${qi}`);
+
+    buttons.forEach(b => b.disabled = true);
+
+    if (opt.correct) {
+      buttons[optIdx].classList.add('correct');
+      feedback.className = 'quiz-feedback correct-fb';
+      feedback.textContent = '✓ ' + opt.feedback;
+      score++;
+      document.getElementById(`pip-${qi}`).className = 'progress-pip done-correct';
+    } else {
+      buttons[optIdx].classList.add('wrong');
+      feedback.className = 'quiz-feedback wrong-fb';
+      feedback.textContent = '✗ ' + opt.feedback;
+      // reveal correct
+      q.options.forEach((o, j) => { if (o.correct) buttons[j].classList.add('correct'); });
+      document.getElementById(`pip-${qi}`).className = 'progress-pip done-wrong';
+    }
+    feedback.style.display = 'block';
+    results.push(opt.correct);
+
+    setTimeout(() => {
+      current++;
+      if (current < questions.length) {
+        renderQuestion(current);
+      } else {
+        showScore();
+      }
+    }, 2200);
+  }
+
+  function showScore() {
+    document.getElementById('quizContainer').innerHTML = '';
+    const scoreEl = document.getElementById('quizScore');
+    scoreEl.classList.add('visible');
+    document.getElementById('scoreNum').textContent = `${score}/${questions.length}`;
+
+    let msg = '';
+    if (score === questions.length) {
+      msg = "Perfect — including the register switch. You're ready to hold your own over tea.";
+    } else if (score >= questions.length - 1) {
+      msg = "Strong result. Review the one you missed — one more pass and it's yours.";
+    } else if (score >= Math.floor(questions.length / 2)) {
+      msg = "Solid. The mixed old/new format is deliberately hard — re-read the dialogues and try once more.";
+    } else {
+      msg = "The interleaving makes this tough — that's by design. Re-read the phrases, then retry the quiz.";
+    }
+    document.getElementById('scoreMsg').textContent = msg;
+  }
+
+  buildProgress();
+  renderQuestion(0);
+</script>
+
+<script>
+(function () {
+  var hostname = window.location.hostname;
+  var ghMatch = hostname.match(/^(.+)\.github\.io$/);
+  var owner = ghMatch ? ghMatch[1] : 'anth87';
+  var pathParts = window.location.pathname.split('/').filter(Boolean);
+  var repo = ghMatch ? (pathParts[0] || 'learn-bangla') : 'learn-bangla';
+  var slug = window.location.pathname.split('/').pop().replace('.html', '');
+  var feedbackFile = 'feedback/' + slug + '-feedback.md';
+  var apiUrl = 'https://api.github.com/repos/' + owner + '/' + repo + '/contents/' + feedbackFile;
+  var PAT_KEY = 'teach_skill_github_pat';
+
+  function getPat() { return localStorage.getItem(PAT_KEY); }
+
+  window.fbSavePat = function () {
+    var val = document.getElementById('fb-pat').value.trim();
+    if (!val) return;
+    localStorage.setItem(PAT_KEY, val);
+    fbInit();
+  };
+
+  window.fbClearPat = function () {
+    localStorage.removeItem(PAT_KEY);
+    fbInit();
+  };
+
+  function fbInit() {
+    var pat = getPat();
+    document.getElementById('fb-setup').style.display = pat ? 'none' : 'block';
+    document.getElementById('fb-form').style.display = pat ? 'block' : 'none';
+    if (pat) fbLoad(pat);
+  }
+
+  function fbDecode(b64) {
+    try { return decodeURIComponent(escape(atob(b64.replace(/\n/g, '')))); }
+    catch (e) { return atob(b64.replace(/\n/g, '')); }
+  }
+
+  function fbEncode(str) {
+    try { return btoa(unescape(encodeURIComponent(str))); }
+    catch (e) { return btoa(str); }
+  }
+
+  function fbLoad(pat) {
+    fetch(apiUrl, { headers: { Authorization: 'Bearer ' + pat, Accept: 'application/vnd.github+json' } })
+      .then(function (r) { return r.status === 404 ? null : r.json(); })
+      .then(function (data) { if (data && data.content) fbRender(fbDecode(data.content)); })
+      .catch(function () {});
+  }
+
+  function fbRender(md) {
+    var el = document.getElementById('fb-entries');
+    var blocks = md.split('\n---\n').map(function (b) { return b.trim(); }).filter(Boolean);
+    if (!blocks.length) { el.innerHTML = ''; return; }
+    var html = '<div class="feedback-entries-label">Saved notes (' + blocks.length + ')</div>';
+    blocks.forEach(function (block) {
+      var phrase = (block.match(/\*\*Phrase:\*\* (.+)/) || [])[1] || '';
+      var family = (block.match(/\*\*Her family says:\*\* (.+)/) || [])[1] || '';
+      var notes  = (block.match(/\*\*Notes:\*\* (.+)/) || [])[1] || '';
+      html += '<div class="feedback-entry">';
+      if (phrase) html += '<div><span style="color:var(--muted)">Phrase: </span><strong style="color:var(--accent2)">' + phrase + '</strong></div>';
+      if (family) html += '<div><span style="color:var(--muted)">Family says: </span><strong style="color:var(--green)">' + family + '</strong></div>';
+      if (notes)  html += '<div style="color:var(--small);margin-top:2px">' + notes + '</div>';
+      html += '</div>';
+    });
+    el.innerHTML = html;
+  }
+
+  window.fbSubmit = function () {
+    var pat = getPat();
+    var phrase = document.getElementById('fb-phrase').value.trim();
+    var family = document.getElementById('fb-family').value.trim();
+    var notes  = document.getElementById('fb-notes').value.trim();
+    var status = document.getElementById('fb-status');
+    var btn    = document.getElementById('fb-btn');
+
+    if (!phrase || !family) {
+      status.style.color = 'var(--amber)';
+      status.textContent = 'Both fields are required.';
+      return;
+    }
+
+    btn.disabled = true;
+    status.style.color = 'var(--muted)';
+    status.textContent = 'Saving…';
+
+    var title = document.title.split('—')[0].trim();
+    var date  = new Date().toISOString().slice(0, 10);
+    var entry = '## ' + title + ' — ' + date + '\n\n' +
+      '**Phrase:** ' + phrase + '  \n' +
+      '**Her family says:** ' + family + '  \n' +
+      (notes ? '**Notes:** ' + notes + '  \n' : '') +
+      '\n---\n';
+
+    fetch(apiUrl, { headers: { Authorization: 'Bearer ' + pat, Accept: 'application/vnd.github+json' } })
+      .then(function (r) {
+        if (r.status === 404) return { existing: '', sha: undefined };
+        return r.json().then(function (d) { return { existing: fbDecode(d.content), sha: d.sha }; });
+      })
+      .then(function (f) {
+        var body = { message: 'feedback: ' + slug, content: fbEncode(f.existing + entry), branch: 'main' };
+        if (f.sha) body.sha = f.sha;
+        return fetch(apiUrl, {
+          method: 'PUT',
+          headers: { Authorization: 'Bearer ' + pat, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        });
+      })
+      .then(function (r) {
+        if (!r.ok) return r.json().then(function (e) { throw new Error(e.message || 'API error'); });
+        status.style.color = 'var(--green)';
+        status.textContent = 'Saved!';
+        document.getElementById('fb-phrase').value = '';
+        document.getElementById('fb-family').value = '';
+        document.getElementById('fb-notes').value = '';
+        fbLoad(pat);
+        btn.disabled = false;
+      })
+      .catch(function (e) {
+        status.style.color = 'var(--red)';
+        status.textContent = 'Error: ' + e.message;
+        btn.disabled = false;
+      });
+  };
+
+  fbInit();
+})();
+</script>
+
+</body>
+</html>

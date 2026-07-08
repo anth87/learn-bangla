@@ -46,6 +46,7 @@
 ## Address & Family Titles
 
 **Amma** *(AM-maa)*: Mother / mother-in-law. How you address your mother-in-law directly.
+  - _(family note)_: **Her family says Ammu** *(AM-mu)* — the wife calls her mum Ammu, and the learner should too. Use Ammu, not Amma.
   - _Also heard as_: Ma *(maa)* — used in many families.
 
 **Abba** *(AB-baa)*: Father / father-in-law. How you address your father-in-law directly.
@@ -148,6 +149,27 @@
 
 ---
 
+## Talking About Yourself
+
+**Bhalo cholche** *(BHAA-lo CHOL-che)*: "It's going well" — the answer to "kaj kemon cholche?" (how's work going). Works for work, projects, life.
+
+**Ami khub byasto** *(AA-mi khub BYAS-to)*: "I'm very busy." Natural follow-up to bhalo cholche when work is hectic.
+
+**Shobai bhalo ache** *(SHO-bai BHAA-lo AA-che)*: "Everyone is well" — the answer when they ask about your family. Shobai = everyone.
+
+**Alhamdulillah** *(al-HAM-du-lil-laah)*: "Praise be to God — all is well." The most natural answer to "how are you / how's everything?" in a Muslim household. Works alone or appended: "bhalo achi, alhamdulillah."
+
+**Ektu ektu shikhchi** *(EK-tu EK-tu SHIKH-chi)*: "I'm learning little by little" — the answer to "Bangla shikhchen?" (you're learning Bangla?). Modest and charming.
+  - _Register_: A friend will ask "Bangla shikhcho?" *(SHIKH-cho)* — same question, tumi form.
+
+**Ar apni?** *(aar AP-ni)*: "And you?" — return any question to keep conversation flowing. "Bhalo achi — ar apni?"
+  - _With friends (tumi)_: **Ar tumi?** *(aar TU-mi)*.
+
+**Ami ...-e kaj kori** *(AA-mi ...-e kaaj KO-ri)*: "I work in/at ..." — answer to "apni ki kaj koren?" (what work do you do?). Dropping an English job title into the Bangla sentence is completely normal: "Ami office-e kaj kori."
+  - _Register_: They ask **kaj koren?** (apni) / a friend asks **kaj koro?** (tumi).
+
+---
+
 ## Food & Meals
 
 **Bhaat** *(bhaat)*: Cooked rice. The staple. "Bhaat khawa" = eating (lit. eating rice).
@@ -162,8 +184,9 @@
 
 **Roti** *(RO-ti)*: Flatbread.
 
-**Jol** *(jol)*: Water — the standard Bangla/Shudho Bangla word.
-  - _Also heard as_: Pani *(PAA-ni)* — used in parts of Bangladesh, borrowed from Hindi/Urdu. Both are understood.
+**Pani** *(PAA-ni)*: Water — what to say at her family's table.
+  - _(family note)_: **Her family uses pani, not jol.** Ask for water with "pani deben?" *(PAA-ni DE-ben)*.
+  - _Also heard as_: Jol *(jol)* — the standard/Shudho Bangla word, common in West Bengal. Understood everywhere, but not the family's word.
 
 **Cha** *(chaa)*: Tea. You will be offered this constantly.
 
