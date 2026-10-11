@@ -1306,5 +1306,9 @@
 })();
 </script>
 
+<script>
+  // Always load the latest version (see sw.js)
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('../sw.js');
+</script>
 </body>
 </html>

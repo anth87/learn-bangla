@@ -76,6 +76,7 @@ Every new lesson MUST be linked from `index.html` in the same commit as the less
 - Add a `.lesson-card` after the last existing card (before `<!-- REFERENCE -->`), copying the existing card markup: number, title, a `lesson-bangla` line of key phrases, a one-sentence description, and scenario/skill tags.
 - Update the progress section: the "N lessons available" label, the "N of ~15 planned lessons" caption, and the `.progress-fill` width (N ÷ 15, rounded).
 - Change the previous lesson's footer "All Lessons →" link to "Next: {new title} →" pointing at the new file; the new lesson's footer keeps "All Lessons →".
+- The new lesson must register the service worker just before `</body>` (copy it from an existing lesson): `navigator.serviceWorker.register('../sw.js')`. This is what makes the iPhone Home Screen app pick up new lessons without the learner clearing anything.
 - Verify before committing: every file in `lessons/` must appear in `index.html`:
   `for f in lessons/*.html; do grep -q "$(basename $f)" index.html || echo "MISSING: $f"; done` should print nothing.
 
