@@ -172,17 +172,70 @@
 
 ## Food & Meals
 
+> Lesson 4 groups food the way the table is: rice & bread, fish/meat/egg, dal & veg, sweets & fruit, drinks & the table.
+
+### Rice & bread
+
 **Bhaat** *(bhaat)*: Cooked rice. The staple. "Bhaat khawa" = eating (lit. eating rice).
 
-**Dal** *(daal)*: Lentil soup/curry. A daily staple.
+**Polao** *(PO-laa-o)*: Fragrant rice cooked in ghee with cardamom (pilau). Made for guests; being served polao is an honour.
 
-**Torkari** *(tôr-KA-ri)*: Vegetable dish / curry (general term).
+**Biriyani** *(BI-ri-yaa-ni)*: Biryani. Rice layered with meat, for weddings, Eid, celebrations.
+
+**Khichuri** *(KHI-chu-ri)*: Rice and lentils cooked together. The rainy-day comfort food.
+
+**Roti** *(RO-ti)*: Flatbread.
+
+**Porota** *(PO-ro-taa)*: Paratha, layered fried bread. Weekend breakfast.
+
+### Fish, meat & egg
 
 **Mach** *(maach)*: Fish. Central to Bangladeshi cuisine.
 
-**Mangsho** *(MANG-shô)*: Meat (usually goat/beef in Dhaka households).
+**Ilish mach** *(I-lish maach)*: Hilsa, the national fish. Prized; praising it praises the cook.
 
-**Roti** *(RO-ti)*: Flatbread.
+**Murgi** *(MUR-gi)*: Chicken. The everyday meat.
+
+**Mangsho** *(MANG-shô)*: Meat (general word). Put the animal in front to be specific.
+  - _Also heard as_: Gosht *(gosht)*, from Urdu, common in Muslim households. If her family says gosht, follow them.
+
+**Gorur mangsho** *(GO-rur MANG-shô)*: Beef (lit. cow's meat). Central at Eid-ul-Adha.
+
+**Khashir mangsho** *(KHAA-shir MANG-shô)*: Goat / mutton. The special-occasion meat.
+
+**Dim** *(dim)*: Egg. Dim bhaji = fried egg / omelette.
+
+### Dal & vegetables
+
+**Dal** *(daal)*: Lentil soup/curry. A daily staple. "Dal-bhaat" = the simplest homely meal.
+
+**Shobji** *(SHOB-ji)*: Vegetables (the ingredient).
+
+**Torkari** *(tôr-KAA-ri)*: Vegetable curry (the cooked dish). Shobji is what you buy; torkari is what's cooked.
+
+**Alu** *(AA-lu)*: Potato.
+
+**Begun** *(BE-gun)*: Aubergine / eggplant. Begun bhaji (fried), begun bhorta (mashed).
+
+**Bhorta** *(BHOR-taa)*: Mashed, spiced side dish. Alu bhorta, begun bhorta, shutki bhorta. Very Bangladeshi.
+
+### Sweets & fruit
+
+**Mishti** *(MISH-ti)*: Sweet / sweets / dessert.
+
+**Mishti doi** *(MISH-ti doi)*: Sweet yoghurt set in clay pots. Doi = yoghurt.
+
+**Payesh** *(PAA-yesh)*: Rice pudding with milk and cardamom.
+
+**Shemai** *(SHE-mai)*: Sweet vermicelli. The taste of Eid morning.
+
+**Phol** *(phol)*: Fruit (general word).
+
+**Aam** *(aam)*: Mango.
+
+**Kathal** *(KAA-thaal)*: Jackfruit, the national fruit.
+
+### Drinks & the table
 
 **Pani** *(PAA-ni)*: Water — what to say at her family's table.
   - _(family note)_: **Her family uses pani, not jol.** Ask for water with "pani deben?" *(PAA-ni DE-ben)*.
@@ -190,9 +243,30 @@
 
 **Cha** *(chaa)*: Tea. You will be offered this constantly.
 
-**Mishti** *(MISH-ti)*: Sweet / sweets / dessert.
+**Dudh** *(dudh)*: Milk. Dudh cha = milk tea; rong cha = black tea.
+
+**Lobon** *(LO-bon)*: Salt. "Lobon deben?" = could you pass the salt?
+  - _Also heard as_: Nun *(noon)*, colloquial. Lobon is the Shudho Bangla default.
+
+**Jhal** *(jhaal)*: Spicy (chilli-hot). Not gôrôm, which is temperature-hot. "Jhal lagche?" = is it spicy for you?
 
 **Aro neen** *(AA-ro neen)*: "Take more / have more." What hosts say when serving food — a command that is really a warm invitation.
+  - _Register_: A friend says **nao** *(NAA-o)*; "khan" (eat) becomes **khao** *(KHAA-o)*.
+
+### Talking about food
+
+**Eta ki?** *(E-taa ki)*: "What is this?" Point at a dish and ask. The answer comes back as "Eta ___".
+
+**Ami ___ khub pochondo kori** *(AA-mi ___ khub PO-chon-do KO-ri)*: "I really like ___." E.g. "Ami ilish mach khub pochondo kori."
+
+**Apni ki pochondo koren?** *(AP-ni ki PO-chon-do KO-ren)*: "What do you like?" (formal).
+  - _Register_: With friends: **Tumi ki pochondo koro?** *(TU-mi ki PO-chon-do KO-ro)*.
+
+**Naki** *(NAA-ki)*: "Or" in a question. "Mach naki mangsho?" = fish or meat?
+
+**Diye** *(DI-ye)*: "With." "Dal diye bhaat" = rice with dal.
+
+**Ranna** *(RAAN-naa)*: Cooking (recognition). "Ranna korechi" = I've cooked.
 
 ---
 

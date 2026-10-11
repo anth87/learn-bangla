@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <title>Lesson 4: What's on the Table · Spoken Bangla</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #0f1117;
+      --surface: #1a1d27;
+      --card:    #22263a;
+      --border:  #2e3347;
+      --accent:  #6c8fff;
+      --accent2: #a78bfa;
+      --green:   #34d399;
+      --amber:   #fbbf24;
+      --red:     #f87171;
+      --text:    #e4e8f1;
+      --muted:   #8891a8;
+      --small:   #6b7390;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+
+    /* ─── HEADER ─── */
+    .lesson-header {
+      background: linear-gradient(135deg, #1a1d27 0%, #0f1117 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    .lesson-number {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 12px;
+    }
+    .lesson-title {
+      font-size: clamp(26px, 5vw, 40px); font-weight: 700;
+      line-height: 1.2; margin-bottom: 16px;
+    }
+    .lesson-subtitle {
+      font-size: 17px; color: var(--muted);
+      max-width: 520px; margin: 0 auto 24px;
+    }
+    .mission-tag {
+      display: inline-block; background: rgba(108,143,255,0.12);
+      border: 1px solid rgba(108,143,255,0.3); color: var(--accent);
+      font-size: 13px; padding: 6px 14px; border-radius: 999px;
+    }
+
+    /* ─── LAYOUT ─── */
+    .container { max-width: 680px; margin: 0 auto; padding: 0 20px; }
+    .section { margin-top: 52px; }
+    .section-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent2); margin-bottom: 20px;
+    }
+    h2 {
+      font-size: clamp(20px, 3.5vw, 26px); font-weight: 700;
+      line-height: 1.3; margin-bottom: 10px;
+    }
+    .lead {
+      color: var(--muted); font-size: 16px; line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    /* ─── SCENARIO BLOCK ─── */
+    .scenario {
+      background: var(--surface); border: 1px solid var(--border);
+      border-left: 3px solid var(--accent2); border-radius: 10px;
+      padding: 20px 22px; margin-bottom: 28px; font-size: 15px;
+      color: var(--muted); line-height: 1.7;
+    }
+    .scenario strong { color: var(--text); }
+
+    /* ─── PHRASE CARD ─── */
+    .phrase-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px 22px; margin-bottom: 12px;
+    }
+    .phrase-bangla {
+      font-size: 22px; font-weight: 700; color: var(--accent);
+      letter-spacing: 0.01em; margin-bottom: 4px;
+    }
+    .phrase-pronounce {
+      font-size: 13px; color: var(--muted); margin-bottom: 8px;
+    }
+    .phrase-english {
+      font-size: 15px; color: var(--text); margin-bottom: 8px;
+    }
+    .phrase-context {
+      font-size: 13px; color: var(--small); line-height: 1.6;
+    }
+
+    /* ─── DHAKA NOTE ─── */
+    .dhaka-note {
+      background: rgba(251,191,36,0.08); border: 1px solid rgba(251,191,36,0.25);
+      border-radius: 8px; padding: 12px 16px; margin-top: 10px;
+      font-size: 13px; color: var(--amber); line-height: 1.6;
+    }
+    .dhaka-note::before {
+      content: "📝 Note · ";
+      font-weight: 700;
+    }
+
+    /* ─── DIALOGUE EXCHANGE ─── */
+    .dialogue { margin-bottom: 14px; }
+    .dialogue-row {
+      display: flex; gap: 12px; align-items: flex-start; margin-bottom: 8px;
+    }
+    .speaker-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 3px 9px; border-radius: 999px;
+      white-space: nowrap; margin-top: 2px; flex-shrink: 0;
+    }
+    .speaker-them {
+      background: rgba(167,139,250,0.15); color: var(--accent2);
+    }
+    .speaker-you {
+      background: rgba(108,143,255,0.15); color: var(--accent);
+    }
+    .dialogue-text { font-size: 15px; line-height: 1.6; }
+    .dialogue-text .phrase { font-weight: 600; color: var(--text); }
+    .dialogue-text .translation { color: var(--muted); font-size: 14px; }
+    .dialogue-note {
+      margin-left: 0; padding: 8px 14px 8px 14px;
+      border-left: 2px solid var(--border);
+      font-size: 13px; color: var(--small); margin-bottom: 6px;
+    }
+
+    /* ─── DIVIDER ─── */
+    hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+    /* ─── RETRIEVAL CARDS ─── */
+    .recall-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px 22px; margin-bottom: 12px;
+      cursor: pointer; transition: border-color 0.15s;
+    }
+    .recall-card:hover { border-color: var(--accent); }
+    .recall-prompt { font-size: 15px; color: var(--text); margin-bottom: 12px; }
+    .recall-reveal {
+      display: none; background: var(--surface); border-radius: 8px;
+      padding: 14px 16px; margin-top: 4px;
+    }
+    .recall-reveal.shown { display: block; }
+    .recall-answer {
+      font-size: 19px; font-weight: 700; color: var(--green); margin-bottom: 4px;
+    }
+    .recall-translation { font-size: 14px; color: var(--muted); }
+    .recall-hint {
+      font-size: 12px; color: var(--small); text-align: right; margin-top: 10px;
+    }
+
+    /* ─── QUIZ ─── */
+    .quiz-block {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 28px 24px; margin-bottom: 20px;
+    }
+    .quiz-number {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--small); margin-bottom: 10px;
+    }
+    .quiz-prompt {
+      font-size: 16px; color: var(--muted); margin-bottom: 6px; line-height: 1.5;
+    }
+    .quiz-stimulus {
+      font-size: 22px; font-weight: 700; color: var(--accent2);
+      margin-bottom: 20px; line-height: 1.3;
+    }
+    .quiz-options { display: flex; flex-direction: column; gap: 10px; }
+    .quiz-option {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 14px 18px; cursor: pointer;
+      transition: all 0.15s; font-size: 15px; line-height: 1.5;
+      text-align: left;
+    }
+    .quiz-option:hover:not(:disabled) { border-color: var(--accent); }
+    .quiz-option.correct { border-color: var(--green); background: rgba(52,211,153,0.1); color: var(--green); }
+    .quiz-option.wrong   { border-color: var(--red);   background: rgba(248,113,113,0.1); color: var(--red); }
+    .quiz-option:disabled { cursor: default; }
+    .quiz-feedback {
+      margin-top: 14px; padding: 12px 16px; border-radius: 8px;
+      font-size: 14px; line-height: 1.6; display: none;
+    }
+    .quiz-feedback.correct-fb { background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.3); color: var(--green); }
+    .quiz-feedback.wrong-fb   { background: rgba(248,113,113,0.1); border: 1px solid rgba(248,113,113,0.3); color: var(--red); }
+
+    /* ─── PROGRESS ─── */
+    .quiz-progress {
+      display: flex; gap: 6px; margin-bottom: 24px; flex-wrap: wrap;
+    }
+    .progress-pip {
+      width: 28px; height: 5px; border-radius: 3px;
+      background: var(--border); transition: background 0.3s;
+    }
+    .progress-pip.done-correct { background: var(--green); }
+    .progress-pip.done-wrong   { background: var(--red); }
+
+    /* ─── SCORE ─── */
+    .quiz-score {
+      text-align: center; padding: 32px 20px; display: none;
+    }
+    .quiz-score.visible { display: block; }
+    .score-number { font-size: 56px; font-weight: 800; color: var(--green); }
+    .score-label  { font-size: 17px; color: var(--muted); margin-top: 8px; }
+    .score-message { font-size: 15px; color: var(--text); margin-top: 16px; max-width: 360px; margin-left: auto; margin-right: auto; }
+
+    /* ─── CHALLENGE ─── */
+    .challenge {
+      background: linear-gradient(135deg, rgba(108,143,255,0.08), rgba(167,139,250,0.08));
+      border: 1px solid rgba(108,143,255,0.3);
+      border-radius: 14px; padding: 28px 24px;
+    }
+    .challenge-title {
+      font-size: 13px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
+    }
+    .challenge p { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 12px; }
+    .challenge p:last-child { margin-bottom: 0; }
+    .challenge strong { color: var(--text); }
+
+    @media (max-width: 480px) {
+      .lesson-header { padding: 36px 20px 32px; }
+      .quiz-stimulus { font-size: 18px; }
+      .phrase-bangla { font-size: 19px; }
+    }
+
+    /* ─── SITE NAV ─── */
+    .site-nav { position: sticky; top: 0; z-index: 50; background: rgba(15,17,23,0.9); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    .site-nav-inner { max-width: 700px; margin: 0 auto; padding: 11px 20px; display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+    .site-nav-brand { font-size: 14px; font-weight: 800; color: var(--text); text-decoration: none; letter-spacing: -0.2px; white-space: nowrap; }
+    .site-nav-brand span { color: var(--accent2); }
+    .site-nav-links { display: flex; gap: 16px; }
+    .site-nav-links a { font-size: 13px; font-weight: 600; color: var(--muted); text-decoration: none; transition: color 0.15s; white-space: nowrap; }
+    .site-nav-links a:hover, .site-nav-links a.active { color: var(--accent); }
+    .site-footer-nav { max-width: 700px; margin: 48px auto 0; padding: 28px 20px 8px; border-top: 1px solid var(--border); }
+    .site-footer-nav-links { display: flex; justify-content: center; flex-wrap: wrap; font-size: 13px; }
+    .site-footer-nav-links a { color: var(--muted); text-decoration: none; font-weight: 600; }
+    .site-footer-nav-links a:hover { color: var(--accent); }
+    .site-footer-nav-links .sep { color: var(--border); margin: 0 10px; }
+    .site-footer-prevnext { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 18px; flex-wrap: wrap; }
+    .site-footer-prevnext a { font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 600; }
+    @media (max-width: 480px) {
+      .site-nav-links { gap: 12px; }
+      .site-nav-brand { font-size: 13px; }
+    }
+
+    /* ─── FEEDBACK ─── */
+    .feedback-section { margin-top: 44px; }
+    .feedback-section-label { font-size:13px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+    .feedback-section h2 { font-size:20px; font-weight:800; color:var(--text); line-height:1.2; margin-bottom:8px; }
+    .feedback-section p { font-size:14px; color:var(--muted); line-height:1.6; }
+    .feedback-card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:22px 24px; margin-top:16px; }
+    .feedback-card-alt { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:22px 24px; margin-top:16px; }
+    .feedback-field-label { font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:6px; }
+    .feedback-input { width:100%; background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:10px 14px; color:var(--text); font-size:14px; outline:none; box-sizing:border-box; font-family:inherit; transition:border-color 0.15s; }
+    .feedback-textarea { width:100%; background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:10px 14px; color:var(--text); font-size:14px; outline:none; box-sizing:border-box; resize:vertical; line-height:1.5; font-family:inherit; transition:border-color 0.15s; }
+    .feedback-input:focus, .feedback-textarea:focus { border-color:var(--accent); }
+    .feedback-btn { background:var(--accent); color:#fff; border:none; border-radius:8px; padding:10px 22px; font-size:14px; font-weight:700; cursor:pointer; transition:opacity 0.15s; }
+    .feedback-btn:hover:not(:disabled) { opacity:0.9; }
+    .feedback-btn:disabled { opacity:0.45; cursor:default; }
+    .feedback-btn-ghost { background:none; border:none; color:var(--small); font-size:12px; cursor:pointer; text-decoration:underline; padding:0; font-family:inherit; }
+    .feedback-entry { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:8px; font-size:13px; line-height:1.7; }
+    .feedback-entries-label { font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin:16px 0 10px; }
+
+    /* ─── TUMI NOTE ─── */
+    .tumi-note {
+      background: rgba(52,211,153,0.06);
+      border: 1px solid rgba(52,211,153,0.2);
+      border-left: 3px solid var(--green);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-top: 12px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .tumi-note strong {
+      color: var(--green);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* ─── FAMILY NOTE ─── */
+    .family-note {
+      background: rgba(251,191,36,0.06);
+      border: 1px solid rgba(251,191,36,0.25);
+      border-left: 3px solid var(--amber);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-top: 12px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .family-note strong {
+      color: var(--amber);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* ─── FOOD GROUPS ─── */
+    .plate-group { margin-bottom: 36px; }
+    .plate-head {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 14px;
+    }
+    .plate-icon {
+      width: 40px; height: 40px; border-radius: 12px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; font-size: 20px;
+      background: rgba(167,139,250,0.12); border: 1px solid rgba(167,139,250,0.25);
+    }
+    .plate-title { font-size: 18px; font-weight: 700; line-height: 1.2; }
+    .plate-sub { font-size: 13px; color: var(--small); }
+    .food-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+    }
+    .food-item {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 14px 16px; position: relative;
+    }
+    .food-word { font-size: 18px; font-weight: 700; color: var(--accent); line-height: 1.25; }
+    .food-say  { font-size: 12px; color: var(--muted); margin: 2px 0 6px; }
+    .food-mean { font-size: 14px; color: var(--text); }
+    .food-ctx  { font-size: 12px; color: var(--small); margin-top: 4px; line-height: 1.5; }
+    .review-badge {
+      position: absolute; top: 10px; right: 10px;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--green); background: rgba(52,211,153,0.1);
+      border: 1px solid rgba(52,211,153,0.25); border-radius: 999px; padding: 1px 7px;
+    }
+    .food-grid .dhaka-note, .food-grid .family-note { grid-column: 1 / -1; margin-top: 0; }
+
+    /* ─── SORT GAME ─── */
+    .sort-stage {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 28px 22px; text-align: center;
+    }
+    .sort-count { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--small); margin-bottom: 12px; }
+    .sort-word { font-size: 30px; font-weight: 800; color: var(--accent2); line-height: 1.2; }
+    .sort-say  { font-size: 14px; color: var(--muted); margin: 4px 0 22px; }
+    .sort-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .sort-btn {
+      background: var(--card); border: 1px solid var(--border); color: var(--text);
+      border-radius: 10px; padding: 12px 10px; font-size: 14px; font-weight: 600;
+      cursor: pointer; transition: all 0.15s; font-family: inherit; line-height: 1.3;
+    }
+    .sort-btn:hover:not(:disabled) { border-color: var(--accent); }
+    .sort-btn:disabled { cursor: default; }
+    .sort-btn.correct { border-color: var(--green); background: rgba(52,211,153,0.1); color: var(--green); }
+    .sort-btn.wrong   { border-color: var(--red);   background: rgba(248,113,113,0.1); color: var(--red); }
+    .sort-btn:last-child:nth-child(odd) { grid-column: 1 / -1; }
+    .sort-fb { min-height: 24px; margin-top: 16px; font-size: 14px; color: var(--muted); }
+    .sort-fb strong { color: var(--text); }
+    .sort-again {
+      margin-top: 18px; background: var(--accent); color: #fff; border: none;
+      border-radius: 8px; padding: 10px 22px; font-size: 14px; font-weight: 700;
+      cursor: pointer; font-family: inherit;
+    }
+
+    @media (max-width: 480px) {
+      .food-grid { grid-template-columns: 1fr; }
+      .sort-word { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="../index.html" class="site-nav-brand">Learn <span>Bangla</span></a>
+    <div class="site-nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../reference/pronunciation-guide.html">Pronunciation</a>
+      <a href="../reference/glossary.html">Glossary</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<div class="lesson-header">
+  <div class="lesson-number">Lesson 4 · Spoken Bangla for Family</div>
+  <h1 class="lesson-title">What's on<br>the Table?</h1>
+  <p class="lesson-subtitle">Bhaat, mach, mangsho, mishti. Name every dish Ammu puts down, and tell her which one you love.</p>
+  <span class="mission-tag">The family meal, dish by dish</span>
+</div>
+
+<div class="container">
+
+  <!-- SECTION: WARM-UP -->
+  <div class="section">
+    <div class="section-label">Warm-up · Spaced Review</div>
+    <h2>From two lessons ago: the table</h2>
+    <p class="lead">Lesson 2 was a while back. Say each answer out loud <em>before</em> you tap. If it's slow to come, good: that effort is what makes it stick.</p>
+
+    <div class="recall-card" onclick="toggleRecall(this)">
+      <div class="recall-prompt">Ammu asks if you'll have tea. What did she say?</div>
+      <div class="recall-reveal">
+        <div class="recall-answer">Cha khaben?</div>
+        <div class="recall-translation">chaa KHAA-ben · "Will you have tea?" Notice: Bangla <em>eats</em> tea. Khaben covers eating and drinking.</div>
+      </div>
+      <div class="recall-hint">Tap to reveal</div>
+    </div>
+
+    <div class="recall-card" onclick="toggleRecall(this)">
+      <div class="recall-prompt">You've just tasted her cooking. Which compliment praises how it <em>came out</em>, and which praises its <em>sweetness</em>?</div>
+      <div class="recall-reveal">
+        <div class="recall-answer">Khub shundor hoyeche · Khub mishti</div>
+        <div class="recall-translation">"It's come out beautifully" works for any dish. "Very sweet" is for desserts. Today you'll learn which dishes get which.</div>
+      </div>
+      <div class="recall-hint">Tap to reveal</div>
+    </div>
+
+    <div class="recall-card" onclick="toggleRecall(this)">
+      <div class="recall-prompt">Your plate is being refilled for the third time. How do you say you're full?</div>
+      <div class="recall-reveal">
+        <div class="recall-answer">Ami bhoraa</div>
+        <div class="recall-translation">AA-mi BHO-raa · "I'm full." Expect "aro neen!" anyway. "Jee, ektu nebo" is the graceful surrender.</div>
+      </div>
+      <div class="recall-hint">Tap to reveal</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- SECTION: SCENARIO -->
+  <div class="section">
+    <div class="section-label">The Scenario</div>
+    <h2>Dinner is served</h2>
+
+    <div class="scenario">
+      The table fills up fast. Rice, then a bowl of dal, then fish, then something orange you don't recognise,
+      then chicken, then a second rice that smells of cardamom. Ammu names each one as it lands:
+      <strong>"Eta ilish mach. Eta murgi. Eta polao."</strong><br><br>
+      Right now those are just sounds. By the end of this lesson they're dishes you can name, ask about, and pick favourites from.
+      Food is the topic every Bangladeshi family can talk about for hours. It's your easiest way into the conversation.
+    </div>
+  </div>
+
+  <!-- SECTION: CORE VOCAB -->
+  <div class="section">
+    <div class="section-label">Core Vocabulary · Five Plates</div>
+    <h2>The dishes, grouped the way the table is</h2>
+    <p class="lead">Words marked <span style="color:var(--green);font-weight:700">review</span> are already in your glossary. Aim to <em>recognise</em> all of these, and to <em>say</em> five favourites.</p>
+
+    <!-- PLATE 1 -->
+    <div class="plate-group">
+      <div class="plate-head">
+        <div class="plate-icon">🍚</div>
+        <div>
+          <div class="plate-title">Rice &amp; bread</div>
+          <div class="plate-sub">The base of every meal</div>
+        </div>
+      </div>
+      <div class="food-grid">
+        <div class="food-item"><span class="review-badge">review</span>
+          <div class="food-word">Bhaat</div><div class="food-say">bhaat</div>
+          <div class="food-mean">Plain cooked rice</div>
+          <div class="food-ctx">The centre of the plate. Everything else is eaten <em>with</em> bhaat.</div>
+        </div>
+        <div class="food-item">
+          <div class="food-word">Polao</div><div class="food-say">PO-laa-o</div>
+          <div class="food-mean">Fragrant rice (pilau)</div>
+          <div class="food-ctx">Rice cooked in ghee with cardamom. Made for guests. If you get polao, you're being honoured.</div>
+        </div>
+        <div class="food-item">
+          <div class="food-word">Biriyani</div><div class="food-say">BI-ri-yaa-ni</div>
+          <div class="food-mean">Biryani</div>
+          <div class="food-ctx">Rice layered with meat. Weddings, Eid, celebrations.</div>
+        </div>
+        <div class="food-item">
+          <div class="food-word">Khichuri</div><div class="food-say">KHI-chu-ri</div>
+          <div class="food-mean">Rice &amp; lentils cooked together</div>
+          <div class="food-ctx">The comfort food. Rainy day = khichuri day. Ask about it and you'll get a story.</div>
+        </div>
+        <div class="food-item"><span class="review-badge">review</span>
+          <div class="food-word">Roti</div><div class="food-say">RO-ti</div>
+          <div class="food-mean">Flatbread</div>
+          <div class="food-ctx">Often at breakfast or with a light dinner.</div>
+        </div>
+        <div class="food-item">
+          <div class="food-word">Porota</div><div class="food-say">PO-ro-taa</div>
+          <div class="food-mean">Paratha (layered, fried bread)</div>
+          <div class="food-ctx">Weekend breakfast, usually with egg or alu.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLATE 2 -->
+    <div class="plate-group">
+      <div class="plate-head">
+        <div class="plate-icon">🐟</div>
+        <div>
+          <div class="plate-title">Fish, meat &amp; egg</div>
+          <div class="plate-sub">The dish that gets the most attention</div>
+        </div>
+      </div>
+      <div class="food-grid">
+        <div class="food-item"><span class="review-badge">review</span>
+          <div class="food-word">Mach</div><div class="food-say">maach</div>
+          <div class="food-mean">Fish</div>
+          <div class="food-ctx">"Mache-bhaate Bangali": rice and fish make a Bengali. Fish is identity, not just food.</div>
+        </div>
+        <div class="food-item">
+          <div class="food-word">Ilish mach</div><div class="food-say">I-lish maach</div>
+          <div class="food-mean">Hilsa fish</div>
+          <div class="food-ctx">The national fish. Bony, rich, prized. Praising the ilish is praising the cook.</div>
+        </div>
+        <div class="food-item">
+          <div class="food-word">Murgi</div><div class="food-say">MUR-gi</div>
+          <div class="food-mean">Chicken</div>
+          <div class="food-ctx">The everyday meat. "Murgir mangsho" in full, but "murgi" alone is normal at the table.</div>
+        </div>
+        <div class="food-item"><span class="review-badge">review</span>
+          <div class="food-word">Mangsho</div><div class="food-say">MANG-shô</div>
+          <div class="food-mean">Meat</div>
+          <div class="food-ctx">The general word. Add the animal in front to be specific.</div>
+        </div>
+        <div class="food-item">
+          <div class="food-word">Gorur mangsho</div><div class="food-say">GO-rur MANG-shô</div>
+          <div class="food-mean">Beef</div>
+          <div class="food-ctx">Lit. "cow's meat". Central at Eid-ul-Adha.</div>
+        </div>
+        <div class="food-item">
+          <div class="food-word">Khashir mangsho</div><div class="food-say">KHAA-shir MANG-shô</div>
+          <div class="food-mean">Goat (mutton)</div>
+          <div class="food-ctx">The special-occasion meat. Often in the biriyani.</div>
+        </div>
+        <div class="food-item">
+          <div class="food-word">Dim</div><div class="food-say">dim</div>
+          <div class="food-mean">Egg</div>
+          <div class="food-ctx">Dim bhaji = fried egg / omelette. Breakfast staple.</div>
+        </div>
+        <div class="dhaka-note">Mangsho is the Shudho Bangla word and your primary target. In many Muslim households you'll also hear <strong>gosht</strong> (gosht), borrowed from Urdu. Both mean meat; if her family says gosht, follow them.</div>
+      </div>
+    </div>
+
+    <!-- PLATE 3 -->
+    <div class="plate-group">
+      <div class="plate-head">
+        <div class="plate-icon">🥘</div>
+        <div>
+          <div class="plate-title">Dal &amp; vegetables</div>
+          <div class="plate-sub">The everyday dishes around the rice</div>
+        </div>
+      </div>
+      <div class="food-grid">
+        <div class="food-item"><span class="review-badge">review</span>
+          <div class="food-word">Dal</div><div class="food-say">daal</div>
+          <div class="food-mean">Lentils (soup/curry)</div>
+          <div class="food-ctx">On the table every single day. "Dal-bhaat" = the simplest, most homely meal.</div>
+        </div>
+        <div class="food-item">
+          <div class="food-word">Shobji</div><div class="food-say">SHOB-ji</div>
+          <div class="food-mean">Vegetables</div>
+          <div class="food-ctx">The ingredient: the vegetables themselves, raw or in general.</div>
+        </div>
+        <div class="food-item"><span class="review-badge">review</span>
+          <div class="food-word">Torkari</div><div class="food-say">tôr-KAA-ri</div>
+          <div class="food-mean">Vegetable curry (the dish)</div>
+          <div class="food-ctx">Shobji is what you buy; torkari is what Ammu cooks with it.</div>
+        </div>
+        <div class="food-item">
+          <div class="food-word">Alu</div><div class="food-say">AA-lu</div>
+          <div class="food-mean">Potato</div>
+          <div class="food-ctx">In almost everything, including the biriyani.</div>
+        </div>
+        <div class="food-item">
+          <div class="food-word">Begun</div><div class="food-say">BE-gun</div>
+          <div class="food-mean">Aubergine / eggplant</div>
+          <div class="food-ctx">Fried in slices (begun bhaji) or mashed (begun bhorta).</div>
+        </div>
+        <div class="food-item">
+          <div class="food-word">Bhorta</div><div class="food-say">BHOR-taa</div>
+          <div class="food-mean">Mashed, spiced side dish</div>
+          <div class="food-ctx">Very Bangladeshi. Alu bhorta, begun bhorta, even shutki (dried fish) bhorta. That orange thing you didn't recognise.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLATE 4 -->
+    <div class="plate-group">
+      <div class="plate-head">
+        <div class="plate-icon">🍮</div>
+        <div>
+          <div class="plate-title">Sweets &amp; fruit</div>
+          <div class="plate-sub">Where "khub mishti" belongs</div>
+        </div>
+      </div>
+      <div class="food-grid">
+        <div class="food-item"><span class="review-badge">review</span>
+          <div class="food-word">Mishti</div><div class="food-say">MISH-ti</div>
+          <div class="food-mean">Sweets / sweet</div>
+          <div class="food-ctx">The word for the sweets box <em>and</em> for the taste. Visitors bring mishti; you should too.</div>
+        </div>
+        <div class="food-item">
+          <div class="food-word">Mishti doi</div><div class="food-say">MISH-ti doi</div>
+          <div class="food-mean">Sweet yoghurt</div>
+          <div class="food-ctx">Doi = yoghurt. Set in clay pots. Bogura's is famous.</div>
+        </div>
+        <div class="food-item">
+          <div class="food-word">Payesh</div><div class="food-say">PAA-yesh</div>
+          <div class="food-mean">Rice pudding</div>
+          <div class="food-ctx">Milk, rice, sugar, cardamom. Birthdays and special days.</div>
+        </div>
+        <div class="food-item">
+          <div class="food-word">Shemai</div><div class="food-say">SHE-mai</div>
+          <div class="food-mean">Sweet vermicelli</div>
+          <div class="food-ctx">The taste of Eid morning. Every house serves it; eat a little at each.</div>
+        </div>
+        <div class="food-item">
+          <div class="food-word">Phol</div><div class="food-say">phol</div>
+          <div class="food-mean">Fruit</div>
+          <div class="food-ctx">The general word, like mangsho is for meat.</div>
+        </div>
+        <div class="food-item">
+          <div class="food-word">Aam</div><div class="food-say">aam</div>
+          <div class="food-mean">Mango</div>
+          <div class="food-ctx">Summer obsession. Ask "which aam is best?" and settle in for a debate.</div>
+        </div>
+        <div class="food-item">
+          <div class="food-word">Kathal</div><div class="food-say">KAA-thaal</div>
+          <div class="food-mean">Jackfruit</div>
+          <div class="food-ctx">The national fruit. Huge, fragrant, polarising.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLATE 5 -->
+    <div class="plate-group">
+      <div class="plate-head">
+        <div class="plate-icon">🫖</div>
+        <div>
+          <div class="plate-title">Drinks &amp; the table</div>
+          <div class="plate-sub">What's in the glass, and what's in the dish</div>
+        </div>
+      </div>
+      <div class="food-grid">
+        <div class="food-item"><span class="review-badge">review</span>
+          <div class="food-word">Cha</div><div class="food-say">chaa</div>
+          <div class="food-mean">Tea</div>
+          <div class="food-ctx">Milky, sweet, constant.</div>
+        </div>
+        <div class="food-item"><span class="review-badge">review</span>
+          <div class="food-word">Pani</div><div class="food-say">PAA-ni</div>
+          <div class="food-mean">Water</div>
+          <div class="food-ctx">Her family's word. "Pani deben?"</div>
+        </div>
+        <div class="food-item">
+          <div class="food-word">Dudh</div><div class="food-say">dudh</div>
+          <div class="food-mean">Milk</div>
+          <div class="food-ctx">"Dudh cha" = milk tea; "rong cha" = black tea.</div>
+        </div>
+        <div class="food-item">
+          <div class="food-word">Lobon</div><div class="food-say">LO-bon</div>
+          <div class="food-mean">Salt</div>
+          <div class="food-ctx">"Lobon deben?" = could you pass the salt?</div>
+        </div>
+        <div class="food-item">
+          <div class="food-word">Jhal</div><div class="food-say">jhaal</div>
+          <div class="food-mean">Spicy (chilli-hot)</div>
+          <div class="food-ctx">Not gôrôm, which is temperature-hot. Jhal is chilli. You will be asked about this.</div>
+        </div>
+        <div class="family-note"><strong>Her family says</strong>Pani, not jol. You've drilled this already: keep it.</div>
+        <div class="dhaka-note">Lobon is the Shudho Bangla word for salt. In casual speech you'll often hear <strong>nun</strong> (noon). Same thing; lobon is your default.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- SECTION: USING THE WORDS -->
+  <div class="section">
+    <div class="section-label">Using the Words · Three Frames</div>
+    <h2>Drop any food word into these</h2>
+    <p class="lead">Three tiny frames turn a list of nouns into conversation. The food word is the only part that changes.</p>
+
+    <div class="phrase-card">
+      <div class="phrase-bangla">Eta ki?</div>
+      <div class="phrase-pronounce">E-taa ki</div>
+      <div class="phrase-english">"What is this?"</div>
+      <div class="phrase-context">Point at a dish and ask. Her answer will be "Eta ___" (this is ___). Asking shows curiosity about her cooking, which is its own compliment.</div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-bangla">Ami ___ khub pochondo kori</div>
+      <div class="phrase-pronounce">AA-mi ___ khub PO-chon-do KO-ri</div>
+      <div class="phrase-english">"I really like ___"</div>
+      <div class="phrase-context">"Ami ilish mach khub pochondo kori." Pick your five favourites from the plates above and practise them in this frame out loud.</div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-bangla">Apni ki pochondo koren?</div>
+      <div class="phrase-pronounce">AP-ni ki PO-chon-do KO-ren</div>
+      <div class="phrase-english">"What do you like?" (formal)</div>
+      <div class="phrase-context">Turn it back to Ammu or Abba. Add two options with <strong>naki</strong> (NAA-ki, "or"): "Mach naki mangsho?"</div>
+      <div class="tumi-note">
+        <strong>With friends (tumi)</strong>
+        <strong style="color:var(--green);font-size:15px;text-transform:none;letter-spacing:0;display:inline">Tumi ki pochondo koro?</strong> · TU-mi ki PO-chon-do KO-ro · same question to your wife's friends. The <em>-en</em> ending (koren) becomes <em>-o</em> (koro), exactly like kaj koren → kaj koro in Lesson 3.
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- SECTION: LISTENING -->
+  <div class="section">
+    <div class="section-label">Listening Practice · What You'll Hear</div>
+    <h2>Around the table</h2>
+    <p class="lead">Listen for the food word first. Even if the rest of the sentence is a blur, catching "ilish" or "jhal" tells you what's going on.</p>
+
+    <div class="dialogue">
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-them">Ammu</span>
+        <div class="dialogue-text">
+          <div class="phrase">Bhaat neen. Dal diye khan.</div>
+          <div class="translation">bhaat neen. daal DI-ye khaan · "Take rice. Eat it with dal."</div>
+        </div>
+      </div>
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-you">You</span>
+        <div class="dialogue-text">
+          <div class="phrase">Jee, dhônnobad.</div>
+          <div class="translation">"Yes, thank you."</div>
+        </div>
+      </div>
+      <div class="dialogue-note"><strong>Diye</strong> (DI-ye) = "with". You'll hear it constantly: dal diye bhaat, mach diye bhaat. Rice is the base; diye names what goes on it.</div>
+      <div class="tumi-note">
+        <strong>With friends (tumi)</strong>
+        <strong style="color:var(--green);font-size:15px;text-transform:none;letter-spacing:0;display:inline">Bhaat nao. Khao, khao!</strong> · bhaat NAA-o. KHAA-o · a friend serving you. Neen → nao, khan → khao.
+      </div>
+    </div>
+
+    <div class="dialogue">
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-them">Ammu</span>
+        <div class="dialogue-text">
+          <div class="phrase">Aaj ilish mach ranna korechi.</div>
+          <div class="translation">aaj I-lish maach RAAN-naa KO-re-chi · "Today I've cooked hilsa."</div>
+        </div>
+      </div>
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-you">You</span>
+        <div class="dialogue-text">
+          <div class="phrase">Ilish mach ami khub pochondo kori!</div>
+          <div class="translation">"I really love hilsa!"</div>
+        </div>
+      </div>
+      <div class="dialogue-note">Recognition only: <strong>ranna</strong> (RAAN-naa) = cooking. You don't need to say it yet, but when you hear it, someone is telling you what they made for you.</div>
+    </div>
+
+    <div class="dialogue">
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-you">You</span>
+        <div class="dialogue-text">
+          <div class="phrase">Eta ki?</div>
+          <div class="translation">"What's this?" (pointing at the orange mash)</div>
+        </div>
+      </div>
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-them">Ammu</span>
+        <div class="dialogue-text">
+          <div class="phrase">Eta alu bhorta.</div>
+          <div class="translation">E-taa AA-lu BHOR-taa · "This is mashed potato (spiced)."</div>
+        </div>
+      </div>
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-you">You</span>
+        <div class="dialogue-text">
+          <div class="phrase">Khub shundor hoyeche!</div>
+          <div class="translation">"It's come out beautifully!" Savoury dish, so shundor, not mishti.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dialogue">
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-them">Abba</span>
+        <div class="dialogue-text">
+          <div class="phrase">Jhal lagche?</div>
+          <div class="translation">jhaal LAAG-che · "Is it too spicy for you?"</div>
+        </div>
+      </div>
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-you">You</span>
+        <div class="dialogue-text">
+          <div class="phrase">Ektu jhal. Pani deben?</div>
+          <div class="translation">"A little spicy. Could I have some water?" Or, if you're fine: "Na, thik ache."</div>
+        </div>
+      </div>
+      <div class="dialogue-note">Same shape as <em>bhook lagche</em> (I'm hungry): lagche = "is feeling". It has no apni/tumi ending, so a friend asks it exactly the same way.</div>
+    </div>
+
+    <div class="dialogue">
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-them">Friend</span>
+        <div class="dialogue-text">
+          <div class="phrase">Tumi ki pochondo koro, biriyani naki khichuri?</div>
+          <div class="translation">"What do you prefer, biriyani or khichuri?"</div>
+        </div>
+      </div>
+      <div class="dialogue-row">
+        <span class="speaker-tag speaker-you">You</span>
+        <div class="dialogue-text">
+          <div class="phrase">Biriyani! Ar tumi?</div>
+          <div class="translation">"Biriyani! And you?" Tumi back to a friend.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- SECTION: SORT GAME -->
+  <div class="section">
+    <div class="section-label">Practice 1 · Retrieval Sort</div>
+    <h2>Which plate does it go on?</h2>
+    <p class="lead">Only the Bangla word is shown. Recall what it means, then put it on the right plate. The meaning appears after you choose.</p>
+
+    <div class="sort-stage" id="sortStage"></div>
+  </div>
+
+  <hr>
+
+  <!-- SECTION: QUIZ -->
+  <div class="section">
+    <div class="section-label">Practice 2 · Mixed Retrieval</div>
+    <h2>At the table, old and new together</h2>
+    <p class="lead">Food words mixed with phrases from Lessons 2 and 3. One chance per question.</p>
+
+    <div class="quiz-progress" id="quizProgress"></div>
+
+    <div id="quizContainer"></div>
+    <div class="quiz-score" id="quizScore">
+      <div class="score-number" id="scoreNum"></div>
+      <div class="score-label">correct</div>
+      <div class="score-message" id="scoreMsg"></div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- SECTION: CHALLENGE -->
+  <div class="section">
+    <div class="section-label">Real-World Challenge</div>
+    <div class="challenge">
+      <div class="challenge-title">Before the next session</div>
+      <p>At the next family meal (or on a call when food comes up), point at one dish and ask <strong>"Eta ki?"</strong> Listen for the food word in the answer.</p>
+      <p>Then tell Ammu one real favourite: <strong>"Ami ___ khub pochondo kori."</strong> Pick it now, so it's ready.</p>
+      <p>Gold-star version: ask her back, <strong>"Apni ki pochondo koren?"</strong> and see if you can catch the dish she names.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <hr style="border:none; border-top:1px solid var(--border); margin: 0 0 44px;">
+
+    <!-- FAMILY FEEDBACK -->
+    <div class="feedback-section">
+      <div class="feedback-section-label">Her Family</div>
+      <h2>How does her family say it?</h2>
+      <p>Note any phrases her family says differently. Notes are saved to the repo and picked up automatically next time the teach skill runs.</p>
+
+      <div id="fb-setup" class="feedback-card-alt">
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--amber); margin-bottom:10px;">One-time setup</div>
+        <p style="font-size:13px; color:var(--muted); margin-bottom:14px; line-height:1.5;">
+          Enter a GitHub Personal Access Token with <strong style="color:var(--text)">Contents: Read &amp; Write</strong>
+          on this repo to save notes directly.
+          <a href="https://github.com/settings/tokens?type=beta" target="_blank" style="color:var(--accent);">Create one here ↗</a>
+        </p>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <input id="fb-pat" type="password" class="feedback-input" placeholder="github_pat_..." style="flex:1; min-width:200px;" />
+          <button class="feedback-btn" onclick="fbSavePat()">Save token</button>
+        </div>
+      </div>
+
+      <div id="fb-form" class="feedback-card" style="display:none;">
+        <div style="margin-bottom:14px;">
+          <label class="feedback-field-label" for="fb-phrase">Phrase from this lesson</label>
+          <input id="fb-phrase" type="text" class="feedback-input" placeholder="e.g. lobon" />
+        </div>
+        <div style="margin-bottom:14px;">
+          <label class="feedback-field-label" for="fb-family">Her family says</label>
+          <input id="fb-family" type="text" class="feedback-input" placeholder="e.g. nun" />
+        </div>
+        <div style="margin-bottom:18px;">
+          <label class="feedback-field-label" for="fb-notes">Notes <span style="color:var(--small); font-weight:400; text-transform:none; font-size:11px;">(optional)</span></label>
+          <textarea id="fb-notes" class="feedback-textarea" rows="2" placeholder="e.g. Ammu always says nun for salt"></textarea>
+        </div>
+        <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+          <button id="fb-btn" class="feedback-btn" onclick="fbSubmit()">Save note</button>
+          <span id="fb-status" style="font-size:13px; color:var(--muted); flex:1;"></span>
+          <button class="feedback-btn-ghost" onclick="fbClearPat()">Change token</button>
+        </div>
+      </div>
+
+      <div id="fb-entries"></div>
+    </div>
+  </div>
+
+  <nav class="site-footer-nav">
+    <div class="site-footer-prevnext">
+      <a href="0003-they-will-ask-about-you.html">← Prev: They're Asking About You</a>
+      <a href="../index.html">All Lessons →</a>
+    </div>
+    <div class="site-footer-nav-links">
+      <a href="../index.html">Home</a><span class="sep">·</span>
+      <a href="../reference/pronunciation-guide.html">Pronunciation</a><span class="sep">·</span>
+      <a href="../reference/glossary.html">Glossary</a>
+    </div>
+  </nav>
+
+</div><!-- /container -->
+
+<script>
+  // ─── RECALL TOGGLE ───────────────────────────────────────
+  function toggleRecall(card) {
+    const reveal = card.querySelector('.recall-reveal');
+    const hint   = card.querySelector('.recall-hint');
+    reveal.classList.toggle('shown');
+    hint.style.display = reveal.classList.contains('shown') ? 'none' : 'block';
+  }
+
+  // ─── SORT GAME ───────────────────────────────────────────
+  const plates = {
+    rice:   '🍚 Rice & bread',
+    meat:   '🐟 Fish, meat & egg',
+    veg:    '🥘 Dal & veg',
+    sweet:  '🍮 Sweets & fruit',
+    drink:  '🫖 Drinks & table',
+  };
+  const foods = [
+    { w: 'Polao',          s: 'PO-laa-o',        m: 'fragrant rice',          p: 'rice' },
+    { w: 'Khichuri',       s: 'KHI-chu-ri',      m: 'rice & lentils together',p: 'rice' },
+    { w: 'Porota',         s: 'PO-ro-taa',       m: 'paratha',                p: 'rice' },
+    { w: 'Biriyani',       s: 'BI-ri-yaa-ni',    m: 'biryani',                p: 'rice' },
+    { w: 'Ilish mach',     s: 'I-lish maach',    m: 'hilsa fish',             p: 'meat' },
+    { w: 'Murgi',          s: 'MUR-gi',          m: 'chicken',                p: 'meat' },
+    { w: 'Khashir mangsho',s: 'KHAA-shir MANG-shô', m: 'goat',               p: 'meat' },
+    { w: 'Gorur mangsho',  s: 'GO-rur MANG-shô', m: 'beef',                   p: 'meat' },
+    { w: 'Dim',            s: 'dim',             m: 'egg',                    p: 'meat' },
+    { w: 'Begun',          s: 'BE-gun',          m: 'aubergine',              p: 'veg' },
+    { w: 'Bhorta',         s: 'BHOR-taa',        m: 'mashed spiced side',     p: 'veg' },
+    { w: 'Alu',            s: 'AA-lu',           m: 'potato',                 p: 'veg' },
+    { w: 'Shobji',         s: 'SHOB-ji',         m: 'vegetables',             p: 'veg' },
+    { w: 'Payesh',         s: 'PAA-yesh',        m: 'rice pudding',           p: 'sweet' },
+    { w: 'Shemai',         s: 'SHE-mai',         m: 'sweet vermicelli',       p: 'sweet' },
+    { w: 'Kathal',         s: 'KAA-thaal',       m: 'jackfruit',              p: 'sweet' },
+    { w: 'Aam',            s: 'aam',             m: 'mango',                  p: 'sweet' },
+    { w: 'Mishti doi',     s: 'MISH-ti doi',     m: 'sweet yoghurt',          p: 'sweet' },
+    { w: 'Dudh',           s: 'dudh',            m: 'milk',                   p: 'drink' },
+    { w: 'Lobon',          s: 'LO-bon',          m: 'salt',                   p: 'drink' },
+    { w: 'Jhal',           s: 'jhaal',           m: 'spicy (chilli)',         p: 'drink' },
+  ];
+  const SORT_ROUND = 12;
+  let sortDeck = [], sortIdx = 0, sortScore = 0, sortMissed = [];
+
+  function shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function startSort() {
+    sortDeck = shuffle(foods.slice()).slice(0, SORT_ROUND);
+    sortIdx = 0; sortScore = 0; sortMissed = [];
+    renderSort();
+  }
+
+  function renderSort() {
+    const f = sortDeck[sortIdx];
+    document.getElementById('sortStage').innerHTML = `
+      <div class="sort-count">Word ${sortIdx + 1} of ${sortDeck.length}</div>
+      <div class="sort-word">${f.w}</div>
+      <div class="sort-say">${f.s}</div>
+      <div class="sort-buttons">
+        ${Object.keys(plates).map(k => `<button class="sort-btn" data-k="${k}" onclick="sortPick('${k}')">${plates[k]}</button>`).join('')}
+      </div>
+      <div class="sort-fb" id="sortFb"></div>`;
+  }
+
+  function sortPick(k) {
+    const f = sortDeck[sortIdx];
+    const btns = document.querySelectorAll('.sort-btn');
+    btns.forEach(b => {
+      b.disabled = true;
+      if (b.dataset.k === f.p) b.classList.add('correct');
+      else if (b.dataset.k === k) b.classList.add('wrong');
+    });
+    const fb = document.getElementById('sortFb');
+    if (k === f.p) {
+      sortScore++;
+      fb.innerHTML = `✓ <strong>${f.w}</strong> = ${f.m}`;
+    } else {
+      sortMissed.push(f.w);
+      fb.innerHTML = `✗ <strong>${f.w}</strong> = ${f.m}`;
+    }
+    setTimeout(() => {
+      sortIdx++;
+      if (sortIdx < sortDeck.length) renderSort(); else endSort();
+    }, 1600);
+  }
+
+  function endSort() {
+    let msg;
+    if (sortScore === sortDeck.length) msg = 'Every plate set correctly. The table is yours.';
+    else if (sortScore >= sortDeck.length - 2) msg = 'Nearly perfect. Go back over the ones you missed, then play again: the deck reshuffles.';
+    else msg = 'Food words take a few rounds. Re-read the plates above, then play again: you get a fresh mix each time.';
+    const missed = sortMissed.length ? `<div class="sort-fb">Revisit: <strong>${sortMissed.join(', ')}</strong></div>` : '';
+    document.getElementById('sortStage').innerHTML = `
+      <div class="score-number">${sortScore}/${sortDeck.length}</div>
+      <div class="score-label">sorted correctly</div>
+      <div class="score-message" style="font-size:15px;margin:16px auto 0;max-width:360px">${msg}</div>
+      ${missed}
+      <button class="sort-again" onclick="startSort()">Play again</button>`;
+  }
+
+  // ─── QUIZ DATA (interleaved: L4 new + L2/L3 review) ──────
+  const questions = [
+    {
+      prompt: "Ammu puts a dish in front of you and says:",
+      stimulus: "Eta ilish mach.",
+      translation: "(Listen for the food word)",
+      options: [
+        { text: "This is chicken.",      correct: false, feedback: "Chicken is murgi. 'Mach' is fish, and ilish is the most prized fish of all." },
+        { text: "This is hilsa fish.",   correct: true,  feedback: "Yes: the national fish. Now's the moment for 'khub shundor hoyeche!'" },
+        { text: "This is lentil soup.",  correct: false, feedback: "Lentils are dal. 'Mach' is the word to catch here: fish." },
+      ]
+    },
+    {
+      prompt: "There's a dish you don't recognise. You point and ask:",
+      stimulus: "Asking what something is",
+      translation: "(The most useful question at the table)",
+      options: [
+        { text: "Ki bôllen?",  correct: false, feedback: "'What did you say?' asks for a repeat. To ask what a dish is: 'Eta ki?'" },
+        { text: "Ar apni?",    correct: false, feedback: "'And you?' returns a question. To ask about a dish: 'Eta ki?'" },
+        { text: "Eta ki?",     correct: true,  feedback: "Exactly. And curiosity about her cooking is a compliment in itself." },
+      ]
+    },
+    {
+      prompt: "Review from Lesson 2: you've just tasted Ammu's payesh (rice pudding). The best compliment:",
+      stimulus: "Payesh",
+      translation: "(Sweet or savoury? Pick the compliment that fits)",
+      options: [
+        { text: "Ami khub byasto.",  correct: false, feedback: "'I'm very busy' is a Lesson 3 work answer. Payesh is a dessert: 'khub mishti!'" },
+        { text: "Khub mishti!",      correct: true,  feedback: "Right: payesh is a sweet, so 'very sweet' is the natural praise. 'Khub shundor hoyeche' would also work." },
+        { text: "Pani deben?",       correct: false, feedback: "That asks for water. For a dessert, praise it: 'khub mishti!'" },
+      ]
+    },
+    {
+      prompt: "Abba asks: \"Jhal lagche?\" It really is too hot for you. You say:",
+      stimulus: "Jhal lagche?",
+      translation: "(Is it spicy for you?)",
+      options: [
+        { text: "Ektu jhal. Jol deben?",  correct: false, feedback: "Right idea, but remember her family's word: pani, not jol." },
+        { text: "Ektu jhal. Pani deben?", correct: true,  feedback: "Perfect, and in her family's word. Jhal = chilli-hot, pani = water." },
+        { text: "Ektu lobon.",            correct: false, feedback: "Lobon is salt. Jhal is the spicy-hot word, and you need water: 'pani deben?'" },
+      ]
+    },
+    {
+      prompt: "Ammu asks: \"Apni ki pochondo koren, mach naki mangsho?\"",
+      stimulus: "Mach naki mangsho?",
+      translation: "(Fish or meat?)",
+      options: [
+        { text: "Ami mach khub pochondo kori.", correct: true,  feedback: "A clear, complete answer, using her own verb back to her. (Swap in mangsho if that's the truth.)" },
+        { text: "Ami bhoraa.",                  correct: false, feedback: "'I'm full' doesn't answer 'fish or meat?' Use the frame: 'Ami ___ khub pochondo kori.'" },
+        { text: "Shobai bhalo ache.",           correct: false, feedback: "'Everyone is well' answers a family question. She asked fish or meat: 'Ami mach khub pochondo kori.'" },
+      ]
+    },
+    {
+      prompt: "It's raining. Your wife says Ammu is making the classic rainy-day dish. What will you be eating?",
+      stimulus: "Khichuri",
+      translation: "(Recall the plate it belongs to)",
+      options: [
+        { text: "Sweet vermicelli",            correct: false, feedback: "That's shemai, the Eid-morning sweet. Khichuri is rice and lentils cooked together." },
+        { text: "Rice and lentils, together",  correct: true,  feedback: "Yes: comfort food. Ask about khichuri and someone will tell you their favourite version." },
+        { text: "Mashed aubergine",            correct: false, feedback: "That's begun bhorta. Khichuri is rice and lentils cooked together." },
+      ]
+    },
+    {
+      prompt: "You want to ask your wife's friend (same age) what food they like:",
+      stimulus: "Asking a friend",
+      translation: "(Tumi register)",
+      options: [
+        { text: "Apni ki pochondo koren?", correct: false, feedback: "That's the formal apni form, for elders. With a friend: 'Tumi ki pochondo koro?'" },
+        { text: "Tumi ki pochondo koro?",  correct: true,  feedback: "Register on point: tumi with -o, just like kaj koro from Lesson 3." },
+        { text: "Tumi ki pochondo koren?", correct: false, feedback: "Mixed registers: tumi takes -o, not -en. 'Tumi ki pochondo koro?'" },
+      ]
+    },
+  ];
+
+  let current = 0;
+  let score = 0;
+
+  function buildProgress() {
+    const bar = document.getElementById('quizProgress');
+    bar.innerHTML = questions.map((_, i) => `<div class="progress-pip" id="pip-${i}"></div>`).join('');
+  }
+
+  function renderQuestion(i) {
+    const q = questions[i];
+    const container = document.getElementById('quizContainer');
+    container.innerHTML = `
+      <div class="quiz-block">
+        <div class="quiz-number">Question ${i + 1} of ${questions.length}</div>
+        <div class="quiz-prompt">${q.prompt}</div>
+        <div class="quiz-stimulus">${q.stimulus}<br><span style="font-size:14px;font-weight:400;color:var(--muted)">${q.translation}</span></div>
+        <div class="quiz-options">
+          ${q.options.map((opt, j) => `
+            <button class="quiz-option" onclick="answer(${i}, ${j})">${opt.text}</button>
+          `).join('')}
+        </div>
+        <div class="quiz-feedback" id="feedback-${i}"></div>
+      </div>
+    `;
+  }
+
+  function answer(qi, optIdx) {
+    const q = questions[qi];
+    const opt = q.options[optIdx];
+    const buttons = document.querySelectorAll('.quiz-option');
+    const feedback = document.getElementById(`feedback-${qi}`);
+
+    buttons.forEach(b => b.disabled = true);
+
+    if (opt.correct) {
+      buttons[optIdx].classList.add('correct');
+      feedback.className = 'quiz-feedback correct-fb';
+      feedback.textContent = '✓ ' + opt.feedback;
+      score++;
+      document.getElementById(`pip-${qi}`).className = 'progress-pip done-correct';
+    } else {
+      buttons[optIdx].classList.add('wrong');
+      feedback.className = 'quiz-feedback wrong-fb';
+      feedback.textContent = '✗ ' + opt.feedback;
+      q.options.forEach((o, j) => { if (o.correct) buttons[j].classList.add('correct'); });
+      document.getElementById(`pip-${qi}`).className = 'progress-pip done-wrong';
+    }
+    feedback.style.display = 'block';
+
+    setTimeout(() => {
+      current++;
+      if (current < questions.length) renderQuestion(current); else showScore();
+    }, 2400);
+  }
+
+  function showScore() {
+    document.getElementById('quizContainer').innerHTML = '';
+    document.getElementById('quizScore').classList.add('visible');
+    document.getElementById('scoreNum').textContent = `${score}/${questions.length}`;
+    let msg;
+    if (score === questions.length) msg = "Perfect. You can name the table, praise it correctly, and ask in both registers.";
+    else if (score >= questions.length - 1) msg = "Strong result. Review the one you missed and it's yours.";
+    else if (score >= Math.floor(questions.length / 2)) msg = "Solid. The mix of old and new is deliberately hard. Re-read the dialogues and try again.";
+    else msg = "Food vocabulary is a big batch. Play the sort game twice more, then come back to this quiz.";
+    document.getElementById('scoreMsg').textContent = msg;
+  }
+
+  startSort();
+  buildProgress();
+  renderQuestion(0);
+</script>
+<script>
+(function () {
+  var hostname = window.location.hostname;
+  var ghMatch = hostname.match(/^(.+)\.github\.io$/);
+  var owner = ghMatch ? ghMatch[1] : 'anth87';
+  var pathParts = window.location.pathname.split('/').filter(Boolean);
+  var repo = ghMatch ? (pathParts[0] || 'learn-bangla') : 'learn-bangla';
+  var slug = window.location.pathname.split('/').pop().replace('.html', '');
+  var feedbackFile = 'feedback/' + slug + '-feedback.md';
+  var apiUrl = 'https://api.github.com/repos/' + owner + '/' + repo + '/contents/' + feedbackFile;
+  var PAT_KEY = 'teach_skill_github_pat';
+
+  function getPat() { return localStorage.getItem(PAT_KEY); }
+
+  window.fbSavePat = function () {
+    var val = document.getElementById('fb-pat').value.trim();
+    if (!val) return;
+    localStorage.setItem(PAT_KEY, val);
+    fbInit();
+  };
+
+  window.fbClearPat = function () {
+    localStorage.removeItem(PAT_KEY);
+    fbInit();
+  };
+
+  function fbInit() {
+    var pat = getPat();
+    document.getElementById('fb-setup').style.display = pat ? 'none' : 'block';
+    document.getElementById('fb-form').style.display = pat ? 'block' : 'none';
+    if (pat) fbLoad(pat);
+  }
+
+  function fbDecode(b64) {
+    try { return decodeURIComponent(escape(atob(b64.replace(/\n/g, '')))); }
+    catch (e) { return atob(b64.replace(/\n/g, '')); }
+  }
+
+  function fbEncode(str) {
+    try { return btoa(unescape(encodeURIComponent(str))); }
+    catch (e) { return btoa(str); }
+  }
+
+  function fbLoad(pat) {
+    fetch(apiUrl, { headers: { Authorization: 'Bearer ' + pat, Accept: 'application/vnd.github+json' } })
+      .then(function (r) { return r.status === 404 ? null : r.json(); })
+      .then(function (data) { if (data && data.content) fbRender(fbDecode(data.content)); })
+      .catch(function () {});
+  }
+
+  function fbRender(md) {
+    var el = document.getElementById('fb-entries');
+    var blocks = md.split('\n---\n').map(function (b) { return b.trim(); }).filter(Boolean);
+    if (!blocks.length) { el.innerHTML = ''; return; }
+    var html = '<div class="feedback-entries-label">Saved notes (' + blocks.length + ')</div>';
+    blocks.forEach(function (block) {
+      var phrase = (block.match(/\*\*Phrase:\*\* (.+)/) || [])[1] || '';
+      var family = (block.match(/\*\*Her family says:\*\* (.+)/) || [])[1] || '';
+      var notes  = (block.match(/\*\*Notes:\*\* (.+)/) || [])[1] || '';
+      html += '<div class="feedback-entry">';
+      if (phrase) html += '<div><span style="color:var(--muted)">Phrase: </span><strong style="color:var(--accent2)">' + phrase + '</strong></div>';
+      if (family) html += '<div><span style="color:var(--muted)">Family says: </span><strong style="color:var(--green)">' + family + '</strong></div>';
+      if (notes)  html += '<div style="color:var(--small);margin-top:2px">' + notes + '</div>';
+      html += '</div>';
+    });
+    el.innerHTML = html;
+  }
+
+  window.fbSubmit = function () {
+    var pat = getPat();
+    var phrase = document.getElementById('fb-phrase').value.trim();
+    var family = document.getElementById('fb-family').value.trim();
+    var notes  = document.getElementById('fb-notes').value.trim();
+    var status = document.getElementById('fb-status');
+    var btn    = document.getElementById('fb-btn');
+
+    if (!phrase || !family) {
+      status.style.color = 'var(--amber)';
+      status.textContent = 'Both fields are required.';
+      return;
+    }
+
+    btn.disabled = true;
+    status.style.color = 'var(--muted)';
+    status.textContent = 'Saving…';
+
+    var title = document.title.split(/[—·]/)[0].trim();
+    var date  = new Date().toISOString().slice(0, 10);
+    var entry = '## ' + title + ' — ' + date + '\n\n' +
+      '**Phrase:** ' + phrase + '  \n' +
+      '**Her family says:** ' + family + '  \n' +
+      (notes ? '**Notes:** ' + notes + '  \n' : '') +
+      '\n---\n';
+
+    fetch(apiUrl, { headers: { Authorization: 'Bearer ' + pat, Accept: 'application/vnd.github+json' } })
+      .then(function (r) {
+        if (r.status === 404) return { existing: '', sha: undefined };
+        return r.json().then(function (d) { return { existing: fbDecode(d.content), sha: d.sha }; });
+      })
+      .then(function (f) {
+        var body = { message: 'feedback: ' + slug, content: fbEncode(f.existing + entry), branch: 'main' };
+        if (f.sha) body.sha = f.sha;
+        return fetch(apiUrl, {
+          method: 'PUT',
+          headers: { Authorization: 'Bearer ' + pat, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        });
+      })
+      .then(function (r) {
+        if (!r.ok) return r.json().then(function (e) { throw new Error(e.message || 'API error'); });
+        status.style.color = 'var(--green)';
+        status.textContent = 'Saved!';
+        document.getElementById('fb-phrase').value = '';
+        document.getElementById('fb-family').value = '';
+        document.getElementById('fb-notes').value = '';
+        fbLoad(pat);
+        btn.disabled = false;
+      })
+      .catch(function (e) {
+        status.style.color = 'var(--red)';
+        status.textContent = 'Error: ' + e.message;
+        btn.disabled = false;
+      });
+  };
+
+  fbInit();
+})();
+</script>
+
+</body>
+</html>
