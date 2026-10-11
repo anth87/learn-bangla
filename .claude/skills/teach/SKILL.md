@@ -71,6 +71,14 @@ Write a new lesson file at `lessons/NNNN-slug.html` where NNNN is the next seque
 4. Practice — interactive retrieval exercise
 5. Real-world challenge — one specific thing to try before the next session
 
+### 6.5. Add the lesson to the main page (required)
+Every new lesson MUST be linked from `index.html` in the same commit as the lesson file. A lesson that isn't on the main page doesn't exist for the learner.
+- Add a `.lesson-card` after the last existing card (before `<!-- REFERENCE -->`), copying the existing card markup: number, title, a `lesson-bangla` line of key phrases, a one-sentence description, and scenario/skill tags.
+- Update the progress section: the "N lessons available" label, the "N of ~15 planned lessons" caption, and the `.progress-fill` width (N ÷ 15, rounded).
+- Change the previous lesson's footer "All Lessons →" link to "Next: {new title} →" pointing at the new file; the new lesson's footer keeps "All Lessons →".
+- Verify before committing: every file in `lessons/` must appear in `index.html`:
+  `for f in lessons/*.html; do grep -q "$(basename $f)" index.html || echo "MISSING: $f"; done` should print nothing.
+
 ### 7. Update learning records
 After the lesson is created (or after the learner completes it), write a new learning record at `learning-records/NNNN-slug.md`.
 
